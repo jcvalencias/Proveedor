@@ -73,7 +73,7 @@ function CheckBox() {
             />
             <div className='buttons'>
             <button className='btnEdit' onClick={() => handleEditItem(index)}></button>
-            <button onClick={() => handleDeleteItem(index)}>Borrar</button>
+            <button className='btnDelete' onClick={() => handleDeleteItem(index)}></button>
             </div>
             </div>
           ))}

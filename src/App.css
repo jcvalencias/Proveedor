@@ -321,5 +321,15 @@
 }
 
 .btnEdit {
-  background-image: url("./assets/edit-pencil.svg");
+  background: url("./assets/edit-pencil.svg") no-repeat scroll 0 0 transparent;
+  height: 30px;
+  width: 30px;
+  border: none;
+}
+
+.btnDelete {
+  background: url("./assets/xmark-circle.svg") no-repeat scroll 0 0 transparent;
+  height: 30px;
+  width: 30px;
+  border: none;
 }
