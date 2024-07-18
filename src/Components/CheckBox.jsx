@@ -71,8 +71,10 @@ function CheckBox() {
               isChecked={item.isChecked}
               onChange={() => handleCheckBoxChange(index)}
             />
-            <button onClick={() => handleEditItem(index)}>Editar</button>
+            <div className='buttons'>
+            <button className='btnEdit' onClick={() => handleEditItem(index)}></button>
             <button onClick={() => handleDeleteItem(index)}>Borrar</button>
+            </div>
             </div>
           ))}
       
