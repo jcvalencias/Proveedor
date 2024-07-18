@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
 
 function CheckBox() {
-  const [items, setItems] = useState([
-    { text: 'Item 1', isChecked: false },
-    { text: 'Item 2', isChecked: false },
-  ]);
+  const [items, setItems] = useState([]);
   const [newItemText, setNewItemText] = useState('');
   const [editingItemIndex, setEditingItemIndex] = useState(null);
   const [editingText, setEditingText] = useState('');
@@ -57,29 +54,28 @@ function CheckBox() {
   };
 
   return (
-    <div className="App">
+    <div className="checkBoxDiv">
       <div>
         <input
           type="text"
           value={newItemText}
           onChange={(e) => setNewItemText(e.target.value)}
-          placeholder="Add new item"
+          placeholder="Agregar tipo de trabajo"
         />
-        <button onClick={handleAddItem}>Add</button>
+        <button onClick={handleAddItem}>Agregar</button>
       </div>
-      <ul>
         {items.map((item, index) => (
-          <li key={index}>
-            <ChckBx
+            <div className='chckbxItem'>
+              <ChckBx
               text={item.text}
               isChecked={item.isChecked}
               onChange={() => handleCheckBoxChange(index)}
             />
-            <button onClick={() => handleEditItem(index)}>Edit</button>
-            <button onClick={() => handleDeleteItem(index)}>Delete</button>
-          </li>
-        ))}
-      </ul>
+            <button onClick={() => handleEditItem(index)}>Editar</button>
+            <button onClick={() => handleDeleteItem(index)}>Borrar</button>
+            </div>
+          ))}
+      
       {editingItemIndex !== null && (
         <div>
           <input

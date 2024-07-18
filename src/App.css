@@ -146,6 +146,10 @@
   font-size: 17px;
 }
 
+.chckbxItem {
+  display: flex;
+}
+
 .input-text::-webkit-input-placeholder {
   line-height: 45px;
 }
