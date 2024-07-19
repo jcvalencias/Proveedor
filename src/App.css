@@ -333,3 +333,19 @@
   width: 30px;
   border: none;
 }
+
+.input-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+}
+
+.auto-resizing-input {
+  font-size: 16px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: width 0.2s ease;
+  min-width: 100px; /* Ancho mínimo cuando está vacío */
+}

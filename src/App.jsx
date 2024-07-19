@@ -2,6 +2,7 @@ import { useState } from 'react';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import CheckBox from './Components/CheckBox';
+import AutoResizingInput from './Components/AutoResizingInput';
 import './App.css';
 
 function App() {
@@ -34,15 +35,6 @@ function App() {
       <input className="input-text" type={type} placeholder={placeholder} />
     );
   }
-
-  // function CheckBox({ text }) {
-  //   return (
-  //     <div className="chckbx">
-  //       <input className="checkBox" type="checkbox" id={'chbx' + text} />
-  //       <label for={'chbx' + text}>{text}</label>
-  //     </div>
-  //   );
-  // }
 
   return (
     <div className="presupuestador">
@@ -124,16 +116,11 @@ function App() {
         </div>
         <div className="seccion tipo-trabajo">
           <Divisor nombre={'Tipo de trabajo'} />
-          {/* <div className="checkBoxDiv">
-            <CheckBox text={'Pintura'} />
-            <CheckBox text={'Plomería'} />
-            <CheckBox text={'Gas'} />
-            <CheckBox text={'Mampostería'} />
-          </div> */}
           <CheckBox />
         </div>
         <div className="seccion incluye">
           <Divisor nombre={'Qué incluye'} />
+          <AutoResizingInput />
         </div>
       </div>
     </div>
