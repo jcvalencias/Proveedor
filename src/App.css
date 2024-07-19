@@ -334,11 +334,19 @@
   border: none;
 }
 
+.incluyeOpciones {
+  display: flex;
+  gap:10px;
+  flex-wrap: wrap;
+  background-color: #f1f5f7;
+  padding: 10px;
+  border-radius: 10px;
+}
+
 .input-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 20px;
 }
 
 .auto-resizing-input {
@@ -348,4 +356,10 @@
   border-radius: 4px;
   transition: width 0.2s ease;
   min-width: 50px; /* Ancho mínimo cuando está vacío */
+}
+
+.optionIncluye {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

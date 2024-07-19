@@ -18,7 +18,7 @@ const AutoResizingInput = () => {
   
 
   return (
-    <>
+    <div className='incluyeOpciones'>
     <div className="input-container">
       <input
         type="text"
@@ -30,7 +30,6 @@ const AutoResizingInput = () => {
       />
       <button className='btnEdit' onClick={handleSave}></button>
     </div>
-    <div className='Options'>
       {items.map((item, index)=> (
       <div className='optionIncluye'>
         <span>
@@ -40,7 +39,6 @@ const AutoResizingInput = () => {
       </div>
       ))}
     </div>
-    </>
   );
 };
 
