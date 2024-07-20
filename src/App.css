@@ -334,32 +334,42 @@
   border: none;
 }
 
-.incluyeOpciones {
+.btnOk {
+  background: url("./assets/check.svg") no-repeat scroll 0 0 transparent;
+  height: 30px;
+  width: 30px;
+  border: none;
+}
+
+.incluye {
+  width: 90%;
+  height: auto;
   display: flex;
-  gap:10px;
   flex-wrap: wrap;
-  background-color: #f1f5f7;
-  padding: 10px;
+  background-color: #adc1d1;
+  border-radius: 10px;
+  gap: 10px;
+}
+
+.incluyein {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #999999;
   border-radius: 10px;
 }
 
-.input-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.auto-resizing-input {
-  font-size: 16px;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+.incluyeinput {
+  background-color: transparent;
+  border: none;
   transition: width 0.2s ease;
-  min-width: 50px; /* Ancho mínimo cuando está vacío */
+  min-width: 10px;
 }
 
-.optionIncluye {
+.incluyeOpt {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #f1f5f7;
+  border-radius: 10px;
 }

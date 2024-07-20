@@ -23,7 +23,7 @@ function CheckBox() {
 
   const handleAddItem = () => {
     if (newItemText.trim() === '') return;
-    setItems([...items, { text: newItemText, isChecked: false }]);
+    setItems([...items, { text: newItemText, isChecked: true }]);
     setNewItemText('');
   };
 
