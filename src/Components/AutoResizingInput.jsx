@@ -10,6 +10,7 @@ const AutoResizingInput = () => {
 
   const  handleSave = () => {
     setItems([...items, value]);
+    setValue('');
   }
 
   useEffect(() => {
@@ -26,9 +27,9 @@ const AutoResizingInput = () => {
         onChange={handleTextChange}
         className="auto-resizing-input"
         style={{ width: `${Math.max(value.length * 6, 10)}px` }}
-        placeholder="|"
+        placeholder=""
       />
-      <button className='btnEdit' onClick={handleSave}></button>
+      <button className='btnOk' onClick={handleSave}></button>
     </div>
       {items.map((item, index)=> (
       <div className='optionIncluye'>

@@ -373,3 +373,33 @@
   background-color: #f1f5f7;
   border-radius: 10px;
 }
+
+.incluyeOpciones {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  background-color: #f1f5f7;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auto-resizing-input {
+  font-size: 16px;
+  padding: 8px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  transition: width 0.2s ease;
+  min-width: 20px;
+}
+
+.optionIncluye {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
