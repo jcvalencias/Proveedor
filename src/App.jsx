@@ -129,7 +129,7 @@ function App() {
         </div>
         <div className="seccion incluyeSection">
           <Divisor nombre={'Qué incluye'} />
-          
+          <AutoResizingInput />
         </div>
       </div>
     </div>
