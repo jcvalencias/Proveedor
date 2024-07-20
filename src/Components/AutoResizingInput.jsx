@@ -9,8 +9,14 @@ const AutoResizingInput = () => {
   };
 
   const  handleSave = () => {
-    setItems([...items, value]);
+    if(value === '') {return;}
+    setItems([...items, '#'+value]);
     setValue('');
+  }
+
+  const handleDelete = (index) => {
+    let newArray = items.filter((_, i) => i !== index);
+    setItems(newArray)
   }
 
   useEffect(() => {
@@ -36,7 +42,7 @@ const AutoResizingInput = () => {
         <span>
           {item}
         </span>
-        <button className='btnDelete'></button>
+        <button className='btnDelete' onClick={()=>handleDelete(index)}></button>
       </div>
       ))}
     </div>
