@@ -131,6 +131,22 @@ function App() {
           <Divisor nombre={'Qué incluye'} />
           <AutoResizingInput />
         </div>
+        <div className="seccion noIncluyeSection">
+          <Divisor nombre={'No incluye'} />
+          <AutoResizingInput />
+        </div>
+        <div className='seccion GarantiaSection'>
+          <Divisor nombre={'Detalle de Garantia'} />
+          <input className="inputGarantia input-text" type='text' placeholder='Detalle qué tiene garantía y qué no la tiene.' />
+        </div>
+        <div className='seccion VencimientoSection'>
+          <Divisor nombre={'Fecha de Vencimiento de Presupuesto'} />
+          <input className='inputVencimiento input-text' type='date'/>
+        </div>
+        <div className='seccion ImagenesSection'>
+          <Divisor nombre={'Referencias Anteriores'} />
+          
+        </div>
       </div>
     </div>
   );
