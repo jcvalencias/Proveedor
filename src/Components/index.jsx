@@ -1,3 +1,5 @@
+
+
 <>
   {/*====== Required meta tags ======*/}
   <meta charSet="utf-8" />
@@ -10,31 +12,31 @@
   {/*====== Title ======*/}
   <title>Solukay - Busca, elige y soluciona lo que sea</title>
   {/*====== Favicon Icon ======*/}
-  <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png" />
+  <link rel="shortcut icon" href="../Site/assets/images/favicon.png" type="image/png" />
   {/*====== Bootstrap css ======*/}
-  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../Site/assets/css/bootstrap.min.css" />
   {/*====== FontAwesoem css ======*/}
-  <link rel="stylesheet" href="assets/fonts/themify-icons/themify-icons.css" />
+  <link rel="stylesheet" href="../Site/assets/fonts/themify-icons/themify-icons.css" />
   {/*====== Flaticon css ======*/}
-  <link rel="stylesheet" href="assets/fonts/flaticon/flaticon.css" />
+  <link rel="stylesheet" href="../Site/assets/fonts/flaticon/flaticon.css" />
   {/*====== Magnific Popup css ======*/}
-  <link rel="stylesheet" href="assets/css/magnific-popup.css" />
+  <link rel="stylesheet" href="../Site/assets/css/magnific-popup.css" />
   {/*====== Slick css ======*/}
-  <link rel="stylesheet" href="assets/css/slick.css" />
+  <link rel="stylesheet" href="../Site/assets/css/slick.css" />
   {/*====== Nice-select css ======*/}
-  <link rel="stylesheet" href="assets/css/nice-select.css" />
+  <link rel="stylesheet" href="../Site/assets/css/nice-select.css" />
   {/*====== Jquery ui css ======*/}
-  <link rel="stylesheet" href="assets/css/jquery-ui.min.css" />
+  <link rel="stylesheet" href="../Site/assets/css/jquery-ui.min.css" />
   {/*====== Animate css ======*/}
-  <link rel="stylesheet" href="assets/css/animate.css" />
+  <link rel="stylesheet" href="../Site/assets/css/animate.css" />
   {/*====== Default css ======*/}
-  <link rel="stylesheet" href="assets/css/default.css" />
+  <link rel="stylesheet" href="../Site/assets/css/default.css" />
   {/*====== Style css ======*/}
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="../Site/assets/css/style.css" />
   {/*====== Start Preloader ======*/}
   <div className="preloader">
     <div className="loader">
-      <img src="assets/images/loader.png" alt="loader" />
+      <img src="../Site/assets/images/loader.png" alt="loader" />
     </div>
   </div>
   {/*====== End Preloader ======*/}
@@ -104,7 +106,7 @@
             <div className="col-lg-2 col-5">
               <div className="site-branding">
                 <a href="index.html" className="brand-logo">
-                  <img src="assets/images/logo/logo-1.png" alt="Brand Logo" />
+                  <img src="../Site/assets/images/logo/logo-1.png" alt="Brand Logo" />
                 </a>
               </div>
             </div>
@@ -321,7 +323,7 @@
               <div className="info text-center">
                 <div className="icon">
                   <img
-                    src="assets/images/svg/para-el-hombre.svg"
+                    src="../Site/assets/images/svg/para-el-hombre.svg"
                     height={68}
                     alt="Soluciones para el Hombre"
                   />
@@ -338,7 +340,7 @@
               <div className="info text-center">
                 <div className="icon">
                   <img
-                    src="assets/images/svg/para-la-mujer.svg"
+                    src="../Site/assets/images/svg/para-la-mujer.svg"
                     height={68}
                     alt="Soluciones para la Mujer"
                   />
@@ -355,7 +357,7 @@
               <div className="info text-center">
                 <div className="icon">
                   <img
-                    src="assets/images/svg/para-la-pareja.svg"
+                    src="../Site/assets/images/svg/para-la-pareja.svg"
                     height={68}
                     alt="Soluciones para la Pareja"
                   />
@@ -372,7 +374,7 @@
               <div className="info text-center">
                 <div className="icon">
                   <img
-                    src="assets/images/svg/para-la-casa.svg"
+                    src="../Site/assets/images/svg/para-la-casa.svg"
                     height={68}
                     alt="Soluciones para la Casa"
                   />
@@ -389,7 +391,7 @@
               <div className="info text-center">
                 <div className="icon">
                   <img
-                    src="assets/images/svg/para-el-trabajo.svg"
+                    src="../Site/assets/images/svg/para-el-trabajo.svg"
                     height={68}
                     alt="Soluciones para el Trabajo"
                   />
@@ -406,7 +408,7 @@
               <div className="info text-center">
                 <div className="icon">
                   <img
-                    src="assets/images/svg/para-las-novedades.svg"
+                    src="../Site/assets/images/svg/para-las-novedades.svg"
                     height={68}
                     alt="Nuevas Soluciones!"
                   />
@@ -443,14 +445,14 @@
           >
             <div className="category-img">
               <img
-                src="assets/images/servicios/servicio-plomeria.jpg"
+                src="../Site/assets/images/servicios/servicio-plomeria.jpg"
                 alt="Servicio de Plomeria"
               />
               <div className="category-overlay">
                 <div className="category-content">
                   <a href="servicio-plomeria.html">
                     <img
-                      src="assets/images/logo-v.png"
+                      src="../Site/assets/images/logo-v.png"
                       height={75}
                       width={120}
                       alt="Servicio de Plomeria"
@@ -477,14 +479,14 @@
           >
             <div className="category-img">
               <img
-                src="assets/images/servicios/servicio-gasista.jpg"
+                src="../Site/assets/images/servicios/servicio-gasista.jpg"
                 alt="Servicio de Gasista"
               />
               <div className="category-overlay">
                 <div className="category-content">
                   <a href="servicio-gasista.html">
                     <img
-                      src="assets/images/logo-v.png"
+                      src="../Site/assets/images/logo-v.png"
                       height={75}
                       width={120}
                       alt="Servicio de Gasista"
@@ -511,14 +513,14 @@
           >
             <div className="category-img">
               <img
-                src="assets/images/servicios/servicio-electricista.jpg"
+                src="../Site/assets/images/servicios/servicio-electricista.jpg"
                 alt="Servicio de Electricista"
               />
               <div className="category-overlay">
                 <div className="category-content">
                   <a href="servicio-electricista.html">
                     <img
-                      src="assets/images/logo-v.png"
+                      src="../Site/assets/images/logo-v.png"
                       height={75}
                       width={120}
                       alt="Servicio de Electricista"
@@ -545,14 +547,14 @@
           >
             <div className="category-img">
               <img
-                src="assets/images/servicios/servicio-pintor.jpg"
+                src="../Site/assets/images/servicios/servicio-pintor.jpg"
                 alt="Servicio de Pintor"
               />
               <div className="category-overlay">
                 <div className="category-content">
                   <a href="servicio-pintor.html">
                     <img
-                      src="assets/images/logo-v.png"
+                      src="../Site/assets/images/logo-v.png"
                       height={75}
                       width={120}
                       alt="Servicio de Pintor"
@@ -579,14 +581,14 @@
           >
             <div className="category-img">
               <img
-                src="assets/images/servicios/servicio-jardinero.jpg"
+                src="../Site/assets/images/servicios/servicio-jardinero.jpg"
                 alt="Servicio de Jardinero"
               />
               <div className="category-overlay">
                 <div className="category-content">
                   <a href="servicio-jardinero.html">
                     <img
-                      src="assets/images/logo-v.png"
+                      src="../Site/assets/images/logo-v.png"
                       height={75}
                       width={120}
                       alt="Servicio de Jardinero"
@@ -613,14 +615,14 @@
           >
             <div className="category-img">
               <img
-                src="assets/images/servicios/servicio-aire-acondicionado.jpg"
+                src="../Site/assets/images/servicios/servicio-aire-acondicionado.jpg"
                 alt="Servicio de Aires Acondicionados"
               />
               <div className="category-overlay">
                 <div className="category-content">
                   <a href="servicio-aire-acondicionado.html">
                     <img
-                      src="assets/images/logo-v.png"
+                      src="../Site/assets/images/logo-v.png"
                       height={75}
                       width={120}
                       alt="Servicio de Aires Acondicionados"
@@ -647,14 +649,14 @@
           >
             <div className="category-img">
               <img
-                src="assets/images/servicios/servicio-cerrajero.jpg"
+                src="../Site/assets/images/servicios/servicio-cerrajero.jpg"
                 alt="Servicio de Cerrajero"
               />
               <div className="category-overlay">
                 <div className="category-content">
                   <a href="servicio-cerrajero.html">
                     <img
-                      src="assets/images/logo-v.png"
+                      src="../Site/assets/images/logo-v.png"
                       height={75}
                       width={120}
                       alt="Servicio de Cerrajero"
@@ -681,14 +683,14 @@
           >
             <div className="category-img">
               <img
-                src="assets/images/servicios/servicio-techista.jpg"
+                src="../Site/assets/images/servicios/servicio-techista.jpg"
                 alt="Servicio de Techista"
               />
               <div className="category-overlay">
                 <div className="category-content">
                   <a href="servicio-techista.html">
                     <img
-                      src="assets/images/logo-v.png"
+                      src="../Site/assets/images/logo-v.png"
                       height={75}
                       width={120}
                       alt="Servicio de Techista"
@@ -731,7 +733,7 @@
           >
             <div className="listing-thumbnail">
               <img
-                src="assets/images/servicios/promo-canaletas.jpg"
+                src="../Site/assets/images/servicios/promo-canaletas.jpg"
                 alt="Instalacion y Reparacion de Canaletas"
               />
               <span className="featured-btn">Con Garantía</span>
@@ -806,7 +808,7 @@
           >
             <div className="listing-thumbnail">
               <img
-                src="assets/images/servicios/promo-corte-de-pelo.jpg"
+                src="../Site/assets/images/servicios/promo-corte-de-pelo.jpg"
                 alt="Corte de Pelo Masculino en Promocion"
               />
               <span className="featured-btn">25% DE DESCUENTO</span>
@@ -883,7 +885,7 @@
           >
             <div className="listing-thumbnail">
               <img
-                src="assets/images/servicios/promo-protector-celular.jpg"
+                src="../Site/assets/images/servicios/promo-protector-celular.jpg"
                 alt="Cambio de GorillaGlass del Celular en Promocion"
               />
               <span className="featured-btn">2x1</span>
@@ -961,13 +963,13 @@
   <section className="cta-area">
     <div
       className="cta-wrapper-one bg_cover"
-      style={{ backgroundImage: "url(assets/images/bg/cta-bg-1.jpg)" }}
+      style={{ backgroundImage: "url(../Site/assets/images/bg/cta-bg-1.jpg)" }}
     >
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-lg-8">
             <div className="cta-content-box text-center wow fadeInUp">
-              <img src="assets/images/icon-1.png" alt="offer icon" />
+              <img src="../Site/assets/images/icon-1.png" alt="offer icon" />
               <h2>Splash Yourself Bigger Offer on Everyday</h2>
               <a href="how-work.html" className="main-btn icon-btn">
                 Explore Now
@@ -987,7 +989,7 @@
           <div className="col-lg-6">
             <div className="features-img wow fadeInLeft">
               <img
-                src="assets/images/features/features-1.jpg"
+                src="../Site/assets/images/features/features-1.jpg"
                 alt="Features Image"
               />
             </div>
@@ -1061,7 +1063,7 @@
       <div className="place-slider-one wow fadeInDown">
         <div className="place-item place-item-one">
           <div className="place-thumbnail">
-            <img src="assets/images/place/place-1.jpg" alt="Place Image" />
+            <img src="../Site/assets/images/place/place-1.jpg" alt="Place Image" />
             <div className="place-overlay">
               <div className="place-content text-center">
                 <span className="listing">10 Listing</span>
@@ -1075,7 +1077,7 @@
         </div>
         <div className="place-item place-item-one">
           <div className="place-thumbnail">
-            <img src="assets/images/place/place-2.jpg" alt="Place Image" />
+            <img src="../Site/assets/images/place/place-2.jpg" alt="Place Image" />
             <div className="place-overlay">
               <div className="place-content text-center">
                 <span className="listing">10 Listing</span>
@@ -1089,7 +1091,7 @@
         </div>
         <div className="place-item place-item-one">
           <div className="place-thumbnail">
-            <img src="assets/images/place/place-3.jpg" alt="Place Image" />
+            <img src="../Site/assets/images/place/place-3.jpg" alt="Place Image" />
             <div className="place-overlay">
               <div className="place-content text-center">
                 <span className="listing">10 Listing</span>
@@ -1103,7 +1105,7 @@
         </div>
         <div className="place-item place-item-one">
           <div className="place-thumbnail">
-            <img src="assets/images/place/place-4.jpg" alt="Place Image" />
+            <img src="../Site/assets/images/place/place-4.jpg" alt="Place Image" />
             <div className="place-overlay">
               <div className="place-content text-center">
                 <span className="listing">10 Listing</span>
@@ -1117,7 +1119,7 @@
         </div>
         <div className="place-item place-item-one">
           <div className="place-thumbnail">
-            <img src="assets/images/place/place-2.jpg" alt="Place Image" />
+            <img src="../Site/assets/images/place/place-2.jpg" alt="Place Image" />
             <div className="place-overlay">
               <div className="place-content text-center">
                 <span className="listing">10 Listing</span>
@@ -1140,7 +1142,7 @@
         <div className="row">
           <div className="col-lg-5">
             <div className="app-img wow fadeInLeft">
-              <img src="assets/images/app-1.png" alt="App Image" />
+              <img src="../Site/assets/images/app-1.png" alt="App Image" />
             </div>
           </div>
           <div className="col-lg-7">
@@ -1239,7 +1241,7 @@
         <div className="listing-item listing-grid-item-two">
           <div className="listing-thumbnail">
             <img
-              src="assets/images/listing/listing-grid-7.jpg"
+              src="../Site/assets/images/listing/listing-grid-7.jpg"
               alt="Listing Image"
             />
             <a href="#" className="cat-btn">
@@ -1300,7 +1302,7 @@
         <div className="listing-item listing-grid-item-two">
           <div className="listing-thumbnail">
             <img
-              src="assets/images/listing/listing-grid-8.jpg"
+              src="../Site/assets/images/listing/listing-grid-8.jpg"
               alt="Listing Image"
             />
             <a href="#" className="cat-btn">
@@ -1360,7 +1362,7 @@
         <div className="listing-item listing-grid-item-two">
           <div className="listing-thumbnail">
             <img
-              src="assets/images/listing/listing-grid-9.jpg"
+              src="../Site/assets/images/listing/listing-grid-9.jpg"
               alt="Listing Image"
             />
             <a href="#" className="cat-btn">
@@ -1421,7 +1423,7 @@
         <div className="listing-item listing-grid-item-two">
           <div className="listing-thumbnail">
             <img
-              src="assets/images/listing/listing-grid-1.jpg"
+              src="../Site/assets/images/listing/listing-grid-1.jpg"
               alt="Listing Image"
             />
             <a href="#" className="cat-btn">
@@ -1487,7 +1489,7 @@
   <section className="intro-video">
     <div
       className="intro-wrapper-one bg_cover pt-115"
-      style={{ backgroundImage: "url(assets/images/bg/video-bg-1.jpg)" }}
+      style={{ backgroundImage: "url(../Site/assets/images/bg/video-bg-1.jpg)" }}
     >
       <div className="container">
         <div className="row align-items-center">
@@ -1527,7 +1529,7 @@
     <div className="container">
       <div
         className="newsletter-wrapper newsletter-wrapper-one bg_cover"
-        style={{ backgroundImage: "url(assets/images/bg/newsletter-bg-1.jpg)" }}
+        style={{ backgroundImage: "url(../Site/assets/images/bg/newsletter-bg-1.jpg)" }}
       >
         <div className="row">
           <div className="col-lg-5">
@@ -1568,35 +1570,35 @@
           <div className="client-item">
             <div className="client-img">
               <a href="#">
-                <img src="assets/images/client/01.png" alt="Client Image" />
+                <img src="../Site/assets/images/client/01.png" alt="Client Image" />
               </a>
             </div>
           </div>
           <div className="client-item">
             <div className="client-img">
               <a href="#">
-                <img src="assets/images/client/02.png" alt="Client Image" />
+                <img src="../Site/assets/images/client/02.png" alt="Client Image" />
               </a>
             </div>
           </div>
           <div className="client-item">
             <div className="client-img">
               <a href="#">
-                <img src="assets/images/client/03.png" alt="Client Image" />
+                <img src="../Site/assets/images/client/03.png" alt="Client Image" />
               </a>
             </div>
           </div>
           <div className="client-item">
             <div className="client-img">
               <a href="#">
-                <img src="assets/images/client/04.png" alt="Client Image" />
+                <img src="../Site/assets/images/client/04.png" alt="Client Image" />
               </a>
             </div>
           </div>
           <div className="client-item">
             <div className="client-img">
               <a href="#">
-                <img src="assets/images/client/02.png" alt="Client Image" />
+                <img src="../Site/assets/images/client/02.png" alt="Client Image" />
               </a>
             </div>
           </div>
@@ -1624,7 +1626,7 @@
           >
             <div className="post-thumbnail">
               <a href="blog-details.html">
-                <img src="assets/images/blog/blog-1.jpg" alt="Blog Image" />
+                <img src="../Site/assets/images/blog/blog-1.jpg" alt="Blog Image" />
               </a>
               <div className="post-date">
                 <a href="#">
@@ -1668,7 +1670,7 @@
           >
             <div className="post-thumbnail">
               <a href="blog-details.html">
-                <img src="assets/images/blog/blog-2.jpg" alt="Blog Image" />
+                <img src="../Site/assets/images/blog/blog-2.jpg" alt="Blog Image" />
               </a>
               <div className="post-date">
                 <a href="#">
@@ -1712,7 +1714,7 @@
           >
             <div className="post-thumbnail">
               <a href="blog-details.html">
-                <img src="assets/images/blog/blog-3.jpg" alt="Blog Image" />
+                <img src="../Site/assets/images/blog/blog-3.jpg" alt="Blog Image" />
               </a>
               <div className="post-date">
                 <a href="#">
