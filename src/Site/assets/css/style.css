@@ -359,7 +359,13 @@ button {
     text-align: center;
     z-index: 9999;
     -webkit-animation: loadershake infinite .8s linear;
-    animation: loadershake infinite .8s linear; }
+    animation: loadershake infinite .8s linear;
+    transition: opacity 0.25s, visibility 1s;
+   }
+   .fade {
+    opacity: 0;
+    visibility: hidden;
+   }
 
 @-webkit-keyframes loadershake {
   0% {

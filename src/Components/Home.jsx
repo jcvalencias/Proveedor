@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import Header from './Header';
 import '../Site/assets/css/style.css'
 import "../Site/assets/css/default.css"
 import "../Site/assets/css/bootstrap.min.css"
@@ -9,18 +10,24 @@ import "../Site/assets/css/jquery-ui.min.css"
 import "../Site/assets/css/animate.css"
 
 
-function Home() {
-    return (
+const Home = () => {
+  const [fade, setfade] = useState('');
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setfade(' fade');
+    }, 1000);
+  });
+
+  return (
 <>
-  {/*====== Favicon Icon ======*/}
-  <link rel="shortcut icon" href="../Site/assets/images/favicon.png" type="image/png" />
   {/*====== Start Preloader ======*/}
-  <div className="preloader">
+  <div className={"preloader" + fade}>
     <div className="loader">
-      <img src="../Site/assets/images/loader.png" alt="loader" />
+      <img src="/images/loader.png" alt="loader" />
     </div>
   </div>
-
+  <Header />
 </>
 
     );
