@@ -359,13 +359,7 @@ button {
     text-align: center;
     z-index: 9999;
     -webkit-animation: loadershake infinite .8s linear;
-    animation: loadershake infinite .8s linear;
-    transition: opacity 0.25s, visibility 1s;
-   }
-   .fade {
-    opacity: 0;
-    visibility: hidden;
-   }
+    animation: loadershake infinite .8s linear; }
 
 @-webkit-keyframes loadershake {
   0% {
@@ -1560,13 +1554,14 @@ button {
     z-index: 1;
     position: relative; }
     .features-wrapper-one .features-img:after {
+	  border-radius:50px;
       position: absolute;
       bottom: -25px;
-      right: -25px;
+      right: -17px;
       content: '';
       width: 180px;
       height: 180px;
-      background-color: #ffd74e;
+      background-color: #a6ce39;
       z-index: -1; }
     @media (max-width: 991px) {
       .features-wrapper-one .features-img {
@@ -1603,7 +1598,7 @@ button {
     justify-content: center;
     margin-right: 30px;
     margin-top: 5px;
-    border-radius: 3px; }
+    border-radius: 15px; }
     .features-list-one .list-item .icon:before {
       position: absolute;
       top: -6px;
@@ -1611,8 +1606,8 @@ button {
       content: '';
       width: 60px;
       height: 60px;
-      border: 1px solid #3a8476;
-      border-radius: 3px; }
+      border: 1px solid #a6ce39;
+      border-radius: 15px; }
     .features-list-one .list-item .icon i {
       line-height: 1;
       font-size: 40px; }
@@ -1804,7 +1799,7 @@ ul.ratings {
 
 /* CTA CSS */
 .cta-wrapper-one {
-  position: relative;
+  /*position: relative;*/
   z-index: 1;
   padding: 120px 0 230px; }
   .cta-wrapper-one:after {
@@ -1882,7 +1877,7 @@ ul.ratings {
     content: '';
     width: 100%;
     height: 100%;
-    background-color: rgba(22, 22, 31, 0.6);
+    /*background-color: rgba(22, 22, 31, 0.6);*/
     z-index: -1; }
   .intro-wrapper-one .play-content-one .video-popup {
     margin-bottom: 40px;
@@ -2062,7 +2057,7 @@ ul.ratings {
   z-index: 1; }
   .download-wrapper-one:after {
     position: absolute;
-    top: 0;
+    top: -5px;
     left: 0;
     content: '';
     width: 100%;
@@ -2072,7 +2067,7 @@ ul.ratings {
     z-index: -1; }
 
 .download-content-box-one p {
-  margin-bottom: 50px; }
+  margin-bottom: 42px; }
 
 .download-content-box-one ul.button li {
   display: inline-block;
@@ -2174,7 +2169,8 @@ ul.ratings {
       .newsletter-wrapper .newsletter-content-box-one .icon {
         margin-right: 0px; } }
   .newsletter-wrapper .newsletter-content-box-one .content {
-    margin-top: -12px; }
+    margin-top: -12px;
+	padding-left: 20px;	}
     @media (max-width: 767px) {
       .newsletter-wrapper .newsletter-content-box-one .content {
         text-align: center;
@@ -2534,7 +2530,7 @@ h3.title {
   bottom: 25px;
   left: 20px; }
   .listing-grid-item-two .listing-thumbnail .ratings li {
-    color: #fff; }
+    color: #9bb8b9; }
 
 .listing-grid-item-two .listing-thumbnail img {
   border-radius: 5px 5px 0px 0px; }
@@ -3965,7 +3961,7 @@ h3.title {
       -webkit-box-pack: center;
       -ms-flex-pack: center;
       justify-content: center;
-      background-color: #f31b38;
+      background-color: #e0fbfc;
       -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -4544,8 +4540,8 @@ h3.title {
   -ms-flex-align: center;
   align-items: center;
   background-color: #fff;
-  padding: 17px 20px;
-  border-radius: 3px; }
+  padding: 20px 30px;
+  border-radius: 50px; }
   .app-btn.android-btn {
     margin-right: 5px; }
   .app-btn .icon {
@@ -4734,10 +4730,43 @@ h3.title {
  .blanco{
 	 color:#fff!important;
  }
- 
+
+.logo-verde-oscuro{
+	color:#3a8476!important;
+} 
+.logo-verde-claro{
+	color:#a6ce39!important;
+} 
+.verdes-logo{
+	color:#3a8476!important;
+}
+.verdes-logo:hover{
+	color:#a6ce39!important;
+} 
+.fondo-logo-verde-oscuro{
+	background-color:#3a8476!important;
+} 
+.fondo-logo-verde-claro{
+	background-color:#a6ce39!important;
+} 
+.fondo-verde-oscuro{
+	background-color: #063a30!important;
+}
+.fondo-blanco{
+	background-color: #fff!important;
+}
  .para-la .icon-path{
 	 color:#666;
  }
   .para-la:hover .icon-path{
 	 color:#3a8476;
+ }
+ 
+ .fondo-opiniones{
+    padding: 5px 10px;
+    background-color: #e0fbfc;
+    border-radius: 15px;
+ }
+ .redondeado{
+	 border-radius: 50px!important;
  }
