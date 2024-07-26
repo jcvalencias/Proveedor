@@ -14,11 +14,15 @@ const Home = () => {
   }
 
   return (
-  <>
-    {/*====== Start Preloader ======*/}
-    <PreLoader />
-    <Header />
-  </>
+<>
+  {/*====== Start Preloader ======*/}
+  <div className={"preloader" + fade}>
+    <div className="loader">
+      <img src="/assets/images/loader.png" alt="loader" />
+    </div>
+  </div>
+  <Header />
+</>
 
   );
 }
