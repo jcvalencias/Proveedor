@@ -44,7 +44,7 @@ const UsuarioForm = () => {
         }
 
         // Make the API call
-        axios.post('http://127.0.0.1:8000/api/usuarios/create/', data, {
+        axios.post('http://127.0.0.1:8000/api/usuarios/', data, {
             headers: {
                 'Content-Type': 'multipart/form-data',
             },
