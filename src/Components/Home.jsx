@@ -15,7 +15,8 @@ const Home = () => {
 
   return (
   <>
-  <div className="preloader">
+  {/* ====== Start Preloader ======*/}  
+    <div className="preloader">
     <div className="loader">
       <img src="assets/images/loader.png" alt="loader" />
     </div>
@@ -91,36 +92,107 @@ const Home = () => {
                 </a>
               </div>
             </div>
-            <div className="col-lg-7 col-2">
+            <div className="col-lg-6 col-2">
               <div className="nav-menu">
                 <div className="navbar-close">
                   <i className="ti-close" />
                 </div>
                 <nav className="main-menu">
                   <ul>
-                    <li className="menu-item">
-                      <a href="index.html">Inicio</a>
+                    <li className="menu-item has-children">
+                      <a href="index.html" className="active">
+                        Home
+                      </a>
+                      <ul className="sub-menu">
+                        <li className="menu-item">
+                          <a href="index.html">Home One</a>
+                        </li>
+                        <li className="menu-item">
+                          <a href="index-2.html">Home Two</a>
+                        </li>
+                        <li className="menu-item">
+                          <a href="index-3.html">Home Three</a>
+                        </li>
+                      </ul>
                     </li>
                     <li className="menu-item">
-                      <a href="precios-fijados.html">Precios Fijados</a>
+                      <a href="about.html">About us</a>
+                    </li>
+                    <li className="menu-item has-children">
+                      <a href="#">Listings</a>
+                      <ul className="sub-menu">
+                        <li className="menu-item">
+                          <a href="listing-list.html">Listing List</a>
+                        </li>
+                        <li className="menu-item">
+                          <a href="listing-grid.html">Listing Grid</a>
+                        </li>
+                        <li className="menu-item">
+                          <a href="listing-map.html">Listing Map Grid</a>
+                        </li>
+                        <li className="menu-item">
+                          <a href="listing-details-1.html">
+                            Listing Details One
+                          </a>
+                        </li>
+                        <li className="menu-item">
+                          <a href="listing-details-2.html">
+                            Listing Details Two
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li className="menu-item has-children">
+                      <a href="#">Pages</a>
+                      <ul className="sub-menu">
+                        <li className="menu-item">
+                          <a href="add-listing.html">Add Listing</a>
+                        </li>
+                        <li className="menu-item has-children">
+                          <a href="#">Products</a>
+                          <ul className="sub-menu">
+                            <li>
+                              <a href="products.html">Our Products</a>
+                            </li>
+                            <li>
+                              <a href="product-details.html">
+                                Products Details
+                              </a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li className="menu-item">
+                          <a href="how-work.html">How Work</a>
+                        </li>
+                        <li className="menu-item">
+                          <a href="pricing.html">Pricing</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li className="menu-item has-children">
+                      <a href="#">Article</a>
+                      <ul className="sub-menu">
+                        <li className="menu-item">
+                          <a href="blog.html">Our Blog</a>
+                        </li>
+                        <li className="menu-item">
+                          <a href="blog-details.html">Blog details</a>
+                        </li>
+                      </ul>
                     </li>
                     <li className="menu-item">
-                      <a href="en-tu-zona.html">En Tu Zona</a>
+                      <a href="contact.html">Contact</a>
                     </li>
-                    <li className="menu-item">
-                      <a href="promociones.html">Promociones</a>
-                    </li>
-                    <li className="menu-item">
-                      <a href="consejos.html">Consejos</a>
-                    </li>
-                    <li className="menu-item">
-                      <a href="contactenos.html">Contáctenos</a>
+                    <li className="nav-btn">
+                      <a href="add-listing.html" className="main-btn icon-btn">
+                        Add Listing
+                      </a>
                     </li>
                   </ul>
                 </nav>
               </div>
             </div>
-            <div className="col-lg-3 col-5">
+            <div className="col-lg-4 col-5">
               <div className="header-right-nav">
                 <ul className="d-flex align-items-center">
                   <li className="user-btn">
@@ -176,7 +248,7 @@ const Home = () => {
                         <input
                           type="search"
                           className="form_control"
-                          placeholder="Servicio que necesitas"
+                          placeholder="Buscar por Servicio"
                           name="search"
                           required=""
                         />
@@ -375,7 +447,7 @@ const Home = () => {
               <div className="icon">
                 <i className="flaticon-government" />
               </div>
-              <h3 className="title verdes-logo">
+              <h3 className="title">
                 <a href="#">Plomeros</a>
               </h3>
               <span className="listing">15 Proveedores</span>
@@ -409,7 +481,7 @@ const Home = () => {
               <div className="icon">
                 <i className="flaticon-serving-dish" />
               </div>
-              <h3 className="title verdes-logo">
+              <h3 className="title">
                 <a href="#">Gasista</a>
               </h3>
               <span className="listing">24 Proveedores</span>
@@ -443,7 +515,7 @@ const Home = () => {
               <div className="icon">
                 <i className="flaticon-dumbbell" />
               </div>
-              <h3 className="title verdes-logo">
+              <h3 className="title">
                 <a href="#">Electricista</a>
               </h3>
               <span className="listing">55 Proveedores</span>
@@ -477,7 +549,7 @@ const Home = () => {
               <div className="icon">
                 <i className="flaticon-gift-box" />
               </div>
-              <h3 className="title verdes-logo">
+              <h3 className="title">
                 <a href="#">Pintor</a>
               </h3>
               <span className="listing">35 Proveedores</span>
@@ -511,7 +583,7 @@ const Home = () => {
               <div className="icon">
                 <i className="flaticon-game-controller" />
               </div>
-              <h3 className="title verdes-logo">
+              <h3 className="title">
                 <a href="#">Jardinero</a>
               </h3>
               <span className="listing">5 Provedores</span>
@@ -545,7 +617,7 @@ const Home = () => {
               <div className="icon">
                 <i className="flaticon-suitcase" />
               </div>
-              <h3 className="title verdes-logo">
+              <h3 className="title">
                 <a href="#">Aires Acondicionados</a>
               </h3>
               <span className="listing">7 Proveedores</span>
@@ -579,7 +651,7 @@ const Home = () => {
               <div className="icon">
                 <i className="flaticon-shopping" />
               </div>
-              <h3 className="title verdes-logo">
+              <h3 className="title">
                 <a href="#">Cerrajero</a>
               </h3>
               <span className="listing">3 Proveedores</span>
@@ -613,7 +685,7 @@ const Home = () => {
               <div className="icon">
                 <i className="flaticon-color-palette" />
               </div>
-              <h3 className="title verdes-logo">
+              <h3 className="title">
                 <a href="#">Techista</a>
               </h3>
               <span className="listing">2 Proveedores</span>
@@ -660,7 +732,7 @@ const Home = () => {
               </div>
             </div>
             <div className="listing-content">
-              <h3 className="title verdes-logo">
+              <h3 className="title">
                 <a href="">Zingería y Techos</a>
               </h3>
               <div className="ratings">
@@ -735,7 +807,7 @@ const Home = () => {
               </div>
             </div>
             <div className="listing-content">
-              <h3 className="title verdes-logo">
+              <h3 className="title">
                 <a href="">Corte de Pelo Masculino</a>
               </h3>
               <div className="ratings">
@@ -812,9 +884,9 @@ const Home = () => {
               </div>
             </div>
             <div className="listing-content">
-              <h3 className="title verdes-logo">
+              <h3 className="title">
                 <a href="listing-details-1.html">
-                  Cambio de Protector del Celular
+                  Cambio de GorillaGlass del Celular
                 </a>
               </h3>
               <div className="ratings">
@@ -1245,7 +1317,7 @@ const Home = () => {
             </ul>
           </div>
           <div className="listing-content">
-            <h3 className="title verdes-logo">
+            <h3 className="title">
               <a href="listing-details-1.html">Cortado de Pasto</a>
             </h3>
             <p>Incluye Limpieza de Malezas</p>
@@ -1306,7 +1378,7 @@ const Home = () => {
             </ul>
           </div>
           <div className="listing-content">
-            <h3 className="title verdes-logo">
+            <h3 className="title">
               <a href="listing-details-1.html">Limpieza del Hogar</a>
             </h3>
             <p>Ofrece Servicio de Planchado</p>
@@ -1367,7 +1439,7 @@ const Home = () => {
             </ul>
           </div>
           <div className="listing-content">
-            <h3 className="title verdes-logo">
+            <h3 className="title">
               <a href="listing-details-1.html">Cuidado de Niños</a>
             </h3>
             <p>Baby sitting</p>
@@ -1428,7 +1500,7 @@ const Home = () => {
             </ul>
           </div>
           <div className="listing-content">
-            <h3 className="title verdes-logo">
+            <h3 className="title">
               <a href="listing-details-1.html">Cambio de Aceite Automotor</a>
             </h3>
             <p>Baby sitting</p>
@@ -1843,19 +1915,16 @@ const Home = () => {
                 <h4 className="widget-title">Destacados</h4>
                 <ul className="categories-link">
                   <li>
-                    <a href="precios-fijados.html">Precios Fijados</a>
+                    <a href="#">Precios Fijados</a>
                   </li>
                   <li>
-                    <a href="en-tu-zona.html">En Tu Zona</a>
+                    <a href="#">En Tu Zona</a>
                   </li>
                   <li>
-                    <a href="promociones.html">Promociones</a>
+                    <a href="#">Promocionales</a>
                   </li>
                   <li>
-                    <a href="consejos.html">Consejos</a>
-                  </li>
-                  <li>
-                    <a href="contactenos.html">Contáctenos</a>
+                    <a href="#">Consejos</a>
                   </li>
                 </ul>
               </div>
@@ -1921,7 +1990,7 @@ const Home = () => {
   <a href="#" className="back-to-top">
     <i className="ti-angle-up" />
   </a>
-</>
+  </>
 
   );
 }
