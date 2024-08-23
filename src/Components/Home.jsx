@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import UsuarioForm from './Admin/Admin';
-import { Link, BrowserRouter, Route, Switch } from 'react-router-dom';
 
 const Home = () => {
 
@@ -50,11 +49,9 @@ const Home = () => {
             <div className="top-right">
               <ul className="d-flex">
                 <li>
-                  <a href='index.html'>
-                  {/* <Link to="/admin"> */}
+                  <a href='/admin'>
                     <i className="ti-search" />
                     <span>Agregar un Proveedor</span>
-                  {/* </Link> */}
                   </a>
                 </li>
                 <li>
@@ -1992,23 +1989,14 @@ const Home = () => {
   return (
   <>
   {/* ====== Start Preloader ======*/}  
-    {/* <PreLoader/> */}
+    <PreLoader/>
   {/*====== End Preloader ======*/}
-  <BrowserRouter>
   {/*====== Start Header Section ======*/}
   <Header/>
   {/*====== End Header Section ======*/}
   {/*====== Start Form Admin Section ======*/}
-  <Switch>
-  <Route exact path="/admin">
-    <UsuarioForm />
-  </Route>
-  <Route path="/">
-    <Body/>
-  </Route>
-  </Switch>
+  <Body/>
   {/* End Body */}
-  </BrowserRouter>
   {/*====== Start Footer ======*/}
   <Footer/>
   {/*====== End Footer ======*/}
