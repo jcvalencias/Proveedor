@@ -18,9 +18,10 @@
     "jquery": "^3.7.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.1",
     "slick-carousel": "^1.8.1",
     "themify-icons": "^1.0.0",
-    "wow": "^0.0.6"
+    "wow": "^0.0.3"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",
