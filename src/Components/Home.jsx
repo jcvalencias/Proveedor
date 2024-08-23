@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import UsuarioForm from './Admin/Admin';
-import { Link, BrowserRouter, Route, Switch } from 'react-router-dom';
 
 const Home = () => {
 
@@ -50,11 +49,9 @@ const Home = () => {
             <div className="top-right">
               <ul className="d-flex">
                 <li>
-                  <a href='index.html'>
-                  {/* <Link to="/admin"> */}
+                  <a href='/admin'>
                     <i className="ti-search" />
                     <span>Agregar un Proveedor</span>
-                  {/* </Link> */}
                   </a>
                 </li>
                 <li>
@@ -1990,34 +1987,25 @@ const Home = () => {
   }
 
   return (
-  // <>
-  // {/* ====== Start Preloader ======*/}  
-  //   {/* <PreLoader/> */}
-  // {/*====== End Preloader ======*/}
-  // <BrowserRouter>
-  // {/*====== Start Header Section ======*/}
-  // <Header/>
-  // {/*====== End Header Section ======*/}
-  // {/*====== Start Form Admin Section ======*/}
-  // <Switch>
-  // <Route exact path="/admin">
-  //   <UsuarioForm />
-  // </Route>
-  // <Route path="/">
-  //   <Body/>
-  // </Route>
-  // </Switch>
-  // {/* End Body */}
-  // </BrowserRouter>
-  // {/*====== Start Footer ======*/}
-  // <Footer/>
-  // {/*====== End Footer ======*/}
-  // {/*====== back-to-top ======*/}
-  // <a href="#" className="back-to-top">
-  //   <i className="ti-angle-up" />
-  // </a>
-  // </>
-  <UsuarioForm/>
+  <>
+  {/* ====== Start Preloader ======*/}  
+    <PreLoader/>
+  {/*====== End Preloader ======*/}
+  {/*====== Start Header Section ======*/}
+  <Header/>
+  {/*====== End Header Section ======*/}
+  {/*====== Start Form Admin Section ======*/}
+  <Body/>
+  {/* End Body */}
+  {/*====== Start Footer ======*/}
+  <Footer/>
+  {/*====== End Footer ======*/}
+  {/*====== back-to-top ======*/}
+  <a href="#" className="back-to-top">
+    <i className="ti-angle-up" />
+  </a>
+  </>
+  // <UsuarioForm/>
 
   );
 }
