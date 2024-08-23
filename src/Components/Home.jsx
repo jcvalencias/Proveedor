@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import UsuarioForm from './Admin/Admin';
-import { NavLink, BrowserRouter, Route } from 'react-router-dom';
+import { Link, BrowserRouter, Route, Switch } from 'react-router-dom';
 
 const Home = () => {
 
@@ -51,10 +51,10 @@ const Home = () => {
               <ul className="d-flex">
                 <li>
                   <a href='index.html'>
-                  {/* <NavLink className ='ti-search' activeClassName='is-active' to='/admin'> */}
+                  {/* <Link to="/admin"> */}
                     <i className="ti-search" />
                     <span>Agregar un Proveedor</span>
-                  {/* </NavLink> */}
+                  {/* </Link> */}
                   </a>
                 </li>
                 <li>
@@ -1992,23 +1992,23 @@ const Home = () => {
   return (
   <>
   {/* ====== Start Preloader ======*/}  
-    <PreLoader/>
+    {/* <PreLoader/> */}
   {/*====== End Preloader ======*/}
-  {/* <BrowserRouter> */}
+  <BrowserRouter>
   {/*====== Start Header Section ======*/}
   <Header/>
   {/*====== End Header Section ======*/}
   {/*====== Start Form Admin Section ======*/}
-  {/* <Switch>
+  <Switch>
   <Route exact path="/admin">
     <UsuarioForm />
-  </Route> */}
-  {/* <Route path="/"> */}
+  </Route>
+  <Route path="/">
     <Body/>
-  {/* </Route> */}
-  {/* </Switch> */}
+  </Route>
+  </Switch>
   {/* End Body */}
-  {/* </BrowserRouter> */}
+  </BrowserRouter>
   {/*====== Start Footer ======*/}
   <Footer/>
   {/*====== End Footer ======*/}
@@ -2017,6 +2017,7 @@ const Home = () => {
     <i className="ti-angle-up" />
   </a>
   </>
+  // <UsuarioForm/>
 
   );
 }
