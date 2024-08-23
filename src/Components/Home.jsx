@@ -1990,34 +1990,34 @@ const Home = () => {
   }
 
   return (
-  <>
-  {/* ====== Start Preloader ======*/}  
-    {/* <PreLoader/> */}
-  {/*====== End Preloader ======*/}
-  <BrowserRouter>
-  {/*====== Start Header Section ======*/}
-  <Header/>
-  {/*====== End Header Section ======*/}
-  {/*====== Start Form Admin Section ======*/}
-  <Switch>
-  <Route exact path="/admin">
-    <UsuarioForm />
-  </Route>
-  <Route path="/">
-    <Body/>
-  </Route>
-  </Switch>
-  {/* End Body */}
-  </BrowserRouter>
-  {/*====== Start Footer ======*/}
-  <Footer/>
-  {/*====== End Footer ======*/}
-  {/*====== back-to-top ======*/}
-  <a href="#" className="back-to-top">
-    <i className="ti-angle-up" />
-  </a>
-  </>
-  // <UsuarioForm/>
+  // <>
+  // {/* ====== Start Preloader ======*/}  
+  //   {/* <PreLoader/> */}
+  // {/*====== End Preloader ======*/}
+  // <BrowserRouter>
+  // {/*====== Start Header Section ======*/}
+  // <Header/>
+  // {/*====== End Header Section ======*/}
+  // {/*====== Start Form Admin Section ======*/}
+  // <Switch>
+  // <Route exact path="/admin">
+  //   <UsuarioForm />
+  // </Route>
+  // <Route path="/">
+  //   <Body/>
+  // </Route>
+  // </Switch>
+  // {/* End Body */}
+  // </BrowserRouter>
+  // {/*====== Start Footer ======*/}
+  // <Footer/>
+  // {/*====== End Footer ======*/}
+  // {/*====== back-to-top ======*/}
+  // <a href="#" className="back-to-top">
+  //   <i className="ti-angle-up" />
+  // </a>
+  // </>
+  <UsuarioForm/>
 
   );
 }
