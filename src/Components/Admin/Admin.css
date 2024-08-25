@@ -1,0 +1,158 @@
+/* Base Theme Variables */
+:root {
+    --primary-color: #007bff; /* Default blue */
+    --secondary-color: #0056b3; /* Darker blue */
+    --background-color: #f9f9f9; /* Light gray */
+    --text-color: #333; /* Dark gray */
+    --border-color: #ddd; /* Light border */
+}
+
+/* Dark Theme */
+.dark-theme {
+    --primary-color: #343a40; /* Dark gray */
+    --secondary-color: #23272b; /* Darker gray */
+    --background-color: #212529; /* Almost black */
+    --text-color: #ffffff; /* White */
+    --border-color: #444; /* Dark border */
+}
+
+/* Light Theme */
+.light-theme {
+    --primary-color: #17a2b8; /* Teal */
+    --secondary-color: #138496; /* Darker teal */
+    --background-color: #e9ecef; /* Light gray */
+    --text-color: #343a40; /* Dark gray */
+    --border-color: #ced4da; /* Light border */
+}
+
+/* App.css */
+
+/* Parent container styling */
+.app-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* Theme toggle button container */
+.theme-toggle-buttons {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+/* Styling for each theme button */
+.theme-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.theme-button.default {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.theme-button.dark {
+    background-color: #343a40;
+    color: #fff;
+}
+
+.theme-button.light {
+    background-color: #17a2b8;
+    color: #fff;
+}
+
+.theme-button:hover {
+    opacity: 0.9;
+}
+
+/* Form container styling */
+.usuario-form-container {
+    width: 100%;
+    max-width: 600px;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.usuario-form-container h3 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+/* Theme-specific styles */
+.dark-theme .usuario-form-container {
+    background-color: #343a40;
+    color: #ffffff;
+}
+
+.light-theme .usuario-form-container {
+    background-color: #e9ecef;
+    color: #343a40;
+}
+
+.usuario-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--background-color);
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    transition: border-color 0.2s;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.submit-button {
+    display: inline-block;
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.submit-button:hover {
+    background-color: var(--secondary-color);
+}
