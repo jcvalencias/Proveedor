@@ -68,7 +68,7 @@ const UsuarioForm = () => {
             data.append('fotos', formData.fotos);
         }
 
-        axios.post('http://127.0.0.1:8000/api/usuarios/', data, {
+        axios.post('https://c395-190-24-56-12.ngrok-free.app/api/usuarios/', data, {
             headers: {
                 'Content-Type': 'multipart/form-data',
             },

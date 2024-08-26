@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import UsuarioForm from './Admin/Admin';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
 
@@ -49,10 +50,10 @@ const Home = () => {
             <div className="top-right">
               <ul className="d-flex">
                 <li>
-                  <a href='/admin'>
+                  <Link to='/admin'>
                     <i className="ti-search" />
                     <span>Agregar un Proveedor</span>
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <a href="index.html">
