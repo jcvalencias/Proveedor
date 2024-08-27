@@ -36,6 +36,9 @@ const UsuarioForm = () => {
         fotos: null,
     });
 
+    const [alertMessage, setAlertMessage] = useState('');
+    const [alertType, setAlertType] = useState('');
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({
@@ -74,16 +77,34 @@ const UsuarioForm = () => {
             },
         })
         .then((response) => {
-            alert('Usuario created successfully!');
+            setAlertMessage('Usuario created successfully!');
+            setAlertType('success');
             console.log(response.data);
+            // Clear the form after successful submission
+            setFormData({
+                nombre: '',
+                correo_electronico: '',
+                tipo_usuario: 'cliente',
+                estado: 'activo',
+                descripcion: '',
+                foto_perfil: null,
+                fotos: null,
+            });
         })
         .catch((error) => {
+            setAlertMessage('There was an error creating the Usuario. Please try again.');
+            setAlertType('error');
             console.error('There was an error!', error);
         });
     };
 
     return (
         <form onSubmit={handleSubmit} className="usuario-form">
+            {alertMessage && (
+                <div className={`alert ${alertType}`}>
+                    {alertMessage}
+                </div>
+            )}
             <div className="form-group">
                 <label>Nombre:</label>
                 <input
