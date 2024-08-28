@@ -57,7 +57,7 @@
 }
 
 .theme-button.default {
-    background-color: var(--primary-color);
+    background-color: #007bff;
     color: #fff;
 }
 
@@ -91,7 +91,7 @@
     font-size: 24px;
     font-weight: bold;
     text-align: center;
-    color: var(--primary-color);
+    color: var(--text-color);
 }
 
 /* Theme-specific styles */
@@ -176,4 +176,48 @@
     background-color: #f8d7da;
     color: #721c24;
     border: 1px solid #f5c6cb;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: var(--primary-color);
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-logo a {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-link {
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-link:hover {
+    background-color: var(--secondary-color);
+    color: #ffffff;
+}
+
+.dark-theme .navbar {
+    background-color: #343a40;
+}
+
+.light-theme .navbar {
+    background-color: #17a2b8;
 }

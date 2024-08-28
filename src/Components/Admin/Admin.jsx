@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './Admin.css';
 import axios from 'axios';
 
@@ -8,9 +9,24 @@ const Admin = () => {
     const toggleTheme = (themeName) => {
         setTheme(themeName);
     };
+    const NavBar = () => {
+        return (
+            <nav className="navbar">
+                <div className="navbar-logo">
+                    <Link to="/">Solukay</Link>
+                </div>
+                <div className="navbar-links">
+                    <Link to="/admin" className="nav-link">Admin Dashboard</Link>
+                    <Link to="/create-user" className="nav-link">Create User</Link>
+                    <Link to="/settings" className="nav-link">Settings</Link>
+                </div>
+            </nav>
+        );
+    };
 
     return (
         <div className={`app-container ${theme}`}>
+            <NavBar />
             <div className="theme-toggle-buttons">
                 <button onClick={() => toggleTheme('')} className="theme-button default">Default Theme</button>
                 <button onClick={() => toggleTheme('dark-theme')} className="theme-button dark">Dark Theme</button>
@@ -20,6 +36,7 @@ const Admin = () => {
             <div className="usuario-form-container">
                 <h3>Create a New User</h3>
                 <UsuarioForm />
+                <UserList />
             </div>
         </div>
     );
@@ -33,7 +50,7 @@ const UsuarioForm = () => {
         estado: 'activo',
         descripcion: '',
         foto_perfil: null,
-        fotos: null,
+        fotos: [],
     });
 
     const [alertMessage, setAlertMessage] = useState('');
@@ -49,10 +66,17 @@ const UsuarioForm = () => {
 
     const handleFileChange = (e) => {
         const { name } = e.target;
-        setFormData({
-            ...formData,
-            [name]: e.target.files[0],
-        });
+        if (name === 'fotos') {
+            setFormData({
+                ...formData,
+                [name]: e.target.files,  // Store the FileList object
+            });
+        } else {
+            setFormData({
+                ...formData,
+                [name]: e.target.files[0],  // Handle single file upload
+            });
+        }
     };
 
     const handleSubmit = (e) => {
@@ -67,11 +91,13 @@ const UsuarioForm = () => {
         if (formData.foto_perfil) {
             data.append('foto_perfil', formData.foto_perfil);
         }
-        if (formData.fotos) {
-            data.append('fotos', formData.fotos);
+        if (formData.fotos.length > 0) {
+            Array.from(formData.fotos).forEach((file, index) => {
+                data.append(`fotos_${index}`, file);  // Use a unique key for each file
+            });
         }
 
-        axios.post('https://c395-190-24-56-12.ngrok-free.app/api/usuarios/', data, {
+        axios.post('https://969e-190-24-56-12.ngrok-free.app/api/usuarios/', data, {
             headers: {
                 'Content-Type': 'multipart/form-data',
             },
@@ -88,7 +114,7 @@ const UsuarioForm = () => {
                 estado: 'activo',
                 descripcion: '',
                 foto_perfil: null,
-                fotos: null,
+                fotos: [],
             });
         })
         .catch((error) => {
@@ -182,6 +208,7 @@ const UsuarioForm = () => {
                     type="file"
                     name="fotos"
                     accept="image/*"
+                    multiple
                     onChange={handleFileChange}
                     className="form-control"
                 />
@@ -191,4 +218,40 @@ const UsuarioForm = () => {
     );
 };
 
+
+const UserList = () => {
+    const [users, setUsers] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        axios.get('https://292d-190-24-56-12.ngrok-free.app/api/usuarios/')
+            .then(response => {
+                console.log(response.data)
+                setUsers(response.data);
+                setLoading(false);
+            })
+            .catch(error => {
+                console.error("There was an error retrieving the users!", error);
+                setError(error);
+                setLoading(false);
+            });
+    }, []);
+
+    if (loading) return <div>Loading...</div>;
+    if (error) return <div>There was an error loading the users.</div>;
+
+    return (
+        <div>
+            <h2>User List</h2>
+            <ul>
+                {users.map(user => (
+                    <li key={user.id}>
+                        {user.nombre} ({user.correo_electronico})
+                    </li>
+                ))}
+            </ul>
+        </div>
+    );
+};
 export default Admin;
