@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Admin.css';
 import axios from 'axios';
+import Header from '../Structure/Header';
 
 const Admin = () => {
     const [theme, setTheme] = useState(''); // '' for default, 'dark-theme' or 'light-theme' for other themes
@@ -26,7 +27,7 @@ const Admin = () => {
 
     return (
         <div className={`app-container ${theme}`}>
-            <NavBar />
+            <Header />
             <div className="theme-toggle-buttons">
                 <button onClick={() => toggleTheme('')} className="theme-button default">Default Theme</button>
                 <button onClick={() => toggleTheme('dark-theme')} className="theme-button dark">Dark Theme</button>
