@@ -26,7 +26,7 @@ const HeaderNavigation = () => {
                       </a>
                       <ul className="sub-menu">
                         <li className="menu-item">
-                          <a href="/">Home One</a>
+                          <a href="/listadoMapa">Search in Map</a>
                         </li>
                         <li className="menu-item">
                           <a href="index-2.html">Home Two</a>

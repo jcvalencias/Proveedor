@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './Auth.css';
+import Header from '../Structure/Header';
 
 
 
@@ -54,33 +55,36 @@ const SignIn = () => {
     };
 
     return (
-        <div className="auth-container">
-            <h2>Sign In</h2>
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="email"
-                    name="email"
-                    placeholder="Email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                />
-                <input
-                    type="password"
-                    name="password"
-                    placeholder="Password"
-                    value={formData.password}
-                    onChange={handleChange}
-                    required
-                />
-                <button type="submit">Sign In</button>
-            </form>
-            <h5>Do you want to create an account?</h5>
-            <a href='/SignUp'>
-            <button>Sign Up</button>
-            </a>
-            {error && <p className="error">{error}</p>}
-        </div>
+        <>
+            <Header />
+            <div className="auth-container">
+                <h2>Sign In</h2>
+                <form onSubmit={handleSubmit}>
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                    />
+                    <input
+                        type="password"
+                        name="password"
+                        placeholder="Password"
+                        value={formData.password}
+                        onChange={handleChange}
+                        required
+                    />
+                    <button type="submit">Sign In</button>
+                </form>
+                <h5>Do you want to create an account?</h5>
+                <a href='/SignUp'>
+                <button>Sign Up</button>
+                </a>
+                {error && <p className="error">{error}</p>}
+            </div>
+        </>
     );
 };
 

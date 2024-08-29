@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './Auth.css';
+import Header from '../Structure/Header';
 
 const SignUp = () => {
     const [formData, setFormData] = useState({
@@ -32,37 +33,40 @@ const SignUp = () => {
     };
 
     return (
-        <div className="auth-container">
-            <h2>Sign Up</h2>
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="email"
-                    name="email"
-                    placeholder="Email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                />
-                <input
-                    type="text"
-                    name="username"
-                    placeholder="Username"
-                    value={formData.username}
-                    onChange={handleChange}
-                    required
-                />
-                <input
-                    type="password"
-                    name="password"
-                    placeholder="Password"
-                    value={formData.password}
-                    onChange={handleChange}
-                    required
-                />
-                <button type="submit">Sign Up</button>
-            </form>
-            {error && <p className="error">{error}</p>}
-        </div>
+        <>
+            <Header/>
+            <div className="auth-container">
+                <h2>Sign Up</h2>
+                <form onSubmit={handleSubmit}>
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                    />
+                    <input
+                        type="text"
+                        name="username"
+                        placeholder="Username"
+                        value={formData.username}
+                        onChange={handleChange}
+                        required
+                    />
+                    <input
+                        type="password"
+                        name="password"
+                        placeholder="Password"
+                        value={formData.password}
+                        onChange={handleChange}
+                        required
+                    />
+                    <button type="submit">Sign Up</button>
+                </form>
+                {error && <p className="error">{error}</p>}
+            </div>
+        </>
     );
 };
 

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Header from './Structure/Header';
 import PreLoader from './Structure/Preloader';
 import Footer from './Structure/Footer';
+import ListadoMapa from './Search/listado-con-mapa';
 
 const Home = () => {
 
@@ -1620,7 +1621,7 @@ const Home = () => {
   <Header/>
   {/*====== End Header Section ======*/}
   {/*====== Start Form Admin Section ======*/}
-  <Body/>
+  <Body />
   {/* End Body */}
   {/*====== Start Footer ======*/}
   <Footer/>
