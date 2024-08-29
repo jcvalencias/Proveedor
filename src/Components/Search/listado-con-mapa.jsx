@@ -3,6 +3,41 @@ import PreLoader from "../Structure/Preloader";
 import Header from "../Structure/Header";
 
 const ListadoMapa = () => {
+
+    const ResultServicio = ({name, category, price, opiniones, contact_number, location, availability, image}) => {
+        console.log(opiniones);
+
+        return (
+            <div className="col-lg-4 col-md-6 col-sm-12">
+                <div className="listing-item listing-grid-item-two mb-30">
+                    <div className="listing-thumbnail">
+                        <img src={image} alt={category}/>
+                        <a href="#" className="cat-btn"><i className="flaticon-chef"></i></a>
+                        <span className="featured-btn">{price}</span>
+                        <ul className="ratings ratings-four fondo-opiniones">
+                            <li className="star"><i className="flaticon-star-1"></i></li>
+                            <li className="star"><i className="flaticon-star-1"></i></li>
+                            <li className="star"><i className="flaticon-star-1"></i></li>
+                            <li className="star"><i className="flaticon-star-1"></i></li>
+                            <li className="star"><i className="flaticon-star-1"></i></li>
+                            <li><span><a href="#">({opiniones} Opiniones)</a></span></li>
+                        </ul>
+                    </div>
+                    <div className="listing-content">
+                        <h3 className="title verdes-logo"><a href="listing-details-1.html">{name}</a></h3>
+                        <p>{category}</p>
+                        <span className="phone-meta"><i className="ti-tablet"></i><a href="tel:+982653652-05">{contact_number}</a><span className="status st-open">{availability}</span></span>
+                        <div className="listing-meta">
+                            <ul>
+                                <li><span><i className="ti-location-pin"></i>{location}</span></li>
+                                <li><span><i className="ti-heart"></i><a href="#">Guardar</a></span></li>
+                            </ul>
+                        </div>
+                    </div>
+				</div>
+			</div>
+        );
+    }
     return (
         <>
         <body>
@@ -126,62 +161,8 @@ const ListadoMapa = () => {
                             <div className="tab-content">
                                 <div className="tab-pane fade show active" id="all">
                                     <div className="row">
-                                        <div className="col-lg-4 col-md-6 col-sm-12">
-                                            <div className="listing-item listing-grid-item-two mb-30">
-												<div className="listing-thumbnail">
-													<img src="assets/images/en-tu-zona-baby-sitter.jpg" alt="Baby Sitting"/>
-													<a href="#" className="cat-btn"><i className="flaticon-chef"></i></a>
-													<span className="featured-btn">$50 x hora</span>
-													<ul className="ratings ratings-four fondo-opiniones">
-														<li className="star"><i className="flaticon-star-1"></i></li>
-														<li className="star"><i className="flaticon-star-1"></i></li>
-														<li className="star"><i className="flaticon-star-1"></i></li>
-														<li className="star"><i className="flaticon-star-1"></i></li>
-														<li className="star"><i className="flaticon-star-1"></i></li>
-														<li><span><a href="#">(2 Opiniones)</a></span></li>
-													</ul>
-												</div>
-												<div className="listing-content">
-													<h3 className="title verdes-logo"><a href="listing-details-1.html">Cuidado de Niños</a></h3>
-													<p>Baby sitting</p>
-													<span className="phone-meta"><i className="ti-tablet"></i><a href="tel:+982653652-05">+98 (265) 3652 - 05</a><span className="status st-open">LIBRE HOY</span></span>
-													<div className="listing-meta">
-														<ul>
-															<li><span><i className="ti-location-pin"></i>Barrio XYZ, Bogotá</span></li>
-															<li><span><i className="ti-heart"></i><a href="#">Guardar</a></span></li>
-														</ul>
-													</div>
-												</div>
-											</div>
-                                        </div>
-                                        <div className="col-lg-4 col-md-6 col-sm-12">
-                                            <div className="listing-item listing-grid-item-two mb-30">
-												<div className="listing-thumbnail">
-													<img src="assets/images/en-tu-zona-baby-sitter.jpg" alt="Baby Sitting"/>
-													<a href="#" className="cat-btn"><i className="flaticon-chef"></i></a>
-													<span className="featured-btn">$50 x hora</span>
-													<ul className="ratings ratings-four fondo-opiniones">
-														<li className="star"><i className="flaticon-star-1"></i></li>
-														<li className="star"><i className="flaticon-star-1"></i></li>
-														<li className="star"><i className="flaticon-star-1"></i></li>
-														<li className="star"><i className="flaticon-star-1"></i></li>
-														<li className="star"><i className="flaticon-star-1"></i></li>
-														<li><span><a href="#">(2 Opiniones)</a></span></li>
-													</ul>
-												</div>
-												<div className="listing-content">
-													<h3 className="title verdes-logo"><a href="listing-details-1.html">Cuidado de Niños</a></h3>
-													<p>Baby sitting</p>
-													<span className="phone-meta"><i className="ti-tablet"></i><a href="tel:+982653652-05">+98 (265) 3652 - 05</a><span className="status st-open">LIBRE HOY</span></span>
-													<div className="listing-meta">
-														<ul>
-															<li><span><i className="ti-location-pin"></i>Barrio XYZ, Bogotá</span></li>
-															<li><span><i className="ti-heart"></i><a href="#">Guardar</a></span></li>
-														</ul>
-													</div>
-												</div>
-											</div>
-                                        </div>
+                                        <ResultServicio name='Cuidado de Niños' category='Baby sitting' price='$50 x HORA' opiniones='2' contact_number='+98 (265) 3652 - 05' location='Barrio XYZ, Bogotá' availability='LIBRE HOY' image='assets/images/en-tu-zona-baby-sitter.jpg'/>
+                                        <ResultServicio name='Prueba Cuidado de Niños' category='Prueba Baby sitting' price='Prueba $50 x HORA' opiniones='Prueba 2' contact_number='Prueba +98 (265) 3652 - 05' location='Prueba Barrio XYZ, Bogotá' availability='Prueba LIBRE HOY' image='assets/images/en-tu-zona-baby-sitter.jpg'/>
                                         <div className="col-lg-4 col-md-6 col-sm-12">
                                             <div className="listing-item listing-grid-item-two mb-30">
 												<div className="listing-thumbnail">
