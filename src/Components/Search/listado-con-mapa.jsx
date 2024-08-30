@@ -1,12 +1,29 @@
 import React from "react";
 import PreLoader from "../Structure/Preloader";
 import Header from "../Structure/Header";
+import Footer from "../Structure/Footer";
 
 const ListadoMapa = () => {
 
-    const ResultServicio = ({name, category, price, opiniones, contact_number, location, availability, image}) => {
-        console.log(opiniones);
+    const categories = ['Museums', 'Restaurant', 'Party Center', 'Fitness Zone', 'Game Field', 'Job & Feeds', 'Shooping', 'Art Gallery'];
 
+    const locations=['Dhaka','Delhi','lahore','Rome','New york','Pris','Bern','Bangkok'];
+
+    const prices=['$10-$30','$30-$70','$70-$100','$100-$130','$130-$150'];
+
+
+    const DropdownList = ({name, list}) => {
+        return (<div className="col-lg-3 col-md-6 col-sm-12">
+        <div className="form_group">
+            <select className="wide">
+                <option data-dsplay="Category">{name}</option>
+                {list.map(item => (<option value={item}>{item}</option>))}
+            </select>
+        </div>
+    </div>);
+    }
+
+    const ResultServicio = ({name, category, price, opiniones, contact_number, location, availability, image}) => {
         return (
             <div className="col-lg-4 col-md-6 col-sm-12">
                 <div className="listing-item listing-grid-item-two mb-30">
@@ -79,49 +96,9 @@ const ListadoMapa = () => {
                     <div className="col-lg-12">
                         <div className="listing-search-form mb-60 wow fadeInUp" style={{'background-image': 'url(assets/images/bg/newsletter-bg-1.jpg);'}}>
                             <div className="row">
-                                
-                                <div className="col-lg-3 col-md-6 col-sm-12">
-                                    <div className="form_group">
-                                        <select className="wide">
-                                            <option data-dsplay="Category">Categoría de Servicios</option>
-                                            <option value="01">Museums</option>
-                                            <option value="02">Restaurant</option>
-                                            <option value="03">Party Center</option>
-                                            <option value="04">Fitness Zone</option>
-                                            <option value="05">Game Field</option>
-                                            <option value="06">Job & Feeds</option>
-                                            <option value="07">Shooping</option>
-                                            <option value="08">Art Gallery</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div className="col-lg-3 col-md-6 col-sm-12">
-                                    <div className="form_group">
-                                        <select className="wide">
-                                            <option data-dsplay="Location">en que Zona?</option>
-                                            <option value="01">Dhaka</option>
-                                            <option value="02">Delhi</option>
-                                            <option value="03">lahore</option>
-                                            <option value="04">Rome</option>
-                                            <option value="05">New york</option>
-                                            <option value="06">Pris</option>
-                                            <option value="07">Bern</option>
-                                            <option value="08">Bangkok</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div className="col-lg-3 col-md-6 col-sm-12">
-                                    <div className="form_group">
-                                        <select className="wide">
-                                            <option data-dsplay="Default price">Rango de Precios</option>
-                                            <option value="01">$10-$30</option>
-                                            <option value="02">$30-$70</option>
-                                            <option value="03">$70-$100</option>
-                                            <option value="04">$100-$130</option>
-                                            <option value="05">$130-$150</option>
-                                        </select>
-                                    </div>
-                                </div>
+                                <DropdownList name='Categoria de Servicios' list={categories} />
+                                <DropdownList name='Selecciona tu zona' list={locations} />
+                                <DropdownList name='Rango de Precios' list={prices} />
                                 <div className="col-lg-3 col-md-6 col-sm-12">
                                     <div className="form_group">
                                         <button className="main-btn icon-btn">BUSCAR</button>
@@ -161,205 +138,86 @@ const ListadoMapa = () => {
                             <div className="tab-content">
                                 <div className="tab-pane fade show active" id="all">
                                     <div className="row">
-                                        <ResultServicio name='Cuidado de Niños' category='Baby sitting' price='$50 x HORA' opiniones='2' contact_number='+98 (265) 3652 - 05' location='Barrio XYZ, Bogotá' availability='LIBRE HOY' image='assets/images/en-tu-zona-baby-sitter.jpg'/>
-                                        <ResultServicio name='Prueba Cuidado de Niños' category='Prueba Baby sitting' price='Prueba $50 x HORA' opiniones='Prueba 2' contact_number='Prueba +98 (265) 3652 - 05' location='Prueba Barrio XYZ, Bogotá' availability='Prueba LIBRE HOY' image='assets/images/en-tu-zona-baby-sitter.jpg'/>
-                                        <div className="col-lg-4 col-md-6 col-sm-12">
-                                            <div className="listing-item listing-grid-item-two mb-30">
-												<div className="listing-thumbnail">
-													<img src="assets/images/en-tu-zona-baby-sitter.jpg" alt="Baby Sitting"/>
-													<a href="#" className="cat-btn"><i className="flaticon-chef"></i></a>
-													<span className="featured-btn">$50 x hora</span>
-													<ul className="ratings ratings-four fondo-opiniones">
-														<li className="star"><i className="flaticon-star-1"></i></li>
-														<li className="star"><i className="flaticon-star-1"></i></li>
-														<li className="star"><i className="flaticon-star-1"></i></li>
-														<li className="star"><i className="flaticon-star-1"></i></li>
-														<li className="star"><i className="flaticon-star-1"></i></li>
-														<li><span><a href="#">(2 Opiniones)</a></span></li>
-													</ul>
-												</div>
-												<div className="listing-content">
-													<h3 className="title verdes-logo"><a href="listing-details-1.html">Cuidado de Niños</a></h3>
-													<p>Baby sitting</p>
-													<span className="phone-meta"><i className="ti-tablet"></i><a href="tel:+982653652-05">+98 (265) 3652 - 05</a><span className="status st-open">LIBRE HOY</span></span>
-													<div className="listing-meta">
-														<ul>
-															<li><span><i className="ti-location-pin"></i>Barrio XYZ, Bogotá</span></li>
-															<li><span><i className="ti-heart"></i><a href="#">Guardar</a></span></li>
-														</ul>
-													</div>
-												</div>
-											</div>
-                                        </div>
-                                        <div className="col-lg-4 col-md-6 col-sm-12">
-                                            <div className="listing-item listing-grid-item-two mb-30">
-												<div className="listing-thumbnail">
-													<img src="assets/images/en-tu-zona-baby-sitter.jpg" alt="Baby Sitting"/>
-													<a href="#" className="cat-btn"><i className="flaticon-chef"></i></a>
-													<span className="featured-btn">$50 x hora</span>
-													<ul className="ratings ratings-four fondo-opiniones">
-														<li className="star"><i className="flaticon-star-1"></i></li>
-														<li className="star"><i className="flaticon-star-1"></i></li>
-														<li className="star"><i className="flaticon-star-1"></i></li>
-														<li className="star"><i className="flaticon-star-1"></i></li>
-														<li className="star"><i className="flaticon-star-1"></i></li>
-														<li><span><a href="#">(2 Opiniones)</a></span></li>
-													</ul>
-												</div>
-												<div className="listing-content">
-													<h3 className="title verdes-logo"><a href="listing-details-1.html">Cuidado de Niños</a></h3>
-													<p>Baby sitting</p>
-													<span className="phone-meta"><i className="ti-tablet"></i><a href="tel:+982653652-05">+98 (265) 3652 - 05</a><span className="status st-open">LIBRE HOY</span></span>
-													<div className="listing-meta">
-														<ul>
-															<li><span><i className="ti-location-pin"></i>Barrio XYZ, Bogotá</span></li>
-															<li><span><i className="ti-heart"></i><a href="#">Guardar</a></span></li>
-														</ul>
-													</div>
-												</div>
-											</div>
-                                        </div>
-                                        <div className="col-lg-4 col-md-6 col-sm-12">
-                                            <div className="listing-item listing-grid-item-two mb-30">
-												<div className="listing-thumbnail">
-													<img src="assets/images/en-tu-zona-baby-sitter.jpg" alt="Baby Sitting"/>
-													<a href="#" className="cat-btn"><i className="flaticon-chef"></i></a>
-													<span className="featured-btn">$50 x hora</span>
-													<ul className="ratings ratings-four fondo-opiniones">
-														<li className="star"><i className="flaticon-star-1"></i></li>
-														<li className="star"><i className="flaticon-star-1"></i></li>
-														<li className="star"><i className="flaticon-star-1"></i></li>
-														<li className="star"><i className="flaticon-star-1"></i></li>
-														<li className="star"><i className="flaticon-star-1"></i></li>
-														<li><span><a href="#">(2 Opiniones)</a></span></li>
-													</ul>
-												</div>
-												<div className="listing-content">
-													<h3 className="title verdes-logo"><a href="listing-details-1.html">Cuidado de Niños</a></h3>
-													<p>Baby sitting</p>
-													<span className="phone-meta"><i className="ti-tablet"></i><a href="tel:+982653652-05">+98 (265) 3652 - 05</a><span className="status st-open">LIBRE HOY</span></span>
-													<div className="listing-meta">
-														<ul>
-															<li><span><i className="ti-location-pin"></i>Barrio XYZ, Bogotá</span></li>
-															<li><span><i className="ti-heart"></i><a href="#">Guardar</a></span></li>
-														</ul>
-													</div>
-												</div>
-											</div>
-                                        </div>
-                                        <div className="col-lg-4 col-md-6 col-sm-12">
-                                            <div className="listing-item listing-grid-item-two mb-30">
-												<div className="listing-thumbnail">
-													<img src="assets/images/en-tu-zona-baby-sitter.jpg" alt="Baby Sitting"/>
-													<a href="#" className="cat-btn"><i className="flaticon-chef"></i></a>
-													<span className="featured-btn">$50 x hora</span>
-													<ul className="ratings ratings-four fondo-opiniones">
-														<li className="star"><i className="flaticon-star-1"></i></li>
-														<li className="star"><i className="flaticon-star-1"></i></li>
-														<li className="star"><i className="flaticon-star-1"></i></li>
-														<li className="star"><i className="flaticon-star-1"></i></li>
-														<li className="star"><i className="flaticon-star-1"></i></li>
-														<li><span><a href="#">(2 Opiniones)</a></span></li>
-													</ul>
-												</div>
-												<div className="listing-content">
-													<h3 className="title verdes-logo"><a href="listing-details-1.html">Cuidado de Niños</a></h3>
-													<p>Baby sitting</p>
-													<span className="phone-meta"><i className="ti-tablet"></i><a href="tel:+982653652-05">+98 (265) 3652 - 05</a><span className="status st-open">LIBRE HOY</span></span>
-													<div className="listing-meta">
-														<ul>
-															<li><span><i className="ti-location-pin"></i>Barrio XYZ, Bogotá</span></li>
-															<li><span><i className="ti-heart"></i><a href="#">Guardar</a></span></li>
-														</ul>
-													</div>
-												</div>
-											</div>
-                                        </div>
-                                        <div className="col-lg-4 col-md-6 col-sm-12">
-                                            <div className="listing-item listing-grid-item-two mb-30">
-												<div className="listing-thumbnail">
-													<img src="assets/images/en-tu-zona-baby-sitter.jpg" alt="Baby Sitting"/>
-													<a href="#" className="cat-btn"><i className="flaticon-chef"></i></a>
-													<span className="featured-btn">$50 x hora</span>
-													<ul className="ratings ratings-four fondo-opiniones">
-														<li className="star"><i className="flaticon-star-1"></i></li>
-														<li className="star"><i className="flaticon-star-1"></i></li>
-														<li className="star"><i className="flaticon-star-1"></i></li>
-														<li className="star"><i className="flaticon-star-1"></i></li>
-														<li className="star"><i className="flaticon-star-1"></i></li>
-														<li><span><a href="#">(2 Opiniones)</a></span></li>
-													</ul>
-												</div>
-												<div className="listing-content">
-													<h3 className="title verdes-logo"><a href="listing-details-1.html">Cuidado de Niños</a></h3>
-													<p>Baby sitting</p>
-													<span className="phone-meta"><i className="ti-tablet"></i><a href="tel:+982653652-05">+98 (265) 3652 - 05</a><span className="status st-open">LIBRE HOY</span></span>
-													<div className="listing-meta">
-														<ul>
-															<li><span><i className="ti-location-pin"></i>Barrio XYZ, Bogotá</span></li>
-															<li><span><i className="ti-heart"></i><a href="#">Guardar</a></span></li>
-														</ul>
-													</div>
-												</div>
-											</div>
-                                        </div>
-                                        <div className="col-lg-4 col-md-6 col-sm-12">
-                                            <div className="listing-item listing-grid-item-two mb-30">
-												<div className="listing-thumbnail">
-													<img src="assets/images/en-tu-zona-baby-sitter.jpg" alt="Baby Sitting"/>
-													<a href="#" className="cat-btn"><i className="flaticon-chef"></i></a>
-													<span className="featured-btn">$50 x hora</span>
-													<ul className="ratings ratings-four fondo-opiniones">
-														<li className="star"><i className="flaticon-star-1"></i></li>
-														<li className="star"><i className="flaticon-star-1"></i></li>
-														<li className="star"><i className="flaticon-star-1"></i></li>
-														<li className="star"><i className="flaticon-star-1"></i></li>
-														<li className="star"><i className="flaticon-star-1"></i></li>
-														<li><span><a href="#">(2 Opiniones)</a></span></li>
-													</ul>
-												</div>
-												<div className="listing-content">
-													<h3 className="title verdes-logo"><a href="listing-details-1.html">Cuidado de Niños</a></h3>
-													<p>Baby sitting</p>
-													<span className="phone-meta"><i className="ti-tablet"></i><a href="tel:+982653652-05">+98 (265) 3652 - 05</a><span className="status st-open">LIBRE HOY</span></span>
-													<div className="listing-meta">
-														<ul>
-															<li><span><i className="ti-location-pin"></i>Barrio XYZ, Bogotá</span></li>
-															<li><span><i className="ti-heart"></i><a href="#">Guardar</a></span></li>
-														</ul>
-													</div>
-												</div>
-											</div>
-                                        </div>
-                                        <div className="col-lg-4 col-md-6 col-sm-12">
-                                            <div className="listing-item listing-grid-item-two mb-30">
-												<div className="listing-thumbnail">
-													<img src="assets/images/en-tu-zona-baby-sitter.jpg" alt="Baby Sitting"/>
-													<a href="#" className="cat-btn"><i className="flaticon-chef"></i></a>
-													<span className="featured-btn">$50 x hora</span>
-													<ul className="ratings ratings-four fondo-opiniones">
-														<li className="star"><i className="flaticon-star-1"></i></li>
-														<li className="star"><i className="flaticon-star-1"></i></li>
-														<li className="star"><i className="flaticon-star-1"></i></li>
-														<li className="star"><i className="flaticon-star-1"></i></li>
-														<li className="star"><i className="flaticon-star-1"></i></li>
-														<li><span><a href="#">(2 Opiniones)</a></span></li>
-													</ul>
-												</div>
-												<div className="listing-content">
-													<h3 className="title verdes-logo"><a href="listing-details-1.html">Cuidado de Niños</a></h3>
-													<p>Baby sitting</p>
-													<span className="phone-meta"><i className="ti-tablet"></i><a href="tel:+982653652-05">+98 (265) 3652 - 05</a><span className="status st-open">LIBRE HOY</span></span>
-													<div className="listing-meta">
-														<ul>
-															<li><span><i className="ti-location-pin"></i>Barrio XYZ, Bogotá</span></li>
-															<li><span><i className="ti-heart"></i><a href="#">Guardar</a></span></li>
-														</ul>
-													</div>
-												</div>
-											</div>
-                                        </div>
-										
+                                        <ResultServicio 
+                                            name='Cuidado de Niños' 
+                                            category='Baby sitting' 
+                                            price='$50 x HORA' 
+                                            opiniones='2' 
+                                            contact_number='+98 (265) 3652 - 05' 
+                                            location='Barrio XYZ, Bogotá' 
+                                            availability='LIBRE HOY' 
+                                            image='assets/images/en-tu-zona-baby-sitter.jpg'
+                                            />
+                                        <ResultServicio 
+                                            name='Cuidado de Niños 2' 
+                                            category='Baby sitting 2' 
+                                            price='$50 x HORA 2' 
+                                            opiniones=' 22' 
+                                            contact_number='+98 (265) 3652 - 05 2' 
+                                            location='Barrio XYZ, Bogotá 2' 
+                                            availability='LIBRE HOY 2' 
+                                            image='assets/images/en-tu-zona-baby-sitter.jpg'
+                                            />
+                                        <ResultServicio 
+                                            name='Cuidado de Niños 3' 
+                                            category='Baby sitting 3' 
+                                            price='$50 x HORA 3' 
+                                            opiniones=' 32' 
+                                            contact_number='+98 (265) 3652 - 05 3' 
+                                            location='Barrio XYZ, Bogotá 3' 
+                                            availability='LIBRE HOY 3' 
+                                            image='assets/images/en-tu-zona-baby-sitter.jpg'
+                                            />
+                                        <ResultServicio 
+                                            name='Cuidado de Niños 4' 
+                                            category='Baby sitting 4' 
+                                            price='$50 x HORA 4' 
+                                            opiniones=' 42' 
+                                            contact_number='+98 (265) 3652 - 05 4' 
+                                            location='Barrio XYZ, Bogotá 4' 
+                                            availability='LIBRE HOY 4' 
+                                            image='assets/images/en-tu-zona-baby-sitter.jpg'
+                                            />
+                                        <ResultServicio 
+                                            name='Cuidado de Niños 5' 
+                                            category='Baby sitting 5' 
+                                            price='$50 x HORA 5' 
+                                            opiniones=' 52' 
+                                            contact_number='+98 (265) 3652 - 05 5' 
+                                            location='Barrio XYZ, Bogotá 5' 
+                                            availability='LIBRE HOY 5' 
+                                            image='assets/images/en-tu-zona-baby-sitter.jpg'
+                                            />
+                                        <ResultServicio 
+                                            name='Cuidado de Niños 6' 
+                                            category='Baby sitting 6' 
+                                            price='$50 x HORA 6' 
+                                            opiniones=' 62' 
+                                            contact_number='+98 (265) 3652 - 05 6' 
+                                            location='Barrio XYZ, Bogotá 6' 
+                                            availability='LIBRE HOY 6' 
+                                            image='assets/images/en-tu-zona-baby-sitter.jpg'
+                                            />
+                                        <ResultServicio 
+                                            name='Cuidado de Niños 7' 
+                                            category='Baby sitting 7' 
+                                            price='$50 x HORA 7' 
+                                            opiniones=' 72' 
+                                            contact_number='+98 (265) 3652 - 05 7' 
+                                            location='Barrio XYZ, Bogotá 7' 
+                                            availability='LIBRE HOY 7' 
+                                            image='assets/images/en-tu-zona-baby-sitter.jpg'
+                                            />
+                                        <ResultServicio 
+                                            name='Cuidado de Niños 8' 
+                                            category='Baby sitting 8' 
+                                            price='$50 x HORA 8' 
+                                            opiniones=' 28' 
+                                            contact_number='+98 (265) 3652 - 05 8' 
+                                            location='Barrio XYZ, Bogotá 8' 
+                                            availability='LIBRE HOY 8' 
+                                            image='assets/images/en-tu-zona-baby-sitter.jpg'
+                                            />
                                     </div>
                                 </div>
                                 <div className="tab-pane fade show active" id="cat1">
@@ -621,408 +479,173 @@ const ListadoMapa = () => {
                                 </div>
                                 <div className="tab-pane fade" id="cat2">
                                     <div className="row">
-                                        <div className="col-lg-4 col-md-6 col-sm-12">
-                                            <div className="listing-item listing-grid-item-two mb-30">
-												<div className="listing-thumbnail">
-													<img src="assets/images/en-tu-zona-limpieza-casas.jpg" alt="Limpieza de Casas"/>
-													<a href="#" className="cat-btn"><i className="flaticon-chef"></i></a>
-													<span className="featured-btn">$80 x hora</span>
-													<ul className="ratings ratings-four fondo-opiniones">
-														<li className="star"><i className="flaticon-star-1"></i></li>
-														<li className="star"><i className="flaticon-star-1"></i></li>
-														<li className="star"><i className="flaticon-star-1"></i></li>
-														<li className="star"><i className="flaticon-star-1"></i></li>
-														<li className="star"><i className="flaticon-star-1"></i></li>
-														<li><span><a href="#">(32 Opiniones)</a></span></li>
-													</ul>
-												</div>
-												<div className="listing-content">
-													<h3 className="title verdes-logo"><a href="listing-details-1.html">Limpieza del Hogar</a></h3>
-													<p>Ofrece Servicio de Planchado</p>
-													<span className="phone-meta"><i className="ti-tablet"></i><a href="tel:+982653652-05">+98 (265) 3652 - 05</a><span className="status st-open">LIBRE DESDE EL 30/7</span></span>
-													<div className="listing-meta">
-														<ul>
-															<li><span><i className="ti-location-pin"></i>Barrio XYZ, Bogotá</span></li>
-															<li><span><i className="ti-heart"></i><a href="#">Guardar</a></span></li>
-														</ul>
-													</div>
-												</div>
-											</div>
-                                        </div>
-                                        <div className="col-lg-4 col-md-6 col-sm-12">
-                                            <div className="listing-item listing-grid-item-two mb-30">
-												<div className="listing-thumbnail">
-													<img src="assets/images/en-tu-zona-limpieza-casas.jpg" alt="Limpieza de Casas"/>
-													<a href="#" className="cat-btn"><i className="flaticon-chef"></i></a>
-													<span className="featured-btn">$80 x hora</span>
-													<ul className="ratings ratings-four fondo-opiniones">
-														<li className="star"><i className="flaticon-star-1"></i></li>
-														<li className="star"><i className="flaticon-star-1"></i></li>
-														<li className="star"><i className="flaticon-star-1"></i></li>
-														<li className="star"><i className="flaticon-star-1"></i></li>
-														<li className="star"><i className="flaticon-star-1"></i></li>
-														<li><span><a href="#">(32 Opiniones)</a></span></li>
-													</ul>
-												</div>
-												<div className="listing-content">
-													<h3 className="title verdes-logo"><a href="listing-details-1.html">Limpieza del Hogar</a></h3>
-													<p>Ofrece Servicio de Planchado</p>
-													<span className="phone-meta"><i className="ti-tablet"></i><a href="tel:+982653652-05">+98 (265) 3652 - 05</a><span className="status st-open">LIBRE DESDE EL 30/7</span></span>
-													<div className="listing-meta">
-														<ul>
-															<li><span><i className="ti-location-pin"></i>Barrio XYZ, Bogotá</span></li>
-															<li><span><i className="ti-heart"></i><a href="#">Guardar</a></span></li>
-														</ul>
-													</div>
-												</div>
-											</div>
-                                        </div>
+                                        <ResultServicio 
+                                            name='Limpieza del Hogar' 
+                                            category='Limpieza de Casas' 
+                                            price='$80 x hora' 
+                                            opiniones='32' 
+                                            contact_number='+98 (265) 3652 - 05 8' 
+                                            location='Barrio XYZ, Bogotá 8' 
+                                            availability='LIBRE DESDE EL 30/7' 
+                                            image="assets/images/en-tu-zona-limpieza-casas.jpg"
+                                        />
+                                        <ResultServicio 
+                                            name='Limpieza del Hogar' 
+                                            category='Limpieza de Casas' 
+                                            price='$80 x hora' 
+                                            opiniones='32' 
+                                            contact_number='+98 (265) 3652 - 05 8' 
+                                            location='Barrio XYZ, Bogotá 8' 
+                                            availability='LIBRE DESDE EL 30/7' 
+                                            image="assets/images/en-tu-zona-limpieza-casas.jpg"
+                                        />
+                                        <ResultServicio 
+                                            name='Limpieza del Hogar' 
+                                            category='Limpieza de Casas' 
+                                            price='$80 x hora' 
+                                            opiniones='32' 
+                                            contact_number='+98 (265) 3652 - 05 8' 
+                                            location='Barrio XYZ, Bogotá 8' 
+                                            availability='LIBRE DESDE EL 30/7' 
+                                            image="assets/images/en-tu-zona-limpieza-casas.jpg"
+                                        />
 										
                                     </div>
                                 </div>
                                 <div className="tab-pane fade" id="cat3">
                                     <div className="row">
-                                        <div className="col-lg-4 col-md-6 col-sm-12">
-                                            <div className="listing-item listing-grid-item-two mb-30">
-                                                <div className="listing-thumbnail">
-                                                    <img src="assets/images/listing/listing-grid-24.jpg" alt="Listing Image"/>
-                                                    <a href="#" className="cat-btn"><i className="flaticon-chef"></i></a>
-                                                    <ul className="ratings ratings-four">
-                                                        <li className="star"><i className="flaticon-star-1"></i></li>
-                                                        <li className="star"><i className="flaticon-star-1"></i></li>
-                                                        <li className="star"><i className="flaticon-star-1"></i></li>
-                                                        <li className="star"><i className="flaticon-star-1"></i></li>
-                                                        <li className="star"><i className="flaticon-star-1"></i></li>
-                                                        <li><span><a href="#">(02 Reviews)</a></span></li>
-                                                    </ul>
-                                                </div>
-                                                <div className="listing-content">
-                                                    <h3 className="title"><a href="listing-details-1.html">Pizza Recipe</a></h3>
-                                                    <p>Popular restaurant in california</p>
-                                                    <span className="phone-meta"><i className="ti-tablet"></i><a href="tel:+982653652-05">+98 (265) 3652 - 05</a><span className="status st-open">Open</span></span>
-                                                    <div className="listing-meta">
-                                                        <ul>
-                                                            <li><span><i className="ti-location-pin"></i>California, USA</span></li>
-                                                            <li><span><i className="ti-heart"></i><a href="#">Save</a></span></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="col-lg-4 col-md-6 col-sm-12">
-                                            <div className="listing-item listing-grid-item-two mb-30">
-                                                <div className="listing-thumbnail">
-                                                    <img src="assets/images/listing/listing-grid-25.jpg" alt="Listing Image"/>
-                                                    <a href="#" className="cat-btn"><i className="flaticon-chef"></i></a>
-                                                    <ul className="ratings ratings-four">
-                                                        <li className="star"><i className="flaticon-star-1"></i></li>
-                                                        <li className="star"><i className="flaticon-star-1"></i></li>
-                                                        <li className="star"><i className="flaticon-star-1"></i></li>
-                                                        <li className="star"><i className="flaticon-star-1"></i></li>
-                                                        <li className="star"><i className="flaticon-star-1"></i></li>
-                                                        <li><span><a href="#">(02 Reviews)</a></span></li>
-                                                    </ul>
-                                                </div>
-                                                <div className="listing-content">
-                                                    <h3 className="title"><a href="listing-details-1.html">Pizza Recipe</a></h3>
-                                                    <p>Popular restaurant in california</p>
-                                                    <span className="phone-meta"><i className="ti-tablet"></i><a href="tel:+982653652-05">+98 (265) 3652 - 05</a><span className="status st-close">Close</span></span>
-                                                    <div className="listing-meta">
-                                                        <ul>
-                                                            <li><span><i className="ti-location-pin"></i>California, USA</span></li>
-                                                            <li><span><i className="ti-heart"></i><a href="#">Save</a></span></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="col-lg-4 col-md-6 col-sm-12">
-                                            <div className="listing-item listing-grid-item-two mb-30">
-                                                <div className="listing-thumbnail">
-                                                    <img src="assets/images/listing/listing-grid-26.jpg" alt="Listing Image"/>
-                                                    <a href="#" className="cat-btn"><i className="flaticon-chef"></i></a>
-                                                    <span className="featured-btn">Featured</span>
-                                                    <ul className="ratings ratings-four">
-                                                        <li className="star"><i className="flaticon-star-1"></i></li>
-                                                        <li className="star"><i className="flaticon-star-1"></i></li>
-                                                        <li className="star"><i className="flaticon-star-1"></i></li>
-                                                        <li className="star"><i className="flaticon-star-1"></i></li>
-                                                        <li className="star"><i className="flaticon-star-1"></i></li>
-                                                        <li><span><a href="#">(02 Reviews)</a></span></li>
-                                                    </ul>
-                                                </div>
-                                                <div className="listing-content">
-                                                    <h3 className="title"><a href="listing-details-1.html">Pizza Recipe</a></h3>
-                                                    <p>Popular restaurant in california</p>
-                                                    <span className="phone-meta"><i className="ti-tablet"></i><a href="tel:+982653652-05">+98 (265) 3652 - 05</a><span className="status st-open">Open</span></span>
-                                                    <div className="listing-meta">
-                                                        <ul>
-                                                            <li><span><i className="ti-location-pin"></i>California, USA</span></li>
-                                                            <li><span><i className="ti-heart"></i><a href="#">Save</a></span></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <ResultServicio 
+                                            name='Limpieza del Hogar' 
+                                            category='Limpieza de Casas' 
+                                            price='$80 x hora' 
+                                            opiniones='32' 
+                                            contact_number='+98 (265) 3652 - 05 8' 
+                                            location='Barrio XYZ, Bogotá 8' 
+                                            availability='LIBRE DESDE EL 30/7' 
+                                            image="assets/images/en-tu-zona-limpieza-casas.jpg"
+                                        />
+                                        <ResultServicio 
+                                            name='Limpieza del Hogar' 
+                                            category='Limpieza de Casas' 
+                                            price='$80 x hora' 
+                                            opiniones='32' 
+                                            contact_number='+98 (265) 3652 - 05 8' 
+                                            location='Barrio XYZ, Bogotá 8' 
+                                            availability='LIBRE DESDE EL 30/7' 
+                                            image="assets/images/en-tu-zona-limpieza-casas.jpg"
+                                        />
+                                        <ResultServicio 
+                                            name='Limpieza del Hogar' 
+                                            category='Limpieza de Casas' 
+                                            price='$80 x hora' 
+                                            opiniones='32' 
+                                            contact_number='+98 (265) 3652 - 05 8' 
+                                            location='Barrio XYZ, Bogotá 8' 
+                                            availability='LIBRE DESDE EL 30/7' 
+                                            image="assets/images/en-tu-zona-limpieza-casas.jpg"
+                                        />
                                     </div>
                                 </div>
                                 <div className="tab-pane fade" id="cat4">
                                     <div className="row">
-                                        <div className="col-lg-4 col-md-6 col-sm-12">
-                                            <div className="listing-item listing-grid-item-two mb-30">
-                                                <div className="listing-thumbnail">
-                                                    <img src="assets/images/listing/listing-grid-27.jpg" alt="Listing Image"/>
-                                                    <a href="#" className="cat-btn"><i className="flaticon-chef"></i></a>
-                                                    <span className="featured-btn">Featured</span>
-                                                    <ul className="ratings ratings-four">
-                                                        <li className="star"><i className="flaticon-star-1"></i></li>
-                                                        <li className="star"><i className="flaticon-star-1"></i></li>
-                                                        <li className="star"><i className="flaticon-star-1"></i></li>
-                                                        <li className="star"><i className="flaticon-star-1"></i></li>
-                                                        <li className="star"><i className="flaticon-star-1"></i></li>
-                                                        <li><span><a href="#">(02 Reviews)</a></span></li>
-                                                    </ul>
-                                                </div>
-                                                <div className="listing-content">
-                                                    <h3 className="title"><a href="listing-details-1.html">Pizza Recipe</a></h3>
-                                                    <p>Popular restaurant in california</p>
-                                                    <span className="phone-meta"><i className="ti-tablet"></i><a href="tel:+982653652-05">+98 (265) 3652 - 05</a><span className="status st-open">Open</span></span>
-                                                    <div className="listing-meta">
-                                                        <ul>
-                                                            <li><span><i className="ti-location-pin"></i>California, USA</span></li>
-                                                            <li><span><i className="ti-heart"></i><a href="#">Save</a></span></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="col-lg-4 col-md-6 col-sm-12">
-                                            <div className="listing-item listing-grid-item-two mb-30">
-                                                <div className="listing-thumbnail">
-                                                    <img src="assets/images/listing/listing-grid-28.jpg" alt="Listing Image"/>
-                                                    <a href="#" className="cat-btn"><i className="flaticon-chef"></i></a>
-                                                    <ul className="ratings ratings-four">
-                                                        <li className="star"><i className="flaticon-star-1"></i></li>
-                                                        <li className="star"><i className="flaticon-star-1"></i></li>
-                                                        <li className="star"><i className="flaticon-star-1"></i></li>
-                                                        <li className="star"><i className="flaticon-star-1"></i></li>
-                                                        <li className="star"><i className="flaticon-star-1"></i></li>
-                                                        <li><span><a href="#">(02 Reviews)</a></span></li>
-                                                    </ul>
-                                                </div>
-                                                <div className="listing-content">
-                                                    <h3 className="title"><a href="listing-details-1.html">Pizza Recipe</a></h3>
-                                                    <p>Popular restaurant in california</p>
-                                                    <span className="phone-meta"><i className="ti-tablet"></i><a href="tel:+982653652-05">+98 (265) 3652 - 05</a><span className="status st-open">Open</span></span>
-                                                    <div className="listing-meta">
-                                                        <ul>
-                                                            <li><span><i className="ti-location-pin"></i>California, USA</span></li>
-                                                            <li><span><i className="ti-heart"></i><a href="#">Save</a></span></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="col-lg-4 col-md-6 col-sm-12">
-                                            <div className="listing-item listing-grid-item-two mb-30">
-                                                <div className="listing-thumbnail">
-                                                    <img src="assets/images/listing/listing-grid-29.jpg" alt="Listing Image"/>
-                                                    <a href="#" className="cat-btn"><i className="flaticon-chef"></i></a>
-                                                    <ul className="ratings ratings-four">
-                                                        <li className="star"><i className="flaticon-star-1"></i></li>
-                                                        <li className="star"><i className="flaticon-star-1"></i></li>
-                                                        <li className="star"><i className="flaticon-star-1"></i></li>
-                                                        <li className="star"><i className="flaticon-star-1"></i></li>
-                                                        <li className="star"><i className="flaticon-star-1"></i></li>
-                                                        <li><span><a href="#">(02 Reviews)</a></span></li>
-                                                    </ul>
-                                                </div>
-                                                <div className="listing-content">
-                                                    <h3 className="title"><a href="listing-details-1.html">Pizza Recipe</a></h3>
-                                                    <p>Popular restaurant in california</p>
-                                                    <span className="phone-meta"><i className="ti-tablet"></i><a href="tel:+982653652-05">+98 (265) 3652 - 05</a><span className="status st-close">Close</span></span>
-                                                    <div className="listing-meta">
-                                                        <ul>
-                                                            <li><span><i className="ti-location-pin"></i>California, USA</span></li>
-                                                            <li><span><i className="ti-heart"></i><a href="#">Save</a></span></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <ResultServicio 
+                                            name='Limpieza del Hogar' 
+                                            category='Limpieza de Casas' 
+                                            price='$80 x hora' 
+                                            opiniones='32' 
+                                            contact_number='+98 (265) 3652 - 05 8' 
+                                            location='Barrio XYZ, Bogotá 8' 
+                                            availability='LIBRE DESDE EL 30/7' 
+                                            image="assets/images/en-tu-zona-limpieza-casas.jpg"
+                                        />
+                                        <ResultServicio 
+                                            name='Limpieza del Hogar' 
+                                            category='Limpieza de Casas' 
+                                            price='$80 x hora' 
+                                            opiniones='32' 
+                                            contact_number='+98 (265) 3652 - 05 8' 
+                                            location='Barrio XYZ, Bogotá 8' 
+                                            availability='LIBRE DESDE EL 30/7' 
+                                            image="assets/images/en-tu-zona-limpieza-casas.jpg"
+                                        />
+                                        <ResultServicio 
+                                            name='Limpieza del Hogar' 
+                                            category='Limpieza de Casas' 
+                                            price='$80 x hora' 
+                                            opiniones='32' 
+                                            contact_number='+98 (265) 3652 - 05 8' 
+                                            location='Barrio XYZ, Bogotá 8' 
+                                            availability='LIBRE DESDE EL 30/7' 
+                                            image="assets/images/en-tu-zona-limpieza-casas.jpg"
+                                        />
                                     </div>
                                 </div>
                                 <div className="tab-pane fade" id="cat5">
                                     <div className="row">
-                                        <div className="col-lg-4 col-md-6 col-sm-12">
-                                            <div className="listing-item listing-grid-item-two mb-30">
-                                                <div className="listing-thumbnail">
-                                                    <img src="assets/images/listing/listing-grid-24.jpg" alt="Listing Image"/>
-                                                    <a href="#" className="cat-btn"><i className="flaticon-chef"></i></a>
-                                                    <ul className="ratings ratings-four">
-                                                        <li className="star"><i className="flaticon-star-1"></i></li>
-                                                        <li className="star"><i className="flaticon-star-1"></i></li>
-                                                        <li className="star"><i className="flaticon-star-1"></i></li>
-                                                        <li className="star"><i className="flaticon-star-1"></i></li>
-                                                        <li className="star"><i className="flaticon-star-1"></i></li>
-                                                        <li><span><a href="#">(02 Reviews)</a></span></li>
-                                                    </ul>
-                                                </div>
-                                                <div className="listing-content">
-                                                    <h3 className="title"><a href="listing-details-1.html">Pizza Recipe</a></h3>
-                                                    <p>Popular restaurant in california</p>
-                                                    <span className="phone-meta"><i className="ti-tablet"></i><a href="tel:+982653652-05">+98 (265) 3652 - 05</a><span className="status st-open">Open</span></span>
-                                                    <div className="listing-meta">
-                                                        <ul>
-                                                            <li><span><i className="ti-location-pin"></i>California, USA</span></li>
-                                                            <li><span><i className="ti-heart"></i><a href="#">Save</a></span></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="col-lg-4 col-md-6 col-sm-12">
-                                            <div className="listing-item listing-grid-item-two mb-30">
-                                                <div className="listing-thumbnail">
-                                                    <img src="assets/images/listing/listing-grid-25.jpg" alt="Listing Image"/>
-                                                    <a href="#" className="cat-btn"><i className="flaticon-chef"></i></a>
-                                                    <span className="featured-btn">Featured</span>
-                                                    <ul className="ratings ratings-four">
-                                                        <li className="star"><i className="flaticon-star-1"></i></li>
-                                                        <li className="star"><i className="flaticon-star-1"></i></li>
-                                                        <li className="star"><i className="flaticon-star-1"></i></li>
-                                                        <li className="star"><i className="flaticon-star-1"></i></li>
-                                                        <li className="star"><i className="flaticon-star-1"></i></li>
-                                                        <li><span><a href="#">(02 Reviews)</a></span></li>
-                                                    </ul>
-                                                </div>
-                                                <div className="listing-content">
-                                                    <h3 className="title"><a href="listing-details-1.html">Pizza Recipe</a></h3>
-                                                    <p>Popular restaurant in california</p>
-                                                    <span className="phone-meta"><i className="ti-tablet"></i><a href="tel:+982653652-05">+98 (265) 3652 - 05</a><span className="status st-close">Close</span></span>
-                                                    <div className="listing-meta">
-                                                        <ul>
-                                                            <li><span><i className="ti-location-pin"></i>California, USA</span></li>
-                                                            <li><span><i className="ti-heart"></i><a href="#">Save</a></span></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="col-lg-4 col-md-6 col-sm-12">
-                                            <div className="listing-item listing-grid-item-two mb-30">
-                                                <div className="listing-thumbnail">
-                                                    <img src="assets/images/listing/listing-grid-26.jpg" alt="Listing Image"/>
-                                                    <a href="#" className="cat-btn"><i className="flaticon-chef"></i></a>
-                                                    <ul className="ratings ratings-four">
-                                                        <li className="star"><i className="flaticon-star-1"></i></li>
-                                                        <li className="star"><i className="flaticon-star-1"></i></li>
-                                                        <li className="star"><i className="flaticon-star-1"></i></li>
-                                                        <li className="star"><i className="flaticon-star-1"></i></li>
-                                                        <li className="star"><i className="flaticon-star-1"></i></li>
-                                                        <li><span><a href="#">(02 Reviews)</a></span></li>
-                                                    </ul>
-                                                </div>
-                                                <div className="listing-content">
-                                                    <h3 className="title"><a href="listing-details-1.html">Pizza Recipe</a></h3>
-                                                    <p>Popular restaurant in california</p>
-                                                    <span className="phone-meta"><i className="ti-tablet"></i><a href="tel:+982653652-05">+98 (265) 3652 - 05</a><span className="status st-open">Open</span></span>
-                                                    <div className="listing-meta">
-                                                        <ul>
-                                                            <li><span><i className="ti-location-pin"></i>California, USA</span></li>
-                                                            <li><span><i className="ti-heart"></i><a href="#">Save</a></span></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <ResultServicio 
+                                            name='Limpieza del Hogar' 
+                                            category='Limpieza de Casas' 
+                                            price='$80 x hora' 
+                                            opiniones='32' 
+                                            contact_number='+98 (265) 3652 - 05 8' 
+                                            location='Barrio XYZ, Bogotá 8' 
+                                            availability='LIBRE DESDE EL 30/7' 
+                                            image="assets/images/en-tu-zona-limpieza-casas.jpg"
+                                        />
+                                        <ResultServicio 
+                                            name='Limpieza del Hogar' 
+                                            category='Limpieza de Casas' 
+                                            price='$80 x hora' 
+                                            opiniones='32' 
+                                            contact_number='+98 (265) 3652 - 05 8' 
+                                            location='Barrio XYZ, Bogotá 8' 
+                                            availability='LIBRE DESDE EL 30/7' 
+                                            image="assets/images/en-tu-zona-limpieza-casas.jpg"
+                                        />
+                                        <ResultServicio 
+                                            name='Limpieza del Hogar' 
+                                            category='Limpieza de Casas' 
+                                            price='$80 x hora' 
+                                            opiniones='32' 
+                                            contact_number='+98 (265) 3652 - 05 8' 
+                                            location='Barrio XYZ, Bogotá 8' 
+                                            availability='LIBRE DESDE EL 30/7' 
+                                            image="assets/images/en-tu-zona-limpieza-casas.jpg"
+                                        />
                                     </div>
                                 </div>
                                 <div className="tab-pane fade" id="cat6">
                                     <div className="row">
-                                        <div className="col-lg-4 col-md-6 col-sm-12">
-                                            <div className="listing-item listing-grid-item-two mb-30">
-                                                <div className="listing-thumbnail">
-                                                    <img src="assets/images/listing/listing-grid-27.jpg" alt="Listing Image"/>
-                                                    <a href="#" className="cat-btn"><i className="flaticon-chef"></i></a>
-                                                    <span className="featured-btn">Featured</span>
-                                                    <ul className="ratings ratings-four">
-                                                        <li className="star"><i className="flaticon-star-1"></i></li>
-                                                        <li className="star"><i className="flaticon-star-1"></i></li>
-                                                        <li className="star"><i className="flaticon-star-1"></i></li>
-                                                        <li className="star"><i className="flaticon-star-1"></i></li>
-                                                        <li className="star"><i className="flaticon-star-1"></i></li>
-                                                        <li><span><a href="#">(02 Reviews)</a></span></li>
-                                                    </ul>
-                                                </div>
-                                                <div className="listing-content">
-                                                    <h3 className="title"><a href="listing-details-1.html">Pizza Recipe</a></h3>
-                                                    <p>Popular restaurant in california</p>
-                                                    <span className="phone-meta"><i className="ti-tablet"></i><a href="tel:+982653652-05">+98 (265) 3652 - 05</a><span className="status st-open">Open</span></span>
-                                                    <div className="listing-meta">
-                                                        <ul>
-                                                            <li><span><i className="ti-location-pin"></i>California, USA</span></li>
-                                                            <li><span><i className="ti-heart"></i><a href="#">Save</a></span></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="col-lg-4 col-md-6 col-sm-12">
-                                            <div className="listing-item listing-grid-item-two mb-30">
-                                                <div className="listing-thumbnail">
-                                                    <img src="assets/images/listing/listing-grid-28.jpg" alt="Listing Image"/>
-                                                    <a href="#" className="cat-btn"><i className="flaticon-chef"></i></a>
-                                                    <ul className="ratings ratings-four">
-                                                        <li className="star"><i className="flaticon-star-1"></i></li>
-                                                        <li className="star"><i className="flaticon-star-1"></i></li>
-                                                        <li className="star"><i className="flaticon-star-1"></i></li>
-                                                        <li className="star"><i className="flaticon-star-1"></i></li>
-                                                        <li className="star"><i className="flaticon-star-1"></i></li>
-                                                        <li><span><a href="#">(02 Reviews)</a></span></li>
-                                                    </ul>
-                                                </div>
-                                                <div className="listing-content">
-                                                    <h3 className="title"><a href="listing-details-1.html">Pizza Recipe</a></h3>
-                                                    <p>Popular restaurant in california</p>
-                                                    <span className="phone-meta"><i className="ti-tablet"></i><a href="tel:+982653652-05">+98 (265) 3652 - 05</a><span className="status st-open">Open</span></span>
-                                                    <div className="listing-meta">
-                                                        <ul>
-                                                            <li><span><i className="ti-location-pin"></i>California, USA</span></li>
-                                                            <li><span><i className="ti-heart"></i><a href="#">Save</a></span></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="col-lg-4 col-md-6 col-sm-12">
-                                            <div className="listing-item listing-grid-item-two mb-30">
-                                                <div className="listing-thumbnail">
-                                                    <img src="assets/images/listing/listing-grid-29.jpg" alt="Listing Image"/>
-                                                    <a href="#" className="cat-btn"><i className="flaticon-chef"></i></a>
-                                                    <span className="featured-btn">Featured</span>
-                                                    <ul className="ratings ratings-four">
-                                                        <li className="star"><i className="flaticon-star-1"></i></li>
-                                                        <li className="star"><i className="flaticon-star-1"></i></li>
-                                                        <li className="star"><i className="flaticon-star-1"></i></li>
-                                                        <li className="star"><i className="flaticon-star-1"></i></li>
-                                                        <li className="star"><i className="flaticon-star-1"></i></li>
-                                                        <li><span><a href="#">(02 Reviews)</a></span></li>
-                                                    </ul>
-                                                </div>
-                                                <div className="listing-content">
-                                                    <h3 className="title"><a href="listing-details-1.html">Pizza Recipe</a></h3>
-                                                    <p>Popular restaurant in california</p>
-                                                    <span className="phone-meta"><i className="ti-tablet"></i><a href="tel:+982653652-05">+98 (265) 3652 - 05</a><span className="status st-close">Close</span></span>
-                                                    <div className="listing-meta">
-                                                        <ul>
-                                                            <li><span><i className="ti-location-pin"></i>California, USA</span></li>
-                                                            <li><span><i className="ti-heart"></i><a href="#">Save</a></span></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <ResultServicio 
+                                            name='Limpieza del Hogar' 
+                                            category='Limpieza de Casas' 
+                                            price='$80 x hora' 
+                                            opiniones='32' 
+                                            contact_number='+98 (265) 3652 - 05 8' 
+                                            location='Barrio XYZ, Bogotá 8' 
+                                            availability='LIBRE DESDE EL 30/7' 
+                                            image="assets/images/en-tu-zona-limpieza-casas.jpg"
+                                        />
+                                        <ResultServicio 
+                                            name='Limpieza del Hogar' 
+                                            category='Limpieza de Casas' 
+                                            price='$80 x hora' 
+                                            opiniones='32' 
+                                            contact_number='+98 (265) 3652 - 05 8' 
+                                            location='Barrio XYZ, Bogotá 8' 
+                                            availability='LIBRE DESDE EL 30/7' 
+                                            image="assets/images/en-tu-zona-limpieza-casas.jpg"
+                                        />
+                                        <ResultServicio 
+                                            name='Limpieza del Hogar' 
+                                            category='Limpieza de Casas' 
+                                            price='$80 x hora' 
+                                            opiniones='32' 
+                                            contact_number='+98 (265) 3652 - 05 8' 
+                                            location='Barrio XYZ, Bogotá 8' 
+                                            availability='LIBRE DESDE EL 30/7' 
+                                            image="assets/images/en-tu-zona-limpieza-casas.jpg"
+                                        />
                                     </div>
                                 </div>
                             </div>
@@ -1036,117 +659,7 @@ const ListadoMapa = () => {
         </section>
         {/* <!--====== End listing Section ======--> */}
         {/* <!--====== Start Footer ======--> */}
-        <footer className="footer-area">
-            <div className="footer-wrapper-one fondo-verde-oscuro pt-90">
-                <div className="footer-widget pb-60">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-lg-4 col-md-6 col-sm-12">
-                                <div className="widget about-widget mb-40 wow fadeInUp" data-wow-delay="10ms">
-                                    <h4 className="widget-title">Pruebalo desde tu Movil</h4>
-                                    <ul className="button">
-                                        <li>
-                                            <a href="#" className="app-btn android-btn">
-                                                <div className="icon">
-                                                    <i className="ti-android"></i>
-                                                </div>
-                                                <div className="info">
-                                                    <span>Descargalo en</span>
-                                                    <h6>Google Play</h6>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" className="app-btn apple-btn">
-                                                <div className="icon">
-                                                    <i className="ti-apple"></i>
-                                                </div>
-                                                <div className="info">
-                                                    <span>Descargalo en</span>
-                                                    <h6>App Store</h6>
-                                                </div>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                    <div className="footer-social">
-                                        <h4>Follow Us</h4>
-                                        <ul className="social-link">
-                                            <li><a href="#"><i className="ti-facebook"></i></a></li>
-                                            <li><a href="#"><i className="ti-instagram"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-md-6 col-sm-12">
-                                <div className="widget recent-post-widget mb-40 wow fadeInUp" data-wow-delay="20ms">
-                                    <h4 className="widget-title">Novedades</h4>
-                                    <ul className="post-widget-list">
-                                        <li className="post-content-item">
-                                            <div className="post-title-date">
-                                                <span className="posted-on"><a href="#" className="verdes-logo">22 Agosto - 2024</a></span>
-                                                <h6 className="title"><a href="">Nueva Versión del Presupuestador</a></h6>
-                                            </div>
-                                        </li>
-                                        <li className="post-content-item">
-                                            <div className="post-title-date">
-                                                <span className="posted-on"><a href="#" className="verdes-logo">12 Septiembre - 2024</a></span>
-                                                <h6 className="title"><a href="">Adjunta fotos y videos en el Presupuestador</a></h6>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div className="col-lg-2 col-md-6 col-sm-12">
-                                <div className="widget categories-widget mb-40 wow fadeInUp" data-wow-delay="30ms">
-                                    <h4 className="widget-title">Destacados</h4>
-                                    <ul className="categories-link">
-                                        <li><a href="precios-fijados.html">Precios Fijados</a></li>
-                                        <li><a href="en-tu-zona.html">En Tu Zona</a></li>
-                                        <li><a href="promociones.html">Promociones</a></li>
-                                        <li><a href="consejos.html">Consejos</a></li>
-										<li><a href="contactenos.html">Contáctenos</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-md-6 col-sm-12">
-                                <div className="widget newsletter-widget mb-40 wow fadeInUp" data-wow-delay="40ms">
-                                    <h4 className="widget-title">Newsletter</h4>
-                                    <p>Recibe Cupones de Descuento, Ofertas y Novedades</p>
-                                    <form>
-                                        <div className="form_group">
-                                            <input type="email" className="form_control" placeholder="Ingresa tu Email" name="email" required/>
-                                        </div>
-                                        <div className="form_group">
-                                            <button className="main-btn">Subscribete</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="copyright-area">
-                    <div className="container">
-                        <div className="row align-items-center">
-                            <div className="col-lg-6">
-                                <div className="copyright-text">
-                                    <p>Desea ver su Servicio en SOLUKAY? <span>PUBLIQUE AQUI</span></p>
-                                </div>
-                            </div>
-                            <div className="col-lg-6">
-                                <div className="copyright-link">
-                                    <ul>
-                                        <li><a href="#">Terminos & Condiciones</a></li>
-                                        <li><a href="#">Ayuda</a></li>
-                                        <li><a href="#">Trabajar Con Nosotros</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
+        <Footer />
         </body>
         </>
         );

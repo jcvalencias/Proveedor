@@ -10,20 +10,6 @@ const Admin = () => {
     const toggleTheme = (themeName) => {
         setTheme(themeName);
     };
-    const NavBar = () => {
-        return (
-            <nav className="navbar">
-                <div className="navbar-logo">
-                    <Link to="/">Solukay</Link>
-                </div>
-                <div className="navbar-links">
-                    <Link to="/admin" className="nav-link">Admin Dashboard</Link>
-                    <Link to="/create-user" className="nav-link">Create User</Link>
-                    <Link to="/settings" className="nav-link">Settings</Link>
-                </div>
-            </nav>
-        );
-    };
 
     return (
         <div className={`app-container ${theme}`}>
