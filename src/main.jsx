@@ -13,6 +13,7 @@ import Admin from './Components/Admin/Admin.jsx';
 import SignIn from './Components/SignUp/SignIn.jsx';
 import SignUp from './Components/SignUp/SignUp.jsx';
 import ListadoMapa from './Components/Search/listado-con-mapa.jsx';
+import AddListing from './Components/Proveedor/AddListing.jsx';
 
 
 // axios.defaults.xsrfHeaderName = "X-CSRFTOKEN";
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
   {
     path: "/listadoMapa",
     element: <ListadoMapa/>
+  },
+  {
+    path: "/Addlisting",
+    element: <AddListing/>
   },
 ]);
 

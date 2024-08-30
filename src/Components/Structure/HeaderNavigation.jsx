@@ -67,7 +67,7 @@ const HeaderNavigation = () => {
                       <a href="#">Pages</a>
                       <ul className="sub-menu">
                         <li className="menu-item">
-                          <a href="add-listing.html">Add Listing</a>
+                          <a href="/Addlisting">Add Listing</a>
                         </li>
                         <li className="menu-item has-children">
                           <a href="#">Products</a>
@@ -122,7 +122,7 @@ const HeaderNavigation = () => {
                     </a>
                   </li>
                   <li className="hero-nav-btn">
-                    <a href="add-listing.html" className="main-btn icon-btn">
+                    <a href="/Addlisting" className="main-btn icon-btn">
                       Publica tu Servicio
                     </a>
                   </li>

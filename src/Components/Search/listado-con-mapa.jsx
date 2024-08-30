@@ -2,6 +2,7 @@ import React from "react";
 import PreLoader from "../Structure/Preloader";
 import Header from "../Structure/Header";
 import Footer from "../Structure/Footer";
+import Options from "../Structure/Utils/Options";
 
 const ListadoMapa = () => {
 
@@ -17,13 +18,16 @@ const ListadoMapa = () => {
         <div className="form_group">
             <select className="wide">
                 <option data-dsplay="Category">{name}</option>
-                {list.map(item => (<option value={item}>{item}</option>))}
+                <Options list={list} />
             </select>
         </div>
     </div>);
     }
 
-    const ResultServicio = ({name, category, price, opiniones, contact_number, location, availability, image}) => {
+    const ResultServicio = ({name, category, price, opiniones, contact_number, location, availability, image, rating}) => {
+
+        const classRating = "ratings ratings-" + rating + " fondo-opiniones"
+
         return (
             <div className="col-lg-4 col-md-6 col-sm-12">
                 <div className="listing-item listing-grid-item-two mb-30">
@@ -31,7 +35,7 @@ const ListadoMapa = () => {
                         <img src={image} alt={category}/>
                         <a href="#" className="cat-btn"><i className="flaticon-chef"></i></a>
                         <span className="featured-btn">{price}</span>
-                        <ul className="ratings ratings-four fondo-opiniones">
+                        <ul className={classRating}>
                             <li className="star"><i className="flaticon-star-1"></i></li>
                             <li className="star"><i className="flaticon-star-1"></i></li>
                             <li className="star"><i className="flaticon-star-1"></i></li>
@@ -147,6 +151,7 @@ const ListadoMapa = () => {
                                             location='Barrio XYZ, Bogotá' 
                                             availability='LIBRE HOY' 
                                             image='assets/images/en-tu-zona-baby-sitter.jpg'
+                                            rating='three'
                                             />
                                         <ResultServicio 
                                             name='Cuidado de Niños 2' 
@@ -157,6 +162,7 @@ const ListadoMapa = () => {
                                             location='Barrio XYZ, Bogotá 2' 
                                             availability='LIBRE HOY 2' 
                                             image='assets/images/en-tu-zona-baby-sitter.jpg'
+                                            rating='four'
                                             />
                                         <ResultServicio 
                                             name='Cuidado de Niños 3' 
@@ -167,6 +173,7 @@ const ListadoMapa = () => {
                                             location='Barrio XYZ, Bogotá 3' 
                                             availability='LIBRE HOY 3' 
                                             image='assets/images/en-tu-zona-baby-sitter.jpg'
+                                            rating='two'
                                             />
                                         <ResultServicio 
                                             name='Cuidado de Niños 4' 
@@ -177,6 +184,7 @@ const ListadoMapa = () => {
                                             location='Barrio XYZ, Bogotá 4' 
                                             availability='LIBRE HOY 4' 
                                             image='assets/images/en-tu-zona-baby-sitter.jpg'
+                                            rating='five'
                                             />
                                         <ResultServicio 
                                             name='Cuidado de Niños 5' 
@@ -187,6 +195,7 @@ const ListadoMapa = () => {
                                             location='Barrio XYZ, Bogotá 5' 
                                             availability='LIBRE HOY 5' 
                                             image='assets/images/en-tu-zona-baby-sitter.jpg'
+                                            rating='four'
                                             />
                                         <ResultServicio 
                                             name='Cuidado de Niños 6' 
@@ -197,6 +206,7 @@ const ListadoMapa = () => {
                                             location='Barrio XYZ, Bogotá 6' 
                                             availability='LIBRE HOY 6' 
                                             image='assets/images/en-tu-zona-baby-sitter.jpg'
+                                            rating='zero'
                                             />
                                         <ResultServicio 
                                             name='Cuidado de Niños 7' 
@@ -207,6 +217,7 @@ const ListadoMapa = () => {
                                             location='Barrio XYZ, Bogotá 7' 
                                             availability='LIBRE HOY 7' 
                                             image='assets/images/en-tu-zona-baby-sitter.jpg'
+                                            rating='four'
                                             />
                                         <ResultServicio 
                                             name='Cuidado de Niños 8' 
@@ -217,6 +228,7 @@ const ListadoMapa = () => {
                                             location='Barrio XYZ, Bogotá 8' 
                                             availability='LIBRE HOY 8' 
                                             image='assets/images/en-tu-zona-baby-sitter.jpg'
+                                            rating='five'
                                             />
                                     </div>
                                 </div>
