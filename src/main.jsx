@@ -15,9 +15,9 @@ import SignUp from './Components/SignUp/SignUp.jsx';
 import ListadoMapa from './Components/Search/listado-con-mapa.jsx';
 
 
-axios.defaults.xsrfHeaderName = "X-CSRFTOKEN";
-axios.defaults.xsrfCookieName = "csrftoken";
-axios.defaults.withCredentials = true;
+// axios.defaults.xsrfHeaderName = "X-CSRFTOKEN";
+// axios.defaults.xsrfCookieName = "csrftoken";
+// axios.defaults.withCredentials = true;
 
 const router = createBrowserRouter([
   {

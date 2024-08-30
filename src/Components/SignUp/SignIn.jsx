@@ -3,29 +3,6 @@ import axios from 'axios';
 import './Auth.css';
 import Header from '../Structure/Header';
 
-
-
-// function getCSRFToken() {
-//     let cookieValue = null;
-//     if (document.cookie && document.cookie !== '') {
-//         const cookies = document.cookie.split(';');
-//         for (let i = 0; i < cookies.length; i++) {
-//             const cookie = cookies[i].trim();
-//             if (cookie.substring(0, 10) === 'csrftoken=') {
-//                 cookieValue = decodeURIComponent(cookie.substring(10));
-//                 break;
-//             }
-//         }
-//     }
-
-//     console.log(cookieValue);
-//     return cookieValue;
-// }
-
-// const csrfToken = getCSRFToken();
-
-// console.log(csrfToken);
-
 const SignIn = () => {
     const [formData, setFormData] = useState({
         email: '',
