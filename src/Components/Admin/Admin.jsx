@@ -13,7 +13,7 @@ const Admin = () => {
 
     return (
         <div className={`app-container ${theme}`}>
-            <Header />
+            {/* <Header /> */}
             <div className="theme-toggle-buttons">
                 <button onClick={() => toggleTheme('')} className="theme-button default">Default Theme</button>
                 <button onClick={() => toggleTheme('dark-theme')} className="theme-button dark">Dark Theme</button>
