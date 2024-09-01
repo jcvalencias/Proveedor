@@ -23,7 +23,7 @@ import AddListing from './Components/Proveedor/AddListing.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <SignIn />,
   },
   {
     path: "/admin",

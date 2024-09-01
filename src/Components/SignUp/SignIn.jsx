@@ -6,9 +6,10 @@ const SignIn = () => {
         username: '',
         password: '',
     });
-    const [csrfToken, setCsrfToken] = useState('eOiqcjG0FRV7hrSOPunroDLGKtJEyZVO');
+    const [csrfToken, setCsrfToken] = useState();
     const [error, setError] = useState('');
 
+    
     // Function to retrieve CSRF token from cookies
     const getCsrfToken = () => {
         let cookieValue = null;
@@ -27,26 +28,26 @@ const SignIn = () => {
     };
 
     // Fetch CSRF token on component mount
-    // useEffect(() => {
-    //     const token = getCsrfToken();
-    //     if (!token) {
-    //         fetch('https://e655-190-24-56-12.ngrok-free.app/signup/get-csrf-token/', {
-    //             credentials: 'include',  // Include cookies in the request
-    //         })
-    //             .then(response => {response
-    //                 console.log(document.cookie)
-    //             })
-    //             .then(data => {
-    //                 setCsrfToken(getCsrfToken());
-    //                 console.log(csrfToken);
-    //             })
-    //             .catch(error => {
-    //                 console.error('Could not fetch CSRF token:', error);
-    //             });
-    //     } else {
-    //         setCsrfToken(token);
-    //     }
-    // }, []);
+    useEffect(() => {
+        const token = getCsrfToken();
+        if (!token) {
+            fetch('https://e860-179-1-208-4.ngrok-free.app/signup/get-csrf-token/', {
+                credentials: 'include',  // Include cookies in the request
+            })
+                .then(response => {response
+                    console.log(document.querySelector('[name=csrfmiddlewaretoken]'))
+                })
+                .then(data => {
+                    setCsrfToken(document.querySelector('[name=csrfmiddlewaretoken]').value);
+                    console.log(csrfToken);
+                })
+                .catch(error => {
+                    console.error('Could not fetch CSRF token:', error);
+                });
+        } else {
+            setCsrfToken(token);
+        }
+    }, []);
 
 
     const handleChange = (e) => {
@@ -59,11 +60,11 @@ const SignIn = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        fetch('http://127.0.0.1:8000/accounts/login/', {
+        fetch('https://e860-179-1-208-4.ngrok-free.app/accounts/login/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'X-CSRFToken': getCsrfToken(),  // Send the CSRF token in the headers
+                'X-CSRFToken': csrfToken,  // Send the CSRF token in the headers
             },
             credentials: 'include',  // Include cookies in the request
             body: JSON.stringify(formData),
