@@ -4,6 +4,7 @@ import App from './App.jsx'
 import {
   createBrowserRouter,
   RouterProvider,
+  Navigate
 } from "react-router-dom";
 import './index.css'
 import axios from 'axios';
@@ -14,16 +15,23 @@ import SignIn from './Components/SignUp/SignIn.jsx';
 import SignUp from './Components/SignUp/SignUp.jsx';
 import ListadoMapa from './Components/Search/listado-con-mapa.jsx';
 import AddListing from './Components/Proveedor/AddListing.jsx';
+import ProtectedRoute from './ProtetedRoute.jsx';
 
 
-// axios.defaults.xsrfHeaderName = "X-CSRFTOKEN";
-// axios.defaults.xsrfCookieName = "csrftoken";
-// axios.defaults.withCredentials = true;
+function Logout() {
+  localStorage.clear()
+  return <Navigate to='SignIn'/>
+}
+
+function RegisterAndLogout() {
+  localStorage.clear()
+  return <Navitage to='SignUp' />
+}
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <ProtectedRoute><App /></ProtectedRoute>,
   },
   {
     path: "/admin",
