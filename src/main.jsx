@@ -15,7 +15,9 @@ import SignIn from './Components/SignUp/SignIn.jsx';
 import SignUp from './Components/SignUp/SignUp.jsx';
 import ListadoMapa from './Components/Search/listado-con-mapa.jsx';
 import AddListing from './Components/Proveedor/AddListing.jsx';
-import ProtectedRoute from './ProtetedRoute.jsx';
+import ProtectedRoute from './Components/JWT/ProtetedRoute.jsx';
+import Login from './Components/JWT/login.jsx';
+import Register from './Components/JWT/Register.jsx';
 
 
 function Logout() {
@@ -39,11 +41,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/SignIn",
-    element: <SignIn />
+    element: <Login />
   },
   {
     path: "/SignUp",
-    element: <SignUp />
+    element: <Register />
   },
   {
     path: "/listadoMapa",
