@@ -1,9 +1,12 @@
 import axios from "axios"
 import { ACCESS_TOKEN } from "./constants"
 
+axios.defaults.xsrfCookieName = 'csrftoken'
+axios.defaults.xsrfHeaderName = 'X-CSRFToken'
+
 const api = axios.create({
-    baseURL: import.meta.env.VITE_API_URL
-}, console.log(import.meta.env.VITE_API_URL))
+    baseURL: import.meta.env.VITE_API_URL,
+})
 
 api.interceptors.request.use(
     (config) => {
