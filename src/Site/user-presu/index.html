@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Quotare - Multipurpose Quotation Request HTML Wizard Form">
+    <meta name="author" content="Ansonika">
+    <title>Solukay | Presupuestador Usuario</title>
+    
+    <!-- Favicons-->
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" type="image/x-icon" href="img/apple-touch-icon-57x57-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="img/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="img/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="img/apple-touch-icon-144x144-precomposed.png">
+
+    <!-- GOOGLE WEB FONT -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- BASE CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+	<link href="css/vendors.css" rel="stylesheet">
+
+    <!-- YOUR CUSTOM CSS -->
+    <link href="css/custom.css" rel="stylesheet">
+
+</head>
+
+<body class="bg_style_2">
+
+    <div id="preloader">
+        <div data-loader="circle-side"></div>
+    </div><!-- /Preload -->
+
+    <div id="loader_form">
+        <div data-loader="circle-side-2"></div>
+    </div><!-- /loader_form -->
+
+<div class="min-vh-100 d-flex flex-column">
+
+    <header>
+        <div class="container-fluid">
+            <div class="row d-flex align-items-center">
+                <div class="col-6">
+                    <a href="index.html"><img src="img/logo/logo-2.png" alt="" width="168" height="48" class="img-fluid"></a>
+                </div>
+                <div class="col-6">
+                    <div id="social">
+                        <ul>
+                            <li><a href="#0"><i class="bi bi-facebook"></i></a></li>
+                            <li><a href="#0"><i class="bi bi-instagram"></i></a></li>
+                        </ul>
+                    </div>
+                    <!-- /social -->
+                </div>
+            </div>
+        </div>
+        <!-- /container -->
+    </header>
+    <!-- /header -->
+
+    <div class="container-fluid d-flex flex-column my-auto py-3">
+        <div>
+            <div id="wizard_container">
+                <div id="top-wizard">
+                    <div id="progressbar"></div>
+                </div>
+                <!-- /top-wizard -->
+                <div class="decorative_bg bg_4"></div>
+                <form id="wrapped" method="POST">
+                    <input id="website" name="website" type="text" value="">
+                    <!-- Leave input above for security protection, read docs for details -->
+                    <div id="middle-wizard">
+
+                        <div class="step">
+                            <div class="question_title">
+                                <h3>Qué <span class="highlight">tipo de Soluciones</span> estás buscando?</h3>
+                                <p>Según lo que elijas, en el siguiente paso te ofreceremos opciones más específicas</p>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col-lg-10 col-md-10">
+                                    <div class="list_block_icons">
+                                        <ul>
+                                            <li>
+                                                <div class="item form-group mb-0">
+                                                    <input id="hogar" type="radio" name="product_opt" value="hogar" class="required">
+                                                    <label for="hogar">
+                                                        <img src="img/icono-hogar.png" alt="Soluciones para el Hogar" width="60" height="60"><strong>para el Hogar</strong>
+                                                    </label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item form-group mb-0">
+                                                    <input id="trabajo" type="radio" name="product_opt" value="trabajo" class="required">
+                                                    <label for="trabajo">
+                                                        <img src="img/icono-trabajo.png" alt="Soluciones para el Trabajo" width="60" height="60"><strong>para el Trabajo</strong>
+                                                    </label>
+                                                </div>
+                                            </li>
+											<li>
+                                                <div class="item form-group mb-0">
+                                                    <input id="pareja" type="radio" name="product_opt" value="pareja" class="required">
+                                                    <label for="pareja">
+                                                        <img src="img/icono-pareja.png" alt="Soluciones para La Pareja" width="60" height="60"><strong>para La Pareja</strong>
+                                                    </label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item form-group mb-0">
+                                                    <input id="ella" type="radio" name="product_opt" value="ella" class="required">
+                                                    <label for="ella">
+                                                        <img src="img/icono-ella.png" alt="Soluciones para La Mujer" width="60" height="60"><strong>para Ella</strong>
+                                                    </label>
+                                                </div>
+                                            </li>
+											<li>
+                                                <div class="item form-group mb-0">
+                                                    <input id="el" type="radio" name="product_opt" value="el" class="required">
+                                                    <label for="el">
+                                                        <img src="img/icono-el.png" alt="Soluciones para El Hombre" width="60" height="60"><strong>para El</strong>
+                                                    </label>
+                                                </div>
+                                            </li>
+											
+                                        </ul>
+                                    </div>
+                                    <!-- /list_block-->
+                                    <small>* Solo puedes elegir una opción</small>
+                                </div>
+                            </div>
+                            <!-- /row -->
+                        </div>
+                        <!-- /Step -->
+                        <div class="step">
+                            <div class="question_title">
+                                <h3>...y más precisamente<br><span class="highlight">cuales de estas</span> necesitas?</h3>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col-lg-6 col-md-10">
+                                    <div class="list_block">
+                                        <ul>
+                                            <li>
+                                                <div class="checkbox_radio_container">
+                                                    <input type="checkbox" id="albanil" name="seo_services[]" class="required" value="Albanil">
+                                                    <label class="checkbox" for="albanil"></label>
+                                                    <label for="albanil" class="wrapper">Albañil</label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="checkbox_radio_container">
+                                                    <input type="checkbox" id="pintor" name="seo_services[]" class="required" value="Pintor">
+                                                    <label class="checkbox" for="pintor"></label>
+                                                    <label for="pintor" class="wrapper">Pintor</label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="checkbox_radio_container">
+                                                    <input type="checkbox" id="electricista" name="seo_services[]" class="required" value="Electricista">
+                                                    <label class="checkbox" for="electricista"></label>
+                                                    <label for="electricista" class="wrapper">Electricista</label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="checkbox_radio_container">
+                                                    <input type="checkbox" id="plomero" name="seo_services[]" class="required" value="Plomero">
+                                                    <label class="checkbox" for="plomero"></label>
+                                                    <label for="plomero" class="wrapper">Plomero</label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="checkbox_radio_container">
+                                                    <input type="checkbox" id="gasista" name="seo_services[]" class="required" value="Gasista">
+                                                    <label class="checkbox" for="gasista"></label>
+                                                    <label for="gasista" class="wrapper">Gasista</label>
+                                                </div>
+                                            </li>
+                                        </ul>
+										
+                                    </div>
+                                    <!-- /list_block-->
+                                </div>
+								
+								<div class="col-lg-6 col-md-10">
+                                    <div class="list_block">
+                                        <ul>
+                                            <li>
+                                                <div class="checkbox_radio_container">
+                                                    <input type="checkbox" id="techista" name="seo_services[]" class="required" value="Techista">
+                                                    <label class="checkbox" for="techista"></label>
+                                                    <label for="techista" class="wrapper">Techista</label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="checkbox_radio_container">
+                                                    <input type="checkbox" id="jardinero" name="seo_services[]" class="required" value="Jardinero">
+                                                    <label class="checkbox" for="jardinero"></label>
+                                                    <label for="jardinero" class="wrapper">Jardinero</label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="checkbox_radio_container">
+                                                    <input type="checkbox" id="piletero" name="seo_services[]" class="required" value="Limpieza de Piscinas">
+                                                    <label class="checkbox" for="piletero"></label>
+                                                    <label for="piletero" class="wrapper">Limpieza de Piscinas</label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="checkbox_radio_container">
+                                                    <input type="checkbox" id="limpieza" name="seo_services[]" class="required" value="Limpieza del Hogar">
+                                                    <label class="checkbox" for="limpieza"></label>
+                                                    <label for="limpieza" class="wrapper">Limpieza del Hogar</label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="checkbox_radio_container">
+                                                    <input type="checkbox" id="cerrajero" name="seo_services[]" class="required" value="Cerrajero">
+                                                    <label class="checkbox" for="cerrajero"></label>
+                                                    <label for="cerrajero" class="wrapper">Cerrajero</label>
+                                                </div>
+                                            </li>
+                                        </ul>
+										
+                                    </div>
+                                    <!-- /list_block-->
+                                </div>
+								
+                            </div>
+                            <!-- /row -->
+                        </div>
+                        <!-- /Step -->
+						
+						<!-- /Step -->
+                        <div class="step">
+                            <div class="question_title">
+                                <h3><span class="highlight">Explica en detalle</span><br>que es lo que debes solucionar</h3>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col-md-10">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="group">
+                                                <label for="trabajo-problema">Cuentanos aquí cual es el problema</label>
+                                                <textarea name="trabajo-problema" id="trabajo-problema" class="form-control required"></textarea>
+                                            </div>
+                                            <!-- /form-group -->
+                                        </div>
+                                    </div>
+                                    <!-- /row -->
+                                </div>
+                            </div>
+                            <!-- /row -->
+                        </div>
+                        <!-- /Step -->
+						
+						<!-- /Step -->
+                        <div class="step">
+                            <div class="question_title">
+                                <h3>Tienes <span class="highlight">alguna foto</span><br>que desees agregar?</h3>
+								<p>Adjunta una que muestre bien en detalle el problema a solucionar</p>
+                            </div>
+                            <div class="row justify-content-center">
+							 
+						        <div class="col-md-10">
+						            <div class="mb-3 form-floating">										
+										<div class="fileupload">
+											<input type="file" name="fileupload" accept="image/*,.pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" onchange="getVals(this, 'fileupload');">
+										</div>
+						            </div>
+									<div class="mb-3 form-floating">										
+										<div class="fileupload">
+											<input type="file" name="fileupload" accept="image/*,.pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" onchange="getVals(this, 'fileupload');">
+										</div>
+						            </div>
+									<div class="mb-3 form-floating">										
+										<div class="fileupload">
+											<input type="file" name="fileupload" accept="image/*,.pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" onchange="getVals(this, 'fileupload');">
+										</div>
+						            </div>
+						        </div>
+						    </div>
+						    <!-- /row -->
+                        </div>
+                        <!-- /Step -->
+						
+						<div class="step">
+                            <div class="question_title">
+                                <h3>Ya has definido <span class="highlight">Tu Presupuesto?</span></h3>
+                                <p>Si no lo sabes, puedes saltearte este paso</p>
+                            </div>
+                            <div class="row justify-content-center mt-5">
+                                <div class="col-lg-7 col-md-10">
+                                    <div class="rounded_slider">
+                                        <div id="budget_slider"></div>
+                                        <p>Esto ayudará a que te pasen presupuestos acorder a tu poder adquisitivo</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /Step -->
+						
+                        <div class="submit step">
+                            <div class="question_title">
+                                <h3>Por favor, completa con<br><span class="highlight">Tus Datos de Contacto</span></h3>
+                                <p>Un resumen se te enviará a su Email.</p>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col-md-7">
+                                    <div class="form-group">
+                                        <input type="text" name="first_last_name" id="first_last_name" class="form-control required">
+                                        <label for="first_last_name">Nombre y Apellido</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="email" name="email" id="email" class="form-control required">
+                                        <label for="email">Su Email</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" name="telephone" id="telephone" class="form-control required">
+                                        <label for="telephone">Su Telefono</label>
+                                    </div>
+                                    <div class="terms">
+                                        <label class="container_check">Por favor lee y acepta nuestros <a href="#" data-bs-toggle="modal" data-bs-target="#terms-txt">Términos y Condiciones</a>
+                                            <input type="checkbox" name="terms" value="Yes" class="required">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /row -->
+                        </div>
+                        <!-- /Step -->
+                    </div>
+                    <!-- /middle-wizard -->
+                    <div id="bottom-wizard">
+                        <button type="button" name="backward" class="backward btn_1">Anterior</button>
+                        <button type="button" name="forward" class="forward btn_1">Siguiente</button>
+                        <button type="submit" name="process" class="submit btn_1">ENVIAR</button>
+                    </div>
+                    <!-- /bottom-wizard -->
+                </form>
+            </div>
+            <!-- /Wizard container -->
+        </div>
+    </div>
+    <!-- /Container -->
+
+    <footer>
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-sm-6">
+                    <p>© Solukay | Presupuestador para Usuarios</p>
+                </div>
+            </div>
+            <!-- /Row -->
+        </div>
+        <!-- /Container -->
+    </footer>
+    <!-- /Footer -->
+
+</div>
+<!-- /flex-column -->
+
+
+<!-- Modal terms -->
+<div class="modal fade" id="terms-txt" tabindex="-1" role="dialog" aria-labelledby="termsLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="termsLabel">Terms and conditions</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Lorem ipsum dolor sit amet, in porro albucius qui, in <strong>nec quod novum accumsan</strong>, mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex prompta alterum sanctus, pro ne quod dicunt sensibus.</p>
+                <p>Lorem ipsum dolor sit amet, in porro albucius qui, in nec quod novum accumsan, mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex prompta alterum sanctus, pro ne quod dicunt sensibus. Lorem ipsum dolor sit amet, <strong>in porro albucius qui</strong>, in nec quod novum accumsan, mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex prompta alterum sanctus, pro ne quod dicunt sensibus.</p>
+                <p>Lorem ipsum dolor sit amet, in porro albucius qui, in nec quod novum accumsan, mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex prompta alterum sanctus, pro ne quod dicunt sensibus.</p>
+            </div>
+        </div>
+        <!-- /modal-content -->
+    </div>
+    <!-- /modal-dialog -->
+</div>
+<!-- /modal -->
+	
+<!-- COMMON SCRIPTS -->
+<script src="js/common_scripts.min.js"></script>
+<script src="js/common_functions.js"></script>
+
+<!-- SPECIFIC SCRIPTS -->
+<script src="js/wizard_func_4.js"></script>
+
+</body>
+</html>

@@ -10,8 +10,8 @@ import './index.css'
 
 // pages
 import Admin from './Components/Admin/Admin.jsx';
-import SignIn from './Components/SignUp/SignIn.jsx';
-import SignUp from './Components/SignUp/SignUp.jsx';
+import SignIn from './Components/Authentication/SignIn.jsx';
+import SignUp from './Components/Authentication/SignUp.jsx';
 import ListadoMapa from './Components/Search/listado-con-mapa.jsx';
 import AddListing from './Components/Proveedor/AddListing.jsx';
 import ProtectedRoute from './Components/JWT/ProtetedRoute.jsx';
@@ -45,7 +45,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/SignUp",
-    element: <Register />
+    element: <SignUp />
   },
   {
     path: "/logout",
