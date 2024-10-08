@@ -732,10 +732,6 @@ hr {
   background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
-.text-white {
-  color: #ffffff !important;
-}
-
 .border-white {
   color: #ffffff !important;
 }
@@ -913,7 +909,7 @@ body {
 }
 
 .auth-head {
-  background-image: url(../images/bg-img-3.png);
+  background-image: url(../../images/Authentication/bg-img-3.png);
   background-size: cover;
   background-position: center;
 }
@@ -952,7 +948,7 @@ body {
 }
 
 .authentication-box {
-  background-image: url(../images/bg-img-4.png);
+  background-image: url(../../images/Authentication/bg-img-4.png);
   background-size: cover;
   background-position: center;
 }
@@ -1118,11 +1114,9 @@ button {
 
 
 .gsi-material-button {
-  user-select: none;
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
-  appearance: none;
   -webkit-appearance: none;
   background-color: WHITE;
   background-image: none;
@@ -1153,11 +1147,9 @@ button {
 
 
 .gsi-material-button {
-  user-select: none;
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
-  appearance: none;
   -webkit-appearance: none;
   background-color: WHITE;
   background-image: none;

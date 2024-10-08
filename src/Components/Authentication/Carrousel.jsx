@@ -4,7 +4,7 @@ const Carrousel = () => {
     return (
     <div className="col-lg-6">
         <div className="bg-login dissapear">
-        <img src="images/Authentication/bg-login-1.png" className="img-fluid" alt="" />
+        <img src="assets/Authentication/images/bg-login-1.png" className="img-fluid" alt="" />
         <div className="auth-contain">
             <div
             id="carouselExampleIndicators"
@@ -35,7 +35,7 @@ const Carrousel = () => {
             </div>
             <div className="carousel-inner">
                 <div className="carousel-item active">
-                <div className="text-center text-white my-4 p-4">
+                <div className="text-center text-white my-4 p-4" >
                     <h3>
                     Servicios con Descuentos
                     <br />

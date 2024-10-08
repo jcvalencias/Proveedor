@@ -3,8 +3,6 @@ import api from "../../api"
 import { useNavigate } from "react-router-dom";
 import { ACCESS_TOKEN, REFRESH_TOKEN } from "../../constants";
 import Carrousel from "./Carrousel";
-import './css/style.css';
-import './css/remixicon.css'
 
 const SignUp = () => {
     const [username, setUsername] = useState("")
@@ -34,7 +32,6 @@ const SignUp = () => {
     return (
         <>
             <div id="fb-root"></div>
-            <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v20.0" nonce="DktePRJW"></script>
             
             <div className="account-pages">
             <div className="container">
@@ -45,7 +42,7 @@ const SignUp = () => {
                     <div className="auth-box">
                     <div className="mb-4 mb-md-5 text-center">
                         <a href="javascript:void(0);" className="auth-logo">
-                        <img src="images/Authentication/logo-color.png" height={48} alt="Solukay logo" />
+                        <img src="assets/Authentication/images/logo-color.png" height={48} alt="Solukay logo" />
                         </a>
                     </div>
                     <div className="auth-content">
