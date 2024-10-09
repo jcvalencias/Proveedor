@@ -41,7 +41,7 @@ const SignUp = () => {
                 <div className="col-lg-6">
                     <div className="auth-box">
                     <div className="mb-4 mb-md-5 text-center">
-                        <a href="javascript:void(0);" className="auth-logo">
+                        <a className="auth-logo">
                         <img src="assets/Authentication/images/logo-color.png" height={48} alt="Solukay logo" />
                         </a>
                     </div>

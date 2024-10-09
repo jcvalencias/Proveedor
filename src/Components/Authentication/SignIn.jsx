@@ -7,7 +7,7 @@ import Carrousel from "./Carrousel";
 const SignIn = () => {
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
-    // const [email, setEmail] = useState("")
+    const [email, setEmail] = useState("")
     const [loading, setLoading] = useState(false)
     const navigate = useNavigate()
 
@@ -16,18 +16,17 @@ const SignIn = () => {
         e.preventDefault();
 
         try {
-            const res = await api.post("/signup/token/", {username, email, password})
-            
+            const res = await api.post("/signup/token/", {username, password})
             localStorage.setItem(ACCESS_TOKEN, res.data.access);
             localStorage.setItem(REFRESH_TOKEN, res.data.refresh);
                 
             navigate("/"); 
         }
         catch (error) {
-            alert(error)
+            alert(error);
         }
         finally {
-            setLoading(false)
+            setLoading(false);
         }
     }
     return (
@@ -40,7 +39,7 @@ const SignIn = () => {
                 <div className="col-lg-6">
                     <div className="auth-box">
                         <div className="mb-4 mb-md-5 text-center">
-                            <a href="javascript:void(0);" className="auth-logo">
+                            <a className="auth-logo">
                                 <img src="assets/Authentication/images/logo-color.png" height={48} alt="Solukay logo" />
                             </a>
                         </div>
@@ -50,7 +49,8 @@ const SignIn = () => {
                                 <h4 className="logo-verde-oscuro">Bienvenido de nuevo!</h4>
                                 <p className="text-muted mb-0">Ingrese sus datos para acceder</p>
                             </div>
-                            <form>
+                            <form onSubmit={handleSubmit}>
+                                
                                 <div className="form-floating form-floating-custom mb-3">
                                     <input 
                                     type="text" 
@@ -71,11 +71,14 @@ const SignIn = () => {
                                     value={password}
                                     onChange={(e) => setPassword(e.target.value)} 
                                     />
-                                    <button type="button" className="btn btn-link position-absolute h-100 end-0 top-0 redondeado10"
-                                        id="password-addon">
-                                        <i className="mdi mdi-eye-outline font-size-18 text-muted"></i>
-                                    </button>
-                                    <label htmlFor="input-password">Contraseña</label>
+                                    <button
+                                        type="button"
+                                        className="btn btn-link position-absolute h-100 end-0 top-0"
+                                        id="password-addon"
+                                        >
+                                        <i className="mdi mdi-eye-outline font-size-18 text-muted" />
+                                        </button>
+                                        <label htmlFor="input-password">Contraseña</label>
                                 </div>
 
                                 <div className="form-check">
