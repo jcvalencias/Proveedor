@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import api from "../../api"
 import { useNavigate } from "react-router-dom";
 import { ACCESS_TOKEN, REFRESH_TOKEN } from "../../constants"
@@ -29,6 +29,43 @@ const SignIn = () => {
             setLoading(false);
         }
     }
+
+    const PasswordInput = () => {
+        const [password, setPassword] = useState('');
+        const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+        const timeoutRef = useRef(null);
+    
+        const togglePasswordVisibility = () => {
+            setIsPasswordVisible(true);
+            // Automatically hide the password after 3 seconds
+            timeoutRef.current = setTimeout(() => {
+                setIsPasswordVisible(false);
+            }, 1000);
+        };
+    
+        return (
+            <div className="form-floating form-floating-custom form-password auth-pass-inputgroup mb-3">
+                <input
+                    type={isPasswordVisible ? 'text' : 'password'}
+                    className="form-control redondeado10"
+                    id="password-input"
+                    placeholder="Ingrese su Contraseña"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                />
+                <button
+                    type="button"
+                    className="btn btn-link position-absolute h-100 end-0 top-0"
+                    onClick={togglePasswordVisibility}
+                    onMouseDown={() => clearTimeout(timeoutRef.current)}  // Prevent multiple clicks clearing
+                >
+                    <i className={`mdi ${isPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'} font-size-18 text-muted`} />
+                </button>
+                <label htmlFor="password-input">Contraseña</label>
+            </div>
+        );
+    };
+
     return (
         <>
         <div id="fb-root"></div>
@@ -62,24 +99,7 @@ const SignIn = () => {
                                     <label htmlFor="input-username">Username</label>
                                 </div>
 
-                                <div className="form-floating form-floating-custom form-password auth-pass-inputgroup mb-3">
-                                    <input 
-                                    type="password" 
-                                    className="form-control redondeado10" 
-                                    id="password-input"
-                                    placeholder="Ingrese su Contraseña"
-                                    value={password}
-                                    onChange={(e) => setPassword(e.target.value)} 
-                                    />
-                                    <button
-                                        type="button"
-                                        className="btn btn-link position-absolute h-100 end-0 top-0"
-                                        id="password-addon"
-                                        >
-                                        <i className="mdi mdi-eye-outline font-size-18 text-muted" />
-                                        </button>
-                                        <label htmlFor="input-password">Contraseña</label>
-                                </div>
+                                <PasswordInput />
 
                                 <div className="form-check">
                                     <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
@@ -92,7 +112,7 @@ const SignIn = () => {
                                 </div>
                                 <hr />
                                 <div className="mt-3 text-center">
-                                    <p className="mb-0 text-muted">Aún no tiene una cuenta? Es gratis!<a href="signup.html"
+                                    <p className="mb-0 text-muted">Aún no tiene una cuenta? Es gratis!<a href="/signup"
                                             className="text-success fw-bold text-decoraton-underline ms-1"> Crear una Cuenta
                                         </a></p>
                                 </div>
@@ -148,10 +168,7 @@ const SignIn = () => {
                             data-layout="rounded"
                             data-auto-logout-link="false"
                             data-use-continue-as="false"
-                            style={{
-                                borderRadius: "24px!important",
-                                textAlign: "center"
-                            }}
+                            style={{ borderRadius: "24px!important", textAlign: "center" }}
                             />
                         </div>
                         </div>
