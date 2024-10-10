@@ -18,6 +18,7 @@ import ProtectedRoute from './Components/JWT/ProtetedRoute.jsx';
 import Login from './Components/JWT/login.jsx';
 import Register from './Components/JWT/Register.jsx';
 import Notes from './Components/notes/notes.jsx';
+import EmailVerification from './Components/Authentication/email-verification.jsx';
 
 
 function Logout() {
@@ -62,6 +63,10 @@ const router = createBrowserRouter([
   {
     path: "/notes",
     element: <Notes/>
+  },
+  {
+    path: "/emailverification",
+    element: <EmailVerification/>
   },
 ]);
 
