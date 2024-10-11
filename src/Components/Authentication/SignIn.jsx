@@ -4,6 +4,44 @@ import { useNavigate } from "react-router-dom";
 import { ACCESS_TOKEN, REFRESH_TOKEN } from "../../constants"
 import Carrousel from "./Carrousel";
 
+const PasswordInput = ({ password, setPassword }) => {
+    const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+    const timeoutRef = useRef(null);
+
+    const togglePasswordVisibility = () => {
+        setIsPasswordVisible(!isPasswordVisible);
+        if (!isPasswordVisible) {
+            // Automatically hide the password after 1 second
+            timeoutRef.current = setTimeout(() => {
+                setIsPasswordVisible(false);
+            }, 1000);
+        } else {
+            clearTimeout(timeoutRef.current);
+        }
+    };
+
+    return (
+        <div className="form-floating form-floating-custom form-password auth-pass-inputgroup mb-3">
+            <input
+                type={isPasswordVisible ? 'text' : 'password'}
+                className="form-control redondeado10"
+                id="password-input"
+                placeholder="Ingrese su Contraseña"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+            />
+            <button
+                type="button"
+                className="btn btn-link position-absolute h-100 end-0 top-0"
+                onClick={togglePasswordVisibility}
+            >
+                <i className={`mdi ${isPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'} font-size-18 text-muted`} />
+            </button>
+            <label htmlFor="password-input">Contraseña</label>
+        </div>
+    );
+};
+
 const SignIn = () => {
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
@@ -29,42 +67,6 @@ const SignIn = () => {
             setLoading(false);
         }
     }
-
-    const PasswordInput = () => {
-        const [password, setPassword] = useState('');
-        const [isPasswordVisible, setIsPasswordVisible] = useState(false);
-        const timeoutRef = useRef(null);
-    
-        const togglePasswordVisibility = () => {
-            setIsPasswordVisible(true);
-            // Automatically hide the password after 3 seconds
-            timeoutRef.current = setTimeout(() => {
-                setIsPasswordVisible(false);
-            }, 1000);
-        };
-    
-        return (
-            <div className="form-floating form-floating-custom form-password auth-pass-inputgroup mb-3">
-                <input
-                    type={isPasswordVisible ? 'text' : 'password'}
-                    className="form-control redondeado10"
-                    id="password-input"
-                    placeholder="Ingrese su Contraseña"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                />
-                <button
-                    type="button"
-                    className="btn btn-link position-absolute h-100 end-0 top-0"
-                    onClick={togglePasswordVisibility}
-                    onMouseDown={() => clearTimeout(timeoutRef.current)}  // Prevent multiple clicks clearing
-                >
-                    <i className={`mdi ${isPasswordVisible ? 'mdi-eye-off-outline' : 'mdi-eye-outline'} font-size-18 text-muted`} />
-                </button>
-                <label htmlFor="password-input">Contraseña</label>
-            </div>
-        );
-    };
 
     return (
         <>
@@ -99,7 +101,7 @@ const SignIn = () => {
                                     <label htmlFor="input-username">Username</label>
                                 </div>
 
-                                <PasswordInput />
+                                <PasswordInput password={password} setPassword={setPassword} />
 
                                 <div className="form-check">
                                     <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
