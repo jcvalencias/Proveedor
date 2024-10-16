@@ -57,7 +57,7 @@ const SignUp = () => {
             const res = await api.post("/signup/", { username, password, email });
 
             // Change to validate email page
-            navigate('/emailverification');
+            navigate('/emailverification', { state: { email } });
         } catch (error) {
             alert(error);
         } finally {

@@ -1,11 +1,14 @@
 import { useState, useEffect, useRef } from "react";
 import api from "../../api"
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { ACCESS_TOKEN, REFRESH_TOKEN } from "../../constants";
 import Carrousel from "./Carrousel";
 
 
 const EmailVerification = () => {
+    const location = useLocation();
+    const email = location.state?.email || "your-email@example.com";
+
     return (
         <>
         <div id="fb-root"></div>
@@ -34,14 +37,14 @@ const EmailVerification = () => {
                     <h4 className="logo-verde-oscuro">Revisa tu Email</h4>
                     <p className="text-muted">
                     Te hemos enviado un email de verificación
-                    <br />a tu email xxxx@email.com
+                    <br />a tu email {email}
                     <br />
                     Por favor, revísalo
                     </p>
                 </div>
                 <div className="mt-3">
                     <button className="btn shadow-none w-100 main-btn" type="submit">
-                    Revisa tu email
+                    Revisa tu Email
                     </button>
                 </div>
                 <hr />
