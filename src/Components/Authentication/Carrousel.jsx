@@ -36,7 +36,7 @@ const Carrousel = () => {
             <div className="carousel-inner">
                 <div className="carousel-item active">
                 <div className="text-center text-white my-4 p-4" >
-                    <h3>
+                    <h3 className="text-white">
                     Servicios con Descuentos
                     <br />
                     en tu Email
@@ -50,7 +50,7 @@ const Carrousel = () => {
                 </div>
                 <div className="carousel-item">
                 <div className="text-center text-white my-4 p-4">
-                    <h3>
+                    <h3 className="text-white">
                     Recibe Presupuestos
                     <br />
                     en tu email sin costo!
@@ -63,7 +63,7 @@ const Carrousel = () => {
                 </div>
                 <div className="carousel-item">
                 <div className="text-center text-white my-4 p-4">
-                    <h3>
+                    <h3 className="text-white">
                     También puedes
                     <br />
                     ofrecer tu servicio aquí!
