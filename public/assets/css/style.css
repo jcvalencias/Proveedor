@@ -123,6 +123,10 @@ input, textarea {
 img {
   max-width: 100%; }
 
+.BodyMain {
+  background-color: #fff;
+}
+
 body {
   font-weight: normal;
   font-style: normal;

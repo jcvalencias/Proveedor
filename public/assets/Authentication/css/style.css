@@ -13,6 +13,8 @@
 06.responsive
 
 *****************************************/
+
+
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
 body {
   font-family: 'Nunito', sans-serif;
@@ -816,7 +818,7 @@ hr {
   border-color: #e3e8ee;
 }
 
-body {
+.account-pages {
   background-color: #becd98;
 }
 
@@ -1264,3 +1266,7 @@ button {
   .redondeado10{
 	 border-radius: 10px!important;
  }
+
+ .text-white {
+  color: #fff!important;
+}
