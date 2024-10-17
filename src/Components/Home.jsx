@@ -8,6 +8,17 @@ import ListadoMapa from './Search/listado-con-mapa';
 
 const Home = () => {
 
+  const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        // Simulate a network request or any loading logic
+        const timer = setTimeout(() => {
+            setIsLoading(false); // Set loading to false when the content is ready
+        }, 1000);
+
+        return () => clearTimeout(timer); // Cleanup the timer if the component unmounts
+    }, []);
+
   const Body = () => {
     return (
       <>
@@ -1614,22 +1625,21 @@ const Home = () => {
 
   return (
   <>
-  {/* ====== Start Preloader ======*/}  
-    <PreLoader/>
-  {/*====== End Preloader ======*/}
-  {/*====== Start Header Section ======*/}
+  {isLoading ? (
+                <PreLoader /> // Show the preloader if isLoading is true
+            ) : (
+  <>
   <Header/>
-  {/*====== End Header Section ======*/}
-  {/*====== Start Form Admin Section ======*/}
+ 
   <Body />
-  {/* End Body */}
-  {/*====== Start Footer ======*/}
+  
   <Footer/>
-  {/*====== End Footer ======*/}
-  {/*====== back-to-top ======*/}
+  
   <a href="#" className="back-to-top">
     <i className="ti-angle-up" />
   </a>
+  </>
+  )}
   </>
 
   );
