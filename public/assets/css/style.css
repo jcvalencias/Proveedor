@@ -123,6 +123,10 @@ input, textarea {
 img {
   max-width: 100%; }
 
+.BodyMain {
+  background-color: #fff;
+}
+
 body {
   font-weight: normal;
   font-style: normal;
@@ -358,8 +362,8 @@ button {
     transform: translateY(-50%);
     text-align: center;
     z-index: 9999;
-    -webkit-animation: loadershake .8s linear;
-    animation: loadershake .8s linear; }
+    -webkit-animation: loadershake infinite .8s linear;
+    animation: loadershake infinite .8s linear; }
 
 @-webkit-keyframes loadershake {
   0% {

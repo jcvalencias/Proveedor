@@ -10,14 +10,15 @@ import './index.css'
 
 // pages
 import Admin from './Components/Admin/Admin.jsx';
-import SignIn from './Components/SignUp/SignIn.jsx';
-import SignUp from './Components/SignUp/SignUp.jsx';
+import SignIn from './Components/Authentication/SignIn.jsx';
+import SignUp from './Components/Authentication/SignUp.jsx';
 import ListadoMapa from './Components/Search/listado-con-mapa.jsx';
 import AddListing from './Components/Proveedor/AddListing.jsx';
 import ProtectedRoute from './Components/JWT/ProtetedRoute.jsx';
 import Login from './Components/JWT/login.jsx';
 import Register from './Components/JWT/Register.jsx';
 import Notes from './Components/notes/notes.jsx';
+import EmailVerification from './Components/Authentication/email-verification.jsx';
 
 
 function Logout() {
@@ -41,11 +42,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/SignIn",
-    element: <Login />
+    element: <SignIn />
   },
   {
     path: "/SignUp",
-    element: <Register />
+    element: <SignUp />
   },
   {
     path: "/logout",
@@ -62,6 +63,10 @@ const router = createBrowserRouter([
   {
     path: "/notes",
     element: <Notes/>
+  },
+  {
+    path: "/emailverification",
+    element: <EmailVerification/>
   },
 ]);
 

@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Quotare - Multipurpose Quotation Request HTML Wizard Form">
+    <meta name="author" content="Ansonika">
+    <title>Solukay | Presupuestador Proveedor</title>
+    
+    <!-- Favicons-->
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" type="image/x-icon" href="img/apple-touch-icon-57x57-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="img/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="img/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="img/apple-touch-icon-144x144-precomposed.png">
+
+    <!-- GOOGLE WEB FONT -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- BASE CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+	<link href="css/vendors.css" rel="stylesheet">
+
+    <!-- YOUR CUSTOM CSS -->
+    <link href="css/custom.css" rel="stylesheet">
+
+</head>
+
+<body class="bg_style_2">
+
+    <div id="preloader">
+        <div data-loader="circle-side"></div>
+    </div><!-- /Preload -->
+
+    <div id="loader_form">
+        <div data-loader="circle-side-2"></div>
+    </div><!-- /loader_form -->
+
+<div class="min-vh-100 d-flex flex-column">
+
+    <header>
+        <div class="container-fluid">
+            <div class="row d-flex align-items-center">
+                <div class="col-6">
+                    <a href="index.html"><img src="img/logo/logo-2.png" alt="" width="168" height="48" class="img-fluid"></a>
+                </div>
+                <div class="col-6">
+                    <div id="social">
+                        <ul>
+                            <li><a href="#0"><i class="bi bi-facebook"></i></a></li>
+                            <li><a href="#0"><i class="bi bi-instagram"></i></a></li>
+                        </ul>
+                    </div>
+                    <!-- /social -->
+                </div>
+            </div>
+        </div>
+        <!-- /container -->
+    </header>
+    <!-- /header -->
+
+    <div class="container-fluid d-flex flex-column my-auto py-3">
+        <div>
+            <div id="wizard_container">
+                <div id="top-wizard">
+                    <div id="progressbar"></div>
+                </div>
+                <!-- /top-wizard -->
+                <div class="decorative_bg bg_4"></div>
+                <form id="wrapped" method="POST">
+                    <input id="website" name="website" type="text" value="">
+                    <!-- Leave input above for security protection, read docs for details -->
+                    <div id="middle-wizard">
+						
+						<!-- /Step -->
+                        <div class="step">
+                            <div class="question_title">
+                                <h3><span class="highlight">Explica en detalle</span><br>lo que harás para solucionarlo</h3>
+								<p>Detalla cuál es el problema y cuales son los pasos de tu trabajo.</p>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col-md-10">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="group">
+                                                <label for="descripcion">Aquí la descripción de tu trabajo...</label>
+                                                <textarea name="descripcion" id="descripcion" class="form-control required"></textarea>
+                                            </div>
+                                            <!-- /form-group -->
+                                        </div>
+                                    </div>
+                                    <!-- /row -->
+                                </div>
+                            </div>
+                            <!-- /row -->
+                        </div>
+                        <!-- /Step -->
+						
+						<div class="step">
+                            <div class="question_title">
+                                <h3>Aproximadamente de cuanto es el<br><span class="highlight">Costo de tu Servicio</span></h3>
+                                <p>La idea es que la persona vea si tus servicios están dentro de sus posibilidades.</p>
+                            </div>
+                            <div class="row justify-content-center mt-5">
+                                <div class="col-lg-7 col-md-10">
+                                    <div class="rounded_slider">
+                                        <div id="budget_slider"></div>
+                                        <p>Si te aprueban este precio estimativo, luego puedes definir los detalles y el valor final en persona.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /Step -->
+						
+                        
+                        <div class="step">
+                            <div class="question_title">
+                                <h3>Tu trabajo <br><span class="highlight">incluye</span> que cosas?</h3>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col-lg-6 col-md-10">
+                                    <div class="list_block">
+                                        <ul>
+                                            <li>
+                                                <div class="checkbox_radio_container">
+                                                    <input type="checkbox" id="mano" name="incluye[]" class="required" value="mano">
+                                                    <label class="checkbox" for="mano"></label>
+                                                    <label for="mano" class="wrapper">Mano de Obra</label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="checkbox_radio_container">
+                                                    <input type="checkbox" id="preparacion-area" name="incluye[]" class="required" value="Preparacion Area">
+                                                    <label class="checkbox" for="preparacion-area"></label>
+                                                    <label for="preparacion-area" class="wrapper">Preparacion Area</label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="checkbox_radio_container">
+                                                    <input type="checkbox" id="picado" name="incluye[]" class="required" value="Picado de Paredes">
+                                                    <label class="checkbox" for="picado"></label>
+                                                    <label for="picado" class="wrapper">Picado de Paredes</label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="checkbox_radio_container">
+                                                    <input type="checkbox" id="lijado" name="incluye[]" class="required" value="Lijado">
+                                                    <label class="checkbox" for="lijado"></label>
+                                                    <label for="lijado" class="wrapper">Lijado</label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="checkbox_radio_container">
+                                                    <input type="checkbox" id="revoque" name="incluye[]" class="required" value="Revoque">
+                                                    <label class="checkbox" for="revoque"></label>
+                                                    <label for="revoque" class="wrapper">Revoque</label>
+                                                </div>
+                                            </li>
+                                        </ul>
+										
+                                    </div>
+                                    <!-- /list_block-->
+                                </div>
+								
+								<div class="col-lg-6 col-md-10">
+                                    <div class="list_block">
+                                        <ul>
+                                            <li>
+                                                <div class="checkbox_radio_container">
+                                                    <input type="checkbox" id="materiales" name="incluye[]" class="required" value="Costo de Materiales">
+                                                    <label class="checkbox" for="materiales"></label>
+                                                    <label for="materiales" class="wrapper">Costo de Materiales</label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="checkbox_radio_container">
+                                                    <input type="checkbox" id="escombros" name="incluye[]" class="required" value="Retiro de Escombros">
+                                                    <label class="checkbox" for="escombros"></label>
+                                                    <label for="escombros" class="wrapper">Retiro de Escombros</label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="checkbox_radio_container">
+                                                    <input type="checkbox" id="enduido" name="incluye[]" class="required" value="Enduido">
+                                                    <label class="checkbox" for="enduido"></label>
+                                                    <label for="enduido" class="wrapper">Enduido</label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="checkbox_radio_container">
+                                                    <input type="checkbox" id="pintura" name="incluye[]" class="required" value="Pintura">
+                                                    <label class="checkbox" for="pintura"></label>
+                                                    <label for="pintura" class="wrapper">Pintura</label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="checkbox_radio_container">
+                                                    <input type="checkbox" id="garantia" name="incluye[]" class="required" value="Garantia de Trabajo">
+                                                    <label class="checkbox" for="garantia"></label>
+                                                    <label for="garantia" class="wrapper">Garantia de Trabajo</label>
+                                                </div>
+                                            </li>
+                                        </ul>
+										
+                                    </div>
+                                    <!-- /list_block-->
+                                </div>
+								
+                            </div>
+                            <!-- /row -->
+                        </div>
+                        <!-- /Step -->
+						
+						<div class="step">
+                            <div class="question_title">
+                                <h3>Tu trabajo <br><span class="highlight">NO incluye</span></h3>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col-lg-6 col-md-10">
+                                    <div class="list_block">
+                                        <ul>
+                                            <li>
+                                                <div class="no-checkbox_radio_container">
+                                                    <input type="checkbox" id="mano" name="no-incluye[]" value="mano">
+                                                    <label class="no-checkbox" for="mano"></label>
+                                                    <label for="mano" class="wrapper">Mano de Obra</label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="no-checkbox_radio_container">
+                                                    <input type="checkbox" id="preparacion-area" name="no-incluye[]" value="Preparacion Area">
+                                                    <label class="no-checkbox" for="preparacion-area"></label>
+                                                    <label for="preparacion-area" class="wrapper">Preparacion Area</label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="no-checkbox_radio_container">
+                                                    <input type="checkbox" id="picado" name="no-incluye[]" value="Picado de Paredes">
+                                                    <label class="no-checkbox" for="picado"></label>
+                                                    <label for="picado" class="wrapper">Picado de Paredes</label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="no-checkbox_radio_container">
+                                                    <input type="checkbox" id="lijado" name="no-incluye[]" value="Lijado">
+                                                    <label class="no-checkbox" for="lijado"></label>
+                                                    <label for="lijado" class="wrapper">Lijado</label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="no-checkbox_radio_container">
+                                                    <input type="checkbox" id="revoque" name="no-incluye[]" value="Revoque">
+                                                    <label class="no-checkbox" for="revoque"></label>
+                                                    <label for="revoque" class="wrapper">Revoque</label>
+                                                </div>
+                                            </li>
+                                        </ul>
+										
+                                    </div>
+                                    <!-- /list_block-->
+                                </div>
+								
+								<div class="col-lg-6 col-md-10">
+                                    <div class="list_block">
+                                        <ul>
+                                            <li>
+                                                <div class="no-checkbox_radio_container">
+                                                    <input type="checkbox" id="materiales" name="no-incluye[]" value="Costo de Materiales">
+                                                    <label class="no-checkbox" for="materiales"></label>
+                                                    <label for="materiales" class="wrapper">Costo de Materiales</label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="no-checkbox_radio_container">
+                                                    <input type="checkbox" id="escombros" name="no-incluye[]" value="Retiro de Escombros">
+                                                    <label class="no-checkbox" for="escombros"></label>
+                                                    <label for="escombros" class="wrapper">Retiro de Escombros</label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="no-checkbox_radio_container">
+                                                    <input type="checkbox" id="enduido" name="no-incluye[]" value="Enduido">
+                                                    <label class="no-checkbox" for="enduido"></label>
+                                                    <label for="enduido" class="wrapper">Enduido</label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="no-checkbox_radio_container">
+                                                    <input type="checkbox" id="pintura" name="no-incluye[]" value="Pintura">
+                                                    <label class="no-checkbox" for="pintura"></label>
+                                                    <label for="pintura" class="wrapper">Pintura</label>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="no-checkbox_radio_container">
+                                                    <input type="checkbox" id="garantia" name="no-incluye[]" value="Garantia de Trabajo">
+                                                    <label class="no-checkbox" for="garantia"></label>
+                                                    <label for="garantia" class="wrapper">Garantia de Trabajo</label>
+                                                </div>
+                                            </li>
+                                        </ul>
+										
+                                    </div>
+                                    <!-- /list_block-->
+                                </div>
+								
+                            </div>
+                            <!-- /row -->
+                        </div>
+                        <!-- /Step -->
+						
+						<!-- /Step -->
+                        <div class="step">
+                            <div class="question_title">
+                                <h3>Explica en que consiste<br><span class="highlight">Tu Garantía de Trabajo</span></h3>
+								<p>Ya sea que ofrezcas o no garantía, aclaralo en este punto.</p>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col-md-10">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="group">
+                                                <label for="garantia">Aclara el tiempo de garantía, que cosas están y cuales no estan en esta garantía</label>
+                                                <textarea name="garantia" id="garantia" class="form-control required"></textarea>
+                                            </div>
+                                            <!-- /form-group -->
+                                        </div>
+                                    </div>
+                                    <!-- /row -->
+                                </div>
+                            </div>
+                            <!-- /row -->
+                        </div>
+                        <!-- /Step -->
+						
+						<!-- /Step -->
+                        <div class="step">
+                            <div class="question_title">
+                                <h3>Tienes <span class="highlight">Comentarios</span> que agregar</h3>
+								<p>Deja todo claro, si usas marcas de productos, tiempos de trabajo, etc.</p>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col-md-10">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="group">
+                                                <label for="comentario">Todo lo que consideres que haya que comentar como extra, aquí...</label>
+                                                <textarea name="comentario" id="comentario" class="form-control required"></textarea>
+                                            </div>
+                                            <!-- /form-group -->
+                                        </div>
+                                    </div>
+                                    <!-- /row -->
+                                </div>
+                            </div>
+                            <!-- /row -->
+                        </div>
+                        <!-- /Step -->
+						
+						<!-- /Step -->
+                        <div class="step">
+                            <div class="question_title">
+                                <h3>Tienes <span class="highlight">algunas fotos</span><br>de trabajos similares que hayas hecho?</h3>
+								<p>Adjunta fotos que muestren el antes y después, y la calidad del trabajo realizado.</p>
+                            </div>
+                            <div class="row justify-content-center">
+							 
+						        <div class="col-md-10">
+						            <div class="mb-3 form-floating">										
+										<div class="fileupload">
+											<input type="file" name="fileupload" accept="image/*,.pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" onchange="getVals(this, 'fileupload');">
+										</div>
+						            </div>
+									<div class="mb-3 form-floating">										
+										<div class="fileupload">
+											<input type="file" name="fileupload" accept="image/*,.pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" onchange="getVals(this, 'fileupload');">
+										</div>
+						            </div>
+									<div class="mb-3 form-floating">										
+										<div class="fileupload">
+											<input type="file" name="fileupload" accept="image/*,.pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" onchange="getVals(this, 'fileupload');">
+										</div>
+						            </div>
+						        </div>
+						    </div>
+						    <!-- /row -->
+                        </div>
+                        <!-- /Step -->
+						
+						
+                        <div class="submit step">
+                            <div class="question_title">
+                                <h3>Por favor, Compueba<br><span class="highlight">Tus Datos de Contacto</span></h3>
+                                <p>Un resumen se te enviará a su Email.</p>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col-md-7">
+                                    <div class="form-group">
+                                        <input type="text" name="first_last_name" id="first_last_name" class="form-control required">
+                                        <label for="first_last_name">Nombre y Apellido</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="email" name="email" id="email" class="form-control required">
+                                        <label for="email">Su Email</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" name="telephone" id="telephone" class="form-control required">
+                                        <label for="telephone">Su Telefono</label>
+                                    </div>
+                                    <div class="terms">
+                                        <label class="container_check">Por favor lee y acepta nuestros <a href="#" data-bs-toggle="modal" data-bs-target="#terms-txt">Términos y Condiciones</a>
+                                            <input type="checkbox" name="terms" value="Yes" class="required">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /row -->
+                        </div>
+                        <!-- /Step -->
+                    </div>
+                    <!-- /middle-wizard -->
+                    <div id="bottom-wizard">
+                        <button type="button" name="backward" class="backward btn_1">Anterior</button>
+                        <button type="button" name="forward" class="forward btn_1">Siguiente</button>
+                        <button type="submit" name="process" class="submit btn_1">ENVIAR</button>
+                    </div>
+                    <!-- /bottom-wizard -->
+                </form>
+            </div>
+            <!-- /Wizard container -->
+        </div>
+    </div>
+    <!-- /Container -->
+
+    <footer>
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-sm-6">
+                    <p>© Solukay | Presupuestador para Usuarios</p>
+                </div>
+            </div>
+            <!-- /Row -->
+        </div>
+        <!-- /Container -->
+    </footer>
+    <!-- /Footer -->
+
+</div>
+<!-- /flex-column -->
+
+
+<!-- Modal terms -->
+<div class="modal fade" id="terms-txt" tabindex="-1" role="dialog" aria-labelledby="termsLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="termsLabel">Terms and conditions</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Lorem ipsum dolor sit amet, in porro albucius qui, in <strong>nec quod novum accumsan</strong>, mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex prompta alterum sanctus, pro ne quod dicunt sensibus.</p>
+                <p>Lorem ipsum dolor sit amet, in porro albucius qui, in nec quod novum accumsan, mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex prompta alterum sanctus, pro ne quod dicunt sensibus. Lorem ipsum dolor sit amet, <strong>in porro albucius qui</strong>, in nec quod novum accumsan, mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex prompta alterum sanctus, pro ne quod dicunt sensibus.</p>
+                <p>Lorem ipsum dolor sit amet, in porro albucius qui, in nec quod novum accumsan, mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex prompta alterum sanctus, pro ne quod dicunt sensibus.</p>
+            </div>
+        </div>
+        <!-- /modal-content -->
+    </div>
+    <!-- /modal-dialog -->
+</div>
+<!-- /modal -->
+	
+<!-- COMMON SCRIPTS -->
+<script src="js/common_scripts.min.js"></script>
+<script src="js/common_functions.js"></script>
+
+<!-- SPECIFIC SCRIPTS -->
+<script src="js/wizard_func_4.js"></script>
+
+</body>
+</html>

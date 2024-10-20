@@ -59,6 +59,28 @@ const ListadoMapa = () => {
 			</div>
         );
     }
+
+    const ListOfResults = () =>{
+        return(
+            <div className="row">
+                {locations.map((city, index)=>
+                (<ResultServicio 
+                    name={'cuidado de niños ' + index} 
+                    category={'Baby sitting ' + index} 
+                    price={'$50 x HORA ' + index}
+                    opiniones={index + index}
+                    contact_number={'+98 (265) 3652 - 05 ' + index} 
+                    location={'Barrio XYZ, ' + city + ' ' + index}
+                    availability={'LIBRE HOY ' + index}
+                    image='assets/images/en-tu-zona-baby-sitter.jpg'
+                    rating='four'
+                />)
+                )}
+            </div>
+        );
+    }
+
+
     return (
         <>
         <body>
@@ -141,96 +163,7 @@ const ListadoMapa = () => {
                             
                             <div className="tab-content">
                                 <div className="tab-pane fade show active" id="all">
-                                    <div className="row">
-                                        <ResultServicio 
-                                            name='Cuidado de Niños' 
-                                            category='Baby sitting' 
-                                            price='$50 x HORA' 
-                                            opiniones='2' 
-                                            contact_number='+98 (265) 3652 - 05' 
-                                            location='Barrio XYZ, Bogotá' 
-                                            availability='LIBRE HOY' 
-                                            image='assets/images/en-tu-zona-baby-sitter.jpg'
-                                            rating='three'
-                                            />
-                                        <ResultServicio 
-                                            name='Cuidado de Niños 2' 
-                                            category='Baby sitting 2' 
-                                            price='$50 x HORA 2' 
-                                            opiniones=' 22' 
-                                            contact_number='+98 (265) 3652 - 05 2' 
-                                            location='Barrio XYZ, Bogotá 2' 
-                                            availability='LIBRE HOY 2' 
-                                            image='assets/images/en-tu-zona-baby-sitter.jpg'
-                                            rating='four'
-                                            />
-                                        <ResultServicio 
-                                            name='Cuidado de Niños 3' 
-                                            category='Baby sitting 3' 
-                                            price='$50 x HORA 3' 
-                                            opiniones=' 32' 
-                                            contact_number='+98 (265) 3652 - 05 3' 
-                                            location='Barrio XYZ, Bogotá 3' 
-                                            availability='LIBRE HOY 3' 
-                                            image='assets/images/en-tu-zona-baby-sitter.jpg'
-                                            rating='two'
-                                            />
-                                        <ResultServicio 
-                                            name='Cuidado de Niños 4' 
-                                            category='Baby sitting 4' 
-                                            price='$50 x HORA 4' 
-                                            opiniones=' 42' 
-                                            contact_number='+98 (265) 3652 - 05 4' 
-                                            location='Barrio XYZ, Bogotá 4' 
-                                            availability='LIBRE HOY 4' 
-                                            image='assets/images/en-tu-zona-baby-sitter.jpg'
-                                            rating='five'
-                                            />
-                                        <ResultServicio 
-                                            name='Cuidado de Niños 5' 
-                                            category='Baby sitting 5' 
-                                            price='$50 x HORA 5' 
-                                            opiniones=' 52' 
-                                            contact_number='+98 (265) 3652 - 05 5' 
-                                            location='Barrio XYZ, Bogotá 5' 
-                                            availability='LIBRE HOY 5' 
-                                            image='assets/images/en-tu-zona-baby-sitter.jpg'
-                                            rating='four'
-                                            />
-                                        <ResultServicio 
-                                            name='Cuidado de Niños 6' 
-                                            category='Baby sitting 6' 
-                                            price='$50 x HORA 6' 
-                                            opiniones=' 62' 
-                                            contact_number='+98 (265) 3652 - 05 6' 
-                                            location='Barrio XYZ, Bogotá 6' 
-                                            availability='LIBRE HOY 6' 
-                                            image='assets/images/en-tu-zona-baby-sitter.jpg'
-                                            rating='zero'
-                                            />
-                                        <ResultServicio 
-                                            name='Cuidado de Niños 7' 
-                                            category='Baby sitting 7' 
-                                            price='$50 x HORA 7' 
-                                            opiniones=' 72' 
-                                            contact_number='+98 (265) 3652 - 05 7' 
-                                            location='Barrio XYZ, Bogotá 7' 
-                                            availability='LIBRE HOY 7' 
-                                            image='assets/images/en-tu-zona-baby-sitter.jpg'
-                                            rating='four'
-                                            />
-                                        <ResultServicio 
-                                            name='Cuidado de Niños 8' 
-                                            category='Baby sitting 8' 
-                                            price='$50 x HORA 8' 
-                                            opiniones=' 28' 
-                                            contact_number='+98 (265) 3652 - 05 8' 
-                                            location='Barrio XYZ, Bogotá 8' 
-                                            availability='LIBRE HOY 8' 
-                                            image='assets/images/en-tu-zona-baby-sitter.jpg'
-                                            rating='five'
-                                            />
-                                    </div>
+                                    <ListOfResults />
                                 </div>
                                 <div className="tab-pane fade show active" id="cat1">
                                     <div className="row">
