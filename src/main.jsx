@@ -19,6 +19,7 @@ import Login from './Components/JWT/login.jsx';
 import Register from './Components/JWT/Register.jsx';
 import Notes from './Components/notes/notes.jsx';
 import EmailVerification from './Components/Authentication/email-verification.jsx';
+import RecoverPass from './Components/Authentication/recover-pass.jsx';
 
 
 function Logout() {
@@ -67,6 +68,10 @@ const router = createBrowserRouter([
   {
     path: "/emailverification",
     element: <EmailVerification/>
+  },
+  {
+    path: "/recoverpass",
+    element: <RecoverPass/>
   },
 ]);
 

@@ -103,11 +103,10 @@ const SignIn = () => {
 
                                 <PasswordInput password={password} setPassword={setPassword} />
 
-                                <div className="form-check">
-                                    <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                                    <label className="form-check-label text-muted f-15" htmlFor="flexCheckDefault">
-                                        Recordarme
-                                    </label>
+                                <div className="mt-3 text-center">
+                                    <p className="mb-0 text-muted"><a href="/recoverpass"
+                                            className="text-success fw-bold text-decoraton-underline ms-1">Olvide mi contraseña
+                                        </a></p>
                                 </div>
                                 <div className="mt-3">
                                     <button className="btn shadow-none w-100 main-btn" type="submit">Ingresar</button>
