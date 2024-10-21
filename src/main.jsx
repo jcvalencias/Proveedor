@@ -20,6 +20,7 @@ import Register from './Components/JWT/Register.jsx';
 import Notes from './Components/notes/notes.jsx';
 import EmailVerification from './Components/Authentication/email-verification.jsx';
 import RecoverPass from './Components/Authentication/recover-pass.jsx';
+import PasswordResetConfirm from './Components/Authentication/PasswordResetConfirm.jsx';
 
 
 function Logout() {
@@ -47,7 +48,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/SignUp",
-    element: <SignUp />
+    element: <RegisterAndLogout />
   },
   {
     path: "/logout",
@@ -72,6 +73,10 @@ const router = createBrowserRouter([
   {
     path: "/recoverpass",
     element: <RecoverPass/>
+  },
+  { 
+    path: "/reset-password/:uid/:token",
+    element: <PasswordResetConfirm/>
   },
 ]);
 
