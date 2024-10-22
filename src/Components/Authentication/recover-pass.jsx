@@ -15,8 +15,9 @@ const RecoverPass = () => {
 
     try {
         const response = await api.post("/signup/password-reset-request/", { email });
-      setMessage(response.data.message);
+      setMessage("A tu Email hemos enviado las instrucciones.");
     } catch (err) {
+      setMessage("A tu Email hemos enviado las instrucciones.");
       setError(err.response ? err.response.data.detail : 'An error occurred');
     }
   };
