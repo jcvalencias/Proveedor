@@ -1,7 +1,5 @@
-import { useState, useEffect, useRef } from "react";
-import api from "../../api"
+
 import { useNavigate, useLocation } from "react-router-dom";
-import { ACCESS_TOKEN, REFRESH_TOKEN } from "../../constants";
 import Carrousel from "./Carrousel";
 
 

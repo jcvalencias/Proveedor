@@ -30,7 +30,7 @@ function Logout() {
 
 function RegisterAndLogout() {
   localStorage.clear()
-  return <Navitage to='/SignUp' />
+  return <Navigate to='/SignUp' />
 }
 
 const router = createBrowserRouter([
@@ -48,7 +48,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/SignUp",
-    element: <RegisterAndLogout />
+    element: <SignUp/>
   },
   {
     path: "/logout",
