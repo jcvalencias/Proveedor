@@ -1,29 +1,29 @@
 import React, { useState } from "react";
 import { useParams, useNavigate } from 'react-router-dom';
 import api from "../../api";
+import Carrousel from "./Carrousel";
 
 const PasswordResetConfirm = () => {
     const { uid, token } = useParams();  // Extracting uid and token from route params
     const navigate = useNavigate();  // For navigation after successful reset
 
-    const [password, setPassword] = useState('');
-    const [confirmPassword, setConfirmPassword] = useState('');
+    const [new_password, setPassword] = useState('');
+    const [confirm_password, setConfirmPassword] = useState('');
     const [error, setError] = useState(null);
     const [success, setSuccess] = useState(false);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        if (password !== confirmPassword) {
+        if (new_password !== confirm_password) {
         setError('Passwords do not match');
         return;
         }
 
         try {
-        const response = await api.post('/signup/password-reset-confirm/', {
-            uid,
-            token,
-            password,
+        const response = await api.post('/signup/password-reset-confirm/'+uid+'/'+ token + '/', {
+            new_password,
+            confirm_password
         });
         if (response.status === 200) {
             setSuccess(true);
@@ -63,7 +63,7 @@ const PasswordResetConfirm = () => {
                 <label>New Password:</label>
                 <input
                 type="password"
-                value={password}
+                value={new_password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
                 />
@@ -72,7 +72,7 @@ const PasswordResetConfirm = () => {
                 <label>Confirm Password:</label>
                 <input
                 type="password"
-                value={confirmPassword}
+                value={confirm_password}
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 required
                 />
