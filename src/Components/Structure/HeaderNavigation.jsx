@@ -1,8 +1,38 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 const HeaderNavigation = () => {
-    return (
-    <div className="header-navigation">
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState(null);
+
+  // Handle mobile view check
+  const handleResize = () => {
+    const isMobileView = window.innerWidth <= 1199;
+    setIsMobile(isMobileView);
+  };
+
+  // Handle menu toggle
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  // Handle dropdown toggle
+  const handleDropdownToggle = (index) => {
+    setActiveDropdown(activeDropdown === index ? null : index);
+  };
+
+  // Add resize event listener
+  useEffect(() => {
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  return (
+    <div className={`header-navigation ${isMobile ? "breakpoint-on" : ""}`}>
       <div className="container-fluid">
         <div className="primary-menu">
           <div className="row">
@@ -14,17 +44,15 @@ const HeaderNavigation = () => {
               </div>
             </div>
             <div className="col-lg-6 col-2">
-              <div className="nav-menu">
-                <div className="navbar-close">
+              <div className={`nav-menu ${menuOpen ? "menu-on" : ""}`}>
+                <div className="navbar-close" onClick={toggleMenu}>
                   <i className="ti-close" />
                 </div>
                 <nav className="main-menu">
                   <ul>
                     <li className="menu-item has-children">
-                      <a href="/" className="active">
-                        Home
-                      </a>
-                      <ul className="sub-menu">
+                      <a href="/" className="active">Home</a>
+                      <ul className={`sub-menu ${activeDropdown === 0 ? "active" : ""}`}>
                         <li className="menu-item">
                           <a href="/listadoMapa">Search in Map</a>
                         </li>
@@ -35,13 +63,16 @@ const HeaderNavigation = () => {
                           <a href="index-3.html">Home Three</a>
                         </li>
                       </ul>
+                      <span className="dd-trigger" onClick={() => handleDropdownToggle(0)}>
+                        <i className="ti-arrow-down"></i>
+                      </span>
                     </li>
                     <li className="menu-item">
                       <a href="about.html">About us</a>
                     </li>
                     <li className="menu-item has-children">
                       <a href="#">Listings</a>
-                      <ul className="sub-menu">
+                      <ul className={`sub-menu ${activeDropdown === 1 ? "active" : ""}`}>
                         <li className="menu-item">
                           <a href="listing-list.html">Listing List</a>
                         </li>
@@ -52,35 +83,35 @@ const HeaderNavigation = () => {
                           <a href="listing-map.html">Listing Map Grid</a>
                         </li>
                         <li className="menu-item">
-                          <a href="listing-details-1.html">
-                            Listing Details One
-                          </a>
+                          <a href="listing-details-1.html">Listing Details One</a>
                         </li>
                         <li className="menu-item">
-                          <a href="listing-details-2.html">
-                            Listing Details Two
-                          </a>
+                          <a href="listing-details-2.html">Listing Details Two</a>
                         </li>
                       </ul>
+                      <span className="dd-trigger" onClick={() => handleDropdownToggle(1)}>
+                        <i className="ti-arrow-down"></i>
+                      </span>
                     </li>
                     <li className="menu-item has-children">
                       <a href="#">Pages</a>
-                      <ul className="sub-menu">
+                      <ul className={`sub-menu ${activeDropdown === 2 ? "active" : ""}`}>
                         <li className="menu-item">
                           <a href="/Addlisting">Add Listing</a>
                         </li>
                         <li className="menu-item has-children">
                           <a href="#">Products</a>
-                          <ul className="sub-menu">
+                          <ul className={`sub-menu ${activeDropdown === 3 ? "active" : ""}`}>
                             <li>
                               <a href="products.html">Our Products</a>
                             </li>
                             <li>
-                              <a href="product-details.html">
-                                Products Details
-                              </a>
+                              <a href="product-details.html">Products Details</a>
                             </li>
                           </ul>
+                          <span className="dd-trigger" onClick={() => handleDropdownToggle(3)}>
+                            <i className="ti-arrow-down"></i>
+                          </span>
                         </li>
                         <li className="menu-item">
                           <a href="how-work.html">How Work</a>
@@ -89,10 +120,13 @@ const HeaderNavigation = () => {
                           <a href="pricing.html">Pricing</a>
                         </li>
                       </ul>
+                      <span className="dd-trigger" onClick={() => handleDropdownToggle(2)}>
+                        <i className="ti-arrow-down"></i>
+                      </span>
                     </li>
                     <li className="menu-item has-children">
                       <a href="#">Article</a>
-                      <ul className="sub-menu">
+                      <ul className={`sub-menu ${activeDropdown === 4 ? "active" : ""}`}>
                         <li className="menu-item">
                           <a href="blog.html">Our Blog</a>
                         </li>
@@ -100,6 +134,9 @@ const HeaderNavigation = () => {
                           <a href="blog-details.html">Blog details</a>
                         </li>
                       </ul>
+                      <span className="dd-trigger" onClick={() => handleDropdownToggle(4)}>
+                        <i className="ti-arrow-down"></i>
+                      </span>
                     </li>
                     <li className="menu-item">
                       <a href="contact.html">Contact</a>
@@ -127,7 +164,7 @@ const HeaderNavigation = () => {
                     </a>
                   </li>
                   <li className="nav-toggle-btn">
-                    <div className="navbar-toggler">
+                    <div className="navbar-toggler" onClick={toggleMenu}>
                       <span />
                       <span />
                       <span />
@@ -140,7 +177,7 @@ const HeaderNavigation = () => {
         </div>
       </div>
     </div>
-    );
-}
+  );
+};
 
 export default HeaderNavigation;
