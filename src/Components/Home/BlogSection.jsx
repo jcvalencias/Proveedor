@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import WOW from 'wowjs';
+import {WOW} from 'wow.js';
 
 // Reusable BlogPost component
 const BlogPost = ({ image, alt, date, category, title, comments, link }) => (

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import WOW from 'wowjs';
+import {WOW} from 'wow.js';
 import $ from 'jquery';
 import 'slick-carousel';
 
