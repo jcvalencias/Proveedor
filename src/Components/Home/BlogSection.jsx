@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import {WOW} from 'wow.js';
+import WOW from 'wow.js';
 
 // Reusable BlogPost component
 const BlogPost = ({ image, alt, date, category, title, comments, link }) => (
@@ -71,7 +71,7 @@ const BlogSection = () => {
 
   useEffect(() => {
     // Initialize WOW.js for animations
-    new WOW.WOW().init();
+    new WOW().init();
   }, []);
 
   return (

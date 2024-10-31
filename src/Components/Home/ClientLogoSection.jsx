@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import {WOW} from 'wow.js';
+import WOW from 'wow.js';
 import $ from 'jquery';
 import 'slick-carousel';
 
@@ -28,7 +28,7 @@ const ClientLogoSection = () => {
 
   useEffect(() => {
     // Initialize WOW.js for animation effects
-    new WOW.WOW().init();
+    new WOW().init();
 
     // Ensure the DOM is fully loaded before initializing Slick slider
     const initializeSlider = () => {
