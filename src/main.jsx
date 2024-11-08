@@ -34,11 +34,11 @@ function RegisterAndLogout() {
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <ProtectedRoute><App /></ProtectedRoute>,
+    element: <App />,
   },
   {
     path: "/admin",
-    element: <Admin/>
+    element: <ProtectedRoute><Admin/></ProtectedRoute>,
   },
   {
     path: "/SignIn",
