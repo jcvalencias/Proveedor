@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
-import WOW from 'wowjs';
+import WOW from 'wow.js';
 
 const Footer = () => {
   useEffect(() => {
     // Initialize WOW.js for animations
-    new WOW.WOW().init();
+    new WOW().init();
 
   }, []);
 

@@ -37,8 +37,8 @@ const Header = () => {
     };
   }, []);
 
-  return (
-    <header className={`header-area header-area-one fondo-blanco ${isSticky ? 'sticky' : ''} ${isMobile ? 'breakpoint-on' : ''}`}>
+  const Prelaunch = () => {
+    return (
       <div className="header-top">
         <div className="container-fluid">
           <div className="row">
@@ -96,6 +96,12 @@ const Header = () => {
           </div>
         </div>
       </div>
+    );
+  }
+
+  return (
+    <header className={`header-area header-area-one fondo-blanco ${isSticky ? 'sticky' : ''} ${isMobile ? 'breakpoint-on' : ''}`}>
+      
 
       {/* Navigation Bar */}
       <nav className={`header-navigation ${menuOpen ? 'menu-on' : ''}`}>

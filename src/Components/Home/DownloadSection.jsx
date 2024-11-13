@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
-import WOW from 'wowjs';
+import WOW from 'wow.js';
 import CounterUp from 'react-countup';
 
 const DownloadSection = () => {
   useEffect(() => {
     // Initialize WOW.js for animation effects
-    new WOW.WOW().init();
+    new WOW().init();
   }, []);
 
   return (

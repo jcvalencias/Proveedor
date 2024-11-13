@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import WOW from 'wowjs';
+import WOW from 'wow.js';
 import $ from 'jquery';
 import 'slick-carousel';
 
@@ -118,7 +118,7 @@ const NearbySection = () => {
 
   useEffect(() => {
     // Initialize WOW.js for animations
-    new WOW.WOW().init();
+    new WOW().init();
 
     // Initialize Slick slider
     const initializeSlider = () => {

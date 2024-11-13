@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
-import WOW from 'wowjs';
+import WOW from 'wow.js';
 
 const CategorySection = () => {
 
   useEffect(() => {
     // Initialize WOW.js for animation effects
-    new WOW.WOW().init();
+    new WOW().init();
   }, []);
 
   return (
