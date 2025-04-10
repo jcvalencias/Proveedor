@@ -21,6 +21,7 @@ import Notes from './Components/notes/notes.jsx';
 import EmailVerification from './Components/Authentication/email-verification.jsx';
 import RecoverPass from './Components/Authentication/recover-pass.jsx';
 import PasswordResetConfirm from './Components/Authentication/PasswordResetConfirm.jsx';
+import Activate from './Components/Authentication/Activate.jsx';
 
 
 function Logout() {
@@ -36,11 +37,11 @@ function RegisterAndLogout() {
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <ProtectedRoute><App /></ProtectedRoute>,
+    element: <App />
   },
   {
     path: "/admin",
-    element: <Admin/>
+    element: <ProtectedRoute><Admin/></ProtectedRoute>
   },
   {
     path: "/SignIn",
@@ -77,6 +78,10 @@ const router = createBrowserRouter([
   { 
     path: "/reset-password/:uid/:token",
     element: <PasswordResetConfirm/>
+  },
+  { 
+    path: "/activate/:uid/:token",
+    element: <Activate/>
   },
 ]);
 
