@@ -81,11 +81,7 @@ const router = createBrowserRouter([
   },
   { 
     path: "/activate/:uid/:token",
-<<<<<<< HEAD
-    element: <Activate/>
-=======
     element: <ActivateAccount/>
->>>>>>> 08f81fd0e3a4e338aea851fd851ae7d631b0b7f0
   },
 ]);
 
