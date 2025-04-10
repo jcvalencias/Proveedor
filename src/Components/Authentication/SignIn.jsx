@@ -45,13 +45,14 @@ const PasswordInput = ({ password, setPassword }) => {
 const SignIn = () => {
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
-    const [email, setEmail] = useState("")
+    const [error, setError] = useState("");
     const [loading, setLoading] = useState(false)
     const navigate = useNavigate()
 
     const handleSubmit = async (e) => {
         setLoading(true);
         e.preventDefault();
+        setError("");
 
         try {
             const res = await api.post("/signup/token/", {username, password})
@@ -60,8 +61,12 @@ const SignIn = () => {
                 
             navigate("/"); 
         }
-        catch (error) {
-            alert(error);
+        catch (err) {
+            if (err.response && err.response.data) {
+                setError("Usuario o contraseña no validos");
+            } else {
+                setError("An error occurred. Please try again later.");
+        }
         }
         finally {
             setLoading(false);
@@ -108,6 +113,7 @@ const SignIn = () => {
                                             className="text-success fw-bold text-decoraton-underline ms-1">Olvide mi contraseña
                                         </a></p>
                                 </div>
+                                {error && <div className="error-message">{error}</div>}
                                 <div className="mt-3">
                                     <button className="btn shadow-none w-100 main-btn" type="submit">Ingresar</button>
                                 </div>

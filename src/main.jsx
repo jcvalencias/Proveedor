@@ -21,7 +21,7 @@ import Notes from './Components/notes/notes.jsx';
 import EmailVerification from './Components/Authentication/email-verification.jsx';
 import RecoverPass from './Components/Authentication/recover-pass.jsx';
 import PasswordResetConfirm from './Components/Authentication/PasswordResetConfirm.jsx';
-import Activate from './Components/Authentication/Activate.jsx';
+import ActivateAccount from './Components/Authentication/ActivateAccount.jsx';
 
 
 function Logout() {
@@ -81,7 +81,11 @@ const router = createBrowserRouter([
   },
   { 
     path: "/activate/:uid/:token",
+<<<<<<< HEAD
     element: <Activate/>
+=======
+    element: <ActivateAccount/>
+>>>>>>> 08f81fd0e3a4e338aea851fd851ae7d631b0b7f0
   },
 ]);
 
