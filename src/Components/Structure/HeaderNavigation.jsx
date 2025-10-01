@@ -142,8 +142,8 @@ const HeaderNavigation = () => {
                       <a href="contact.html">Contact</a>
                     </li>
                     <li className="nav-btn">
-                      <a href="add-listing.html" className="main-btn icon-btn">
-                        Add Listing
+                      <a href="/Addlisting" className="main-btn icon-btn">
+                        Publica tu Servicio
                       </a>
                     </li>
                   </ul>

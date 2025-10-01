@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
-import WOW from 'wowjs';
+// import WOW from 'wowjs';
 
 const FeaturesSection = () => {
-  useEffect(() => {
-    // Initialize WOW.js for animation effects
-    new WOW.WOW().init();
-  }, []);
+  // useEffect(() => {
+  //   // Initialize WOW.js for animation effects
+  //   new WOW.WOW().init();
+  // }, []);
 
   return (
     <>

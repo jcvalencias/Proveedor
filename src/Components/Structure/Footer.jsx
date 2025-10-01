@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
-import WOW from 'wowjs';
+// import WOW from 'wowjs';
 
 const Footer = () => {
-  useEffect(() => {
-    // Initialize WOW.js for animations
-    new WOW.WOW().init();
+  // useEffect(() => {
+  //   // Initialize WOW.js for animations
+  //   new WOW.WOW().init();
 
-  }, []);
+  // }, []);
 
   // Handle form submission or other interactions if needed
   const handleFormSubmit = (e) => {

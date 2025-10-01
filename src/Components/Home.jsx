@@ -1,22 +1,22 @@
 import { useState, useEffect } from 'react';
-import UsuarioForm from './Admin/Admin';
-import { Link } from 'react-router-dom';
+// import UsuarioForm from './Admin/Admin';
+// import { Link } from 'react-router-dom';
 import Header from './Structure/Header';
 import PreLoader from './Structure/Preloader';
 import Footer from './Structure/Footer';
-import ListadoMapa from './Search/listado-con-mapa';
+// import ListadoMapa from './Search/listado-con-mapa';
 import HeroSection from './Home/HeroSection';
-import CategorySection from './Home/CategorySection';
+// import CategorySection from './Home/CategorySection';
 import GeneralSolutionSection from './Home/GeneralSolutionSection';
-import PromotionalSection from './Home/PromotionalSection';
+// import PromotionalSection from './Home/PromotionalSection';
 import FeaturesSection from './Home/FeaturesSection';
-import CarouselSection from './Home/CarouselSection';
-import DownloadSection from './Home/DownloadSection';
-import NearbySection from './Home/NearbySection';
-import ExploreSection from './Home/ExploreSection';
-import NewsletterSection from './Home/NewsletterSection';
-import ClientLogoSection from './Home/ClientLogoSection';
-import BlogSection from './Home/BlogSection';
+// import CarouselSection from './Home/CarouselSection';
+// import DownloadSection from './Home/DownloadSection';
+// import NearbySection from './Home/NearbySection';
+// import ExploreSection from './Home/ExploreSection';
+// import NewsletterSection from './Home/NewsletterSection';
+// import ClientLogoSection from './Home/ClientLogoSection';
+// import BlogSection from './Home/BlogSection';
 
 const Home = () => {
 

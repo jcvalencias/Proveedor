@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
-import WOW from 'wowjs';
+// import WOW from 'wowjs';
 
 const GeneralSolutionSection = () => {
 
-  useEffect(() => {
-    // Initialize WOW.js for animation effects
-    new WOW.WOW().init();
-  }, []);
+  // useEffect(() => {
+  //   // Initialize WOW.js for animation effects
+  //   new WOW.WOW().init();
+  // }, []);
 
   return (
     <section className="category-area pt-110 pb-90">

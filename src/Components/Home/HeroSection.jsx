@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
-import WOW from 'wowjs';
+// import WOW from 'wowjs';
 
 const HeroSection = () => {
 
-  useEffect(() => {
-    // Initialize WOW.js for animation effects
-    new WOW.WOW().init();
-  }, []);
+  // useEffect(() => {
+  //   // Initialize WOW.js for animation effects
+  //   new WOW.WOW().init();
+  // }, []);
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
