@@ -14,10 +14,6 @@ import SignIn from './Components/Authentication/SignIn.jsx';
 import SignUp from './Components/Authentication/SignUp.jsx';
 import ListadoMapa from './Components/Search/listado-con-mapa.jsx';
 import AddListing from './Components/Proveedor/AddListing.jsx';
-import ProtectedRoute from './Components/JWT/ProtetedRoute.jsx';
-import Login from './Components/JWT/login.jsx';
-import Register from './Components/JWT/Register.jsx';
-import Notes from './Components/notes/notes.jsx';
 import EmailVerification from './Components/Authentication/email-verification.jsx';
 import RecoverPass from './Components/Authentication/recover-pass.jsx';
 import PasswordResetConfirm from './Components/Authentication/PasswordResetConfirm.jsx';
@@ -41,7 +37,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/admin",
-    element: <ProtectedRoute><Admin/></ProtectedRoute>
+    element: <Admin/>
   },
   {
     path: "/SignIn",
@@ -63,10 +59,7 @@ const router = createBrowserRouter([
     path: "/Addlisting",
     element: <AddListing/>
   },
-  {
-    path: "/notes",
-    element: <Notes/>
-  },
+
   {
     path: "/emailverification",
     element: <EmailVerification/>

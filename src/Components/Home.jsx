@@ -35,17 +35,17 @@ const Home = () => {
     return (
       <>
       <HeroSection />
-      <CategorySection />
+      {/* <CategorySection /> */}
       <GeneralSolutionSection />
-      <PromotionalSection />
+      {/* <PromotionalSection /> */}
       <FeaturesSection />
-      <CarouselSection />
-      <DownloadSection />
-      <NearbySection />
-      <ExploreSection />
-      <NewsletterSection />
-      <ClientLogoSection />
-      <BlogSection />
+      {/* <CarouselSection /> */}
+      {/* <DownloadSection /> */}
+      {/* <NearbySection /> */}
+      {/* <ExploreSection /> */}
+      {/* <NewsletterSection /> */}
+      {/* <ClientLogoSection /> */}
+      {/* <BlogSection /> */}
           </>
     )
   }
